@@ -39,7 +39,7 @@ public class playerController : MonoBehaviour
     void Update()
     {
         movement();
-        if(!isShooting &&Input.GetButton("Shoot"))
+        if (!isShooting && Input.GetButton("Shoot"))
         {
             StartCoroutine(shoot());
         }
@@ -83,11 +83,11 @@ public class playerController : MonoBehaviour
         isShooting = false;
     }
 
-  /*uncomment wne the playerDead() function has been writen.*/
-  //public void takeDamage(int dmg)
-  //{
-  //    gameManager.instance.playerDead();
-  //}
+
+    public void takeDamage(int dmg)
+    {
+        gameManager.instance.playerDead();
+    }
 
 
 }
