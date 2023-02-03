@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.Rendering;
 using UnityEngine;
 
-public class playerControler : MonoBehaviour
+public class playerController : MonoBehaviour
 {
     [Header("~~~~~~~Componets~~~~~~~~")]
     [SerializeField] CharacterController controller;
