@@ -17,8 +17,7 @@ public class Bullet : MonoBehaviour
     {
         if(obj.CompareTag("Player"))
         {
-                                // \/will rework with if name changes
-           // gameManager.instance.playerScript.takeDamage(bulletDmg);
+            gameManager.instance.playerScript.takeDamage(bulletDmg);
         }
         Destroy(gameObject);
     }
