@@ -8,8 +8,10 @@ public class cameraControl : MonoBehaviour
     [Header("~~~~~~Camera Settings~~~~~~")]
     [SerializeField] int sensHorz;
     [SerializeField] int sensVert;
+
     [SerializeField] int lockVertMin;
     [SerializeField] int lockVertMax;
+
     [SerializeField] bool invertX;
 
     float xRotation;
