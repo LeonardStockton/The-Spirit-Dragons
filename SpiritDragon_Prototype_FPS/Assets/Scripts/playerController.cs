@@ -12,8 +12,8 @@ public class playerController : MonoBehaviour
     [Range(1, 5)][SerializeField] int playerSpeed;
     [Range(5, 15)][SerializeField] int HP;
     [Range(1, 2)][SerializeField] int jumpTimes;
-    [Range(1, 5)][SerializeField] int jumpSpeed;
-    [Range(1, 5)][SerializeField] int gravity;
+    [Range(10, 15)][SerializeField] int jumpSpeed;
+    [Range(10, 25)][SerializeField] int gravity;
 
     [Header("~~~~~~~Gun Stats~~~~~~~~")]
     [Range(1, 5)][SerializeField] float shootRate;
