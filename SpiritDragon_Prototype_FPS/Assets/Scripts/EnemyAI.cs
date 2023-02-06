@@ -10,8 +10,8 @@ public class EnemyAI : MonoBehaviour, IDamage
     [SerializeField] NavMeshAgent agent;
 
     [Header("----- Stats -----")]
-    [Range(1,10)][SerializeField] int Hp;
-    [SerializeField] int playerFaceSpeed;
+    [Range(0,100)][SerializeField] int Hp;
+    [Range(0, 50)] [SerializeField] int playerFaceSpeed;
 
     [Header("----- Gun -----")]
     [SerializeField] Transform shootPos;

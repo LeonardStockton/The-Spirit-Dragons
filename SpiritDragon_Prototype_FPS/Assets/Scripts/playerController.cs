@@ -9,17 +9,17 @@ public class playerController : MonoBehaviour
     [SerializeField] CharacterController controller;
 
     [Header("~~~~~~Player Stats~~~~~~")]
-    [Range(1, 5)][SerializeField] int playerSpeed;
-    [Range(5, 15)][SerializeField] int HP;
-    [Range(1, 2)][SerializeField] int jumpTimes;
-    [Range(1, 5)][SerializeField] int jumpSpeed;
-    [Range(1, 5)][SerializeField] int gravity;
+    [Range(0, 100)][SerializeField] int playerSpeed;
+    [Range(0, 100)][SerializeField] int HP;
+    [Range(0, 10)][SerializeField] int jumpTimes;
+    [Range(0, 100)][SerializeField] int jumpSpeed;
+    [Range(0, 100)][SerializeField] int gravity;
 
     [Header("~~~~~~~Gun Stats~~~~~~~~")]
-    [Range(1, 5)][SerializeField] float shootRate;
-    [Range(1, 5)][SerializeField] int shootDist;
-    [Range(1, 5)][SerializeField] int shootDamage;
-    [Range(1, 5)][SerializeField] int weaponAmmo;
+    [Range(0, 100)][SerializeField] float shootRate;
+    [Range(0, 100)][SerializeField] int shootDist;
+    [Range(0, 100)][SerializeField] int shootDamage;
+    [Range(0, 100)][SerializeField] int weaponAmmo;
 
     Vector3 move;
     Vector3 playerVelocity;
@@ -88,7 +88,7 @@ public class playerController : MonoBehaviour
     {
         HP-=dmg;
         stolenHealth();
-        youBeenShoot();
+        StartCoroutine(youBeenShoot());
         if (HP <= 0)
         {
             

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class buttonFuntions : MonoBehaviour
+public class ButtonFunctions : MonoBehaviour
 {
 
     public void resume()

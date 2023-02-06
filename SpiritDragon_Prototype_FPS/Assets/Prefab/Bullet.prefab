@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 863268842095741507}
   - component: {fileID: 7299834497761176345}
   - component: {fileID: 8252676843787283548}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef1dc35c82d57a246a320f91024c37cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletDmg: 1
+  bulletDmg: 10
   timer: 5
 --- !u!135 &863268842095741507
 SphereCollider:
