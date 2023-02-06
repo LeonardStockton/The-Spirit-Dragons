@@ -32,7 +32,7 @@ public class playerController : MonoBehaviour
     void Start()
     {
         HPorg = HP;
-
+        stolenHealth();
     }
 
     // Update is called once per frame
@@ -86,8 +86,26 @@ public class playerController : MonoBehaviour
 
     public void takeDamage(int dmg)
     {
-        gameManager.instance.playerDead();
+        HP-=dmg;
+        stolenHealth();
+        youBeenShoot();
+        if (HP <= 0)
+        {
+            
+            gameManager.instance.playerDead();
+        }
     }
 
+    public void stolenHealth()
+    {
+        gameManager.instance.playerHpBar.fillAmount = (float)HP / (float)HPorg;
+    }
+
+    IEnumerator youBeenShoot()
+    {
+        gameManager.instance.playerDamageFlashScreen.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        gameManager.instance.playerDamageFlashScreen.SetActive(false);
+    }
 
 }
