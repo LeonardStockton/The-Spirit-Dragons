@@ -32,7 +32,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     // Update is called once per frame
     void Update()
     {
-        plyrDir = gameManager.instance.player.transform.position = transform.position;
+        plyrDir = gameManager.instance.player.transform.position - transform.position;
         if(NRange)
         {
             agent.SetDestination(gameManager.instance.player.transform.position);
