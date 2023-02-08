@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7680336462684338097}
   - component: {fileID: 7530393509933415109}
   - component: {fileID: 4069744713121980864}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: cyberSoldBull
   m_TagString: Untagged
   m_Icon: {fileID: 0}

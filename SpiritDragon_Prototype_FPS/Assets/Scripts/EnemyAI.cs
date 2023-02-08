@@ -10,8 +10,10 @@ public class EnemyAI : MonoBehaviour, IDamage
     [SerializeField] NavMeshAgent agent;
 
     [Header("----- Stats -----")]
+    [SerializeField] Transform headPos;
     [Range(0,100)][SerializeField] int Hp;
     [Range(0, 50)] [SerializeField] int playerFaceSpeed;
+    [SerializeField] int viewAngle;
 
     [Header("----- Gun -----")]
     [SerializeField] Transform shootPos;
@@ -21,21 +23,21 @@ public class EnemyAI : MonoBehaviour, IDamage
 
     Vector3 plyrDir;
     bool Shooting, NRange;
+    float angleToPlayer;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        gameManager.instance.updateGameGoal(1);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        plyrDir = gameManager.instance.player.transform.position - transform.position;
-        if(NRange)
-        {
-            agent.SetDestination(gameManager.instance.player.transform.position);
+        
+        if(NRange && canSeePlayer())
+        {     
             if(agent.remainingDistance < agent.stoppingDistance)
             {
                 facePlayer();
@@ -43,6 +45,23 @@ public class EnemyAI : MonoBehaviour, IDamage
             if (!Shooting)
                 StartCoroutine(shoot());
         }
+    }
+
+    bool canSeePlayer()
+    {
+        plyrDir = gameManager.instance.player.transform.position - headPos.position;
+        angleToPlayer = Vector3.Angle(plyrDir, transform.forward);
+        RaycastHit hit;
+        Debug.DrawRay(headPos.position, plyrDir);
+        if (Physics.Raycast(headPos.position,plyrDir, out hit))
+        {
+            if(hit.collider.CompareTag("Player") && angleToPlayer <= viewAngle)
+            {
+                agent.SetDestination(gameManager.instance.player.transform.position);
+                return true;
+            }
+        }
+        return false;
     }
 
     public void takeDamage(int dmg)
