@@ -107,5 +107,13 @@ public class playerController : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         gameManager.instance.playerDamageFlashScreen.SetActive(false);
     }
-
+    //for when we add health, weapons, and ammo. *do not erase*
+    public void healthPack(int heals)
+    {
+        HP+=heals;
+    }
+    public void ammoPack(int rounds)
+    {
+        weaponAmmo += rounds;
+    }
 }
