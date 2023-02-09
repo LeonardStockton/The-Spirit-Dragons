@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
@@ -18,7 +18,13 @@ public class gameManager : MonoBehaviour
     public GameObject winMenu;
     public GameObject loseMenu;
     public GameObject playerDamageFlashScreen;
+    public GameObject playerHealthPickUpScreen;
+    public GameObject playerAmmoPickUpScreen;
     public Image playerHpBar;
+    public TextMeshProUGUI enemiesRemainingText;
+    public TextMeshProUGUI timer;
+    public float time;
+    bool timebool = false;
 
     [Header("----- Game Goals -----")]
     public int enemiesRemaining;
@@ -36,6 +42,13 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        time -= Time.deltaTime;
+        timer.text = time.ToString("F0");
+        if (time <= 0 && timebool == false)
+        {
+            timebool = true;
+            playerDead();
+        }
 
         if (Input.GetButtonDown("Cancel") && activeMenu == null)
         {
@@ -70,7 +83,7 @@ public class gameManager : MonoBehaviour
     public void updateGameGoal(int amount)
     {
         enemiesRemaining += amount;
-
+        enemiesRemainingText.text = enemiesRemaining.ToString("F0");
         if (enemiesRemaining <= 0)
         {
             setMenu(winMenu);

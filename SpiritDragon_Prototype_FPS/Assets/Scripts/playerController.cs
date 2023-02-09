@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.Experimental.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,6 +22,10 @@ public class playerController : MonoBehaviour
     [Range(0, 100)][SerializeField] int shootDist;
     [Range(0, 100)][SerializeField] int shootDamage;
     [Range(0, 100)][SerializeField] int weaponAmmo;
+    [SerializeField] GameObject muzzleFlash;
+    [SerializeField] GameObject hitEffect;
+    [SerializeField] GameObject bloodEffect;
+    [SerializeField] AudioSource gunSound;
 
     public int ammo;
 
@@ -29,7 +34,7 @@ public class playerController : MonoBehaviour
     int jumpCurrent;
     int HPorg;
     bool isShooting;
-    public Text ammoDisplay;
+    public TextMeshProUGUI ammoDisplay;
 
 
     // Start is called before the first frame update
@@ -46,9 +51,18 @@ public class playerController : MonoBehaviour
         ammoDisplay.text = ammo.ToString();
 
         movement();
-        if (!isShooting && Input.GetButton("Shoot"))
+        if (!isShooting && Input.GetButton("Shoot") && ammo > 0)
         {
-            StartCoroutine(shoot());
+           
+                StartCoroutine(shoot());
+         
+            
+            
+        }
+
+        if (ammo <= 0)
+        {
+            ammo = 0;
         }
 
     }
@@ -75,23 +89,31 @@ public class playerController : MonoBehaviour
     IEnumerator shoot()
     {
         isShooting = true;
-
+        gunSound.Play();
+        muzzleFlash.SetActive(true);
+        ammo--;
         RaycastHit hit;
-
-        if (ammo > 0)
+        if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
         {
-            ammo -= 1;
-            if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
-            {
-                Debug.Log(hit.collider.name);
+            Debug.Log(hit.collider.name);
+           
                 if (hit.collider.GetComponent<IDamage>() != null)
                 {
+
                     hit.collider.GetComponent<IDamage>().takeDamage(shootDamage);
+                   GameObject temp =  Instantiate(bloodEffect, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
+                    Destroy(temp, 2);
                 }
-            }
+                else
+                {
+                    GameObject temp =  Instantiate(hitEffect, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
+                    Destroy(temp, 2);
+                }
+               
+          
         }
         yield return new WaitForSeconds(shootRate);
-
+        muzzleFlash.SetActive(false);
         isShooting = false;
     }
 
@@ -123,18 +145,13 @@ public class playerController : MonoBehaviour
     public void healthPack(int heals)
     {
         HP+=heals;
+        stolenHealth();
     }
+
     public void ammoPack(int rounds)
     {
-        weaponAmmo += rounds;
+        ammo += rounds;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("AmmoPickup"))
-        {
-            ammo += 1;
-
-        }
-    }
+  
 }

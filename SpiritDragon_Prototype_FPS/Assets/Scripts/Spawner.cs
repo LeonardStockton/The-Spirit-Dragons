@@ -1,0 +1,66 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Spawner : MonoBehaviour
+{
+    [SerializeField] GameObject enemy;
+    [SerializeField] int spawnMaxNum;
+    [SerializeField] int timer;
+    [SerializeField] Transform[] spawnPos;
+
+    int enemiesSpawned;
+    bool playerInRange;
+    bool isSpawning;
+    Transform randomSpawnPoint;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        gameManager.instance.updateGameGoal(spawnMaxNum);
+        Spawn();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if ((playerInRange && !isSpawning) && (enemiesSpawned < spawnMaxNum))
+        {
+            //StartCoroutine(spawn());
+            
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = true;
+        }
+    }
+
+    //IEnumerator spawn()
+    //{
+    //    isSpawning = true;
+    //    //randomSpawnPoint = spawnPos[Random.Range(0, spawnPos.Length)];
+
+    //    for (int i = 0; i < spawnPos.Length; i++){
+    //        Instantiate(enemy, spawnPos[i].position, spawnPos[i].rotation);
+    //        enemiesSpawned++;
+    //    }
+
+
+    //    yield return new WaitForSeconds(timer);
+    //    isSpawning = false;
+    //}
+
+    void Spawn()
+    {
+        for (int i = 0; i < spawnPos.Length; i++)
+        {
+            Instantiate(enemy, spawnPos[i].position, spawnPos[i].rotation);
+            enemiesSpawned++;
+
+        }
+    }
+}

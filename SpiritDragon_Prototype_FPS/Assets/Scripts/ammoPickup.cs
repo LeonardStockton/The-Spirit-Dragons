@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ammoPickup : MonoBehaviour
 {
+    public int ammoCount;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +21,20 @@ public class ammoPickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            StartCoroutine(ammo());
+            other.GetComponent<playerController>().ammoPack(ammoCount);
         }
 
+    }
+
+
+    IEnumerator ammo()
+    {
+
+
+        gameManager.instance.playerAmmoPickUpScreen.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        gameManager.instance.playerAmmoPickUpScreen.SetActive(false);
+        Destroy(gameObject);
     }
 }
