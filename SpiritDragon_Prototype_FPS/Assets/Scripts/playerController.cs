@@ -98,5 +98,13 @@ public class playerController : MonoBehaviour
         gameManager.instance.playerDead();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("AmmoPickup"))
+        {
+            ammo += 1;
+            script.numofBullets += 1;
+        }
+    }
 
 }
