@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Experimental.Rendering;
+//using UnityEditor.Experimental.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -52,12 +52,8 @@ public class playerController : MonoBehaviour
 
         movement();
         if (!isShooting && Input.GetButton("Shoot") && ammo > 0)
-        {
-           
-                StartCoroutine(shoot());
-         
-            
-            
+        {           
+                StartCoroutine(shoot());        
         }
 
         if (ammo <= 0)
