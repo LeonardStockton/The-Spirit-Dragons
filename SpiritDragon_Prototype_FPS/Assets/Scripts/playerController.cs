@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.Rendering;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerController : MonoBehaviour
 {
@@ -21,16 +22,20 @@ public class playerController : MonoBehaviour
     [Range(0, 100)][SerializeField] int shootDamage;
     [Range(0, 100)][SerializeField] int weaponAmmo;
 
+    public int ammo;
+
     Vector3 move;
     Vector3 playerVelocity;
     int jumpCurrent;
     int HPorg;
     bool isShooting;
+    public Text ammoDisplay;
 
 
     // Start is called before the first frame update
     void Start()
     {
+      
         HPorg = HP;
         stolenHealth();
     }
@@ -38,6 +43,8 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ammoDisplay.text = ammo.ToString();
+
         movement();
         if (!isShooting && Input.GetButton("Shoot"))
         {
@@ -70,12 +77,17 @@ public class playerController : MonoBehaviour
         isShooting = true;
 
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
+
+        if (ammo > 0)
         {
-            Debug.Log(hit.collider.name);
-            if (hit.collider.GetComponent<IDamage>() != null)
+            ammo -= 1;
+            if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
             {
-                hit.collider.GetComponent<IDamage>().takeDamage(shootDamage);
+                Debug.Log(hit.collider.name);
+                if (hit.collider.GetComponent<IDamage>() != null)
+                {
+                    hit.collider.GetComponent<IDamage>().takeDamage(shootDamage);
+                }
             }
         }
         yield return new WaitForSeconds(shootRate);
@@ -115,5 +127,14 @@ public class playerController : MonoBehaviour
     public void ammoPack(int rounds)
     {
         weaponAmmo += rounds;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("AmmoPickup"))
+        {
+            ammo += 1;
+
+        }
     }
 }
