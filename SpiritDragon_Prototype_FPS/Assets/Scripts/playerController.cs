@@ -26,12 +26,15 @@ public class playerController : MonoBehaviour
     int jumpCurrent;
     int HPorg;
     bool isShooting;
+    public ammoCount script;
+    public int ammo;
 
 
     // Start is called before the first frame update
     void Start()
     {
         HPorg = HP;
+        ammo = script.numofBullets;
 
     }
 
@@ -70,12 +73,18 @@ public class playerController : MonoBehaviour
         isShooting = true;
 
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
+
+        if (ammo > 0)
         {
-            Debug.Log(hit.collider.name);
-            if (hit.collider.GetComponent<IDamage>() != null)
+            ammo -= 1;
+
+            if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
             {
-                hit.collider.GetComponent<IDamage>().takeDamage(shootDamage);
+                Debug.Log(hit.collider.name);
+                if (hit.collider.GetComponent<IDamage>() != null)
+                {
+                    hit.collider.GetComponent<IDamage>().takeDamage(shootDamage);
+                }
             }
         }
         yield return new WaitForSeconds(shootRate);
