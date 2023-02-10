@@ -180,7 +180,7 @@ MonoBehaviour:
   gravity: 9
   shootRate: 0.25
   shootDist: 50
-  shootDamage: 40
+  shootDamage: 5
   weaponAmmo: 0
   muzzleFlash: {fileID: 7202741634162829604}
   hitEffect: {fileID: 1788986466055902, guid: a1af21eb94797404b984baeef837a03f, type: 3}
