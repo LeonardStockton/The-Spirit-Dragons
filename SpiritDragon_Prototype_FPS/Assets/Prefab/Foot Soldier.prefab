@@ -875,6 +875,8 @@ MonoBehaviour:
   Hp: 75
   playerFaceSpeed: 9
   viewAngle: 180
+  waitTime: 5
+  roamDist: 10
   shootPos: {fileID: 4952295259362529311}
   bullet: {fileID: 673867294353771614, guid: 6257b34b5c10aa745b6b0c34dc46cc0e, type: 3}
   bulletSpeed: 25

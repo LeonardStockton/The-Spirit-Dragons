@@ -14,7 +14,7 @@ public class turret : MonoBehaviour, IDamage
     [SerializeField] int viewAngle;
 
     [Header("----- Gun -----")]
-    [SerializeField] Transform shootPos;
+    [SerializeField] List<Transform> barrels;
     [SerializeField] GameObject bullet;
     [SerializeField] int bulletSpeed;
     [SerializeField] float fireRate;
@@ -22,6 +22,7 @@ public class turret : MonoBehaviour, IDamage
     Vector3 plyrDir;
     bool Shooting, NRange;
     float angleToPlayer;
+    int barrelNum;
 
 
     // Start is called before the first frame update
@@ -82,12 +83,15 @@ public class turret : MonoBehaviour, IDamage
     IEnumerator shoot()
     {
         Shooting = true;
-        GameObject clone = Instantiate(bullet, shootPos.position, bullet.transform.rotation);
-        Transform bulletForm = clone.transform;
-        bulletForm.transform.GetComponent<turBull>().SendBull(plyrDir);
-        clone.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
-
-        yield return new WaitForSeconds(fireRate);
+        barrelNum = barrels.Count;
+        for (int i = 0; i < barrelNum; i++)
+        {
+            GameObject clone = Instantiate(bullet, barrels[i].position, bullet.transform.rotation);
+            Transform bulletForm = clone.transform;
+            bulletForm.transform.GetComponent<turBull>().SendBull(plyrDir);
+            clone.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
+            yield return new WaitForSeconds(fireRate / barrelNum);
+        }
         Shooting = false;
     }
 
