@@ -18,14 +18,16 @@ public class playerController : MonoBehaviour
     [Range(0, 100)][SerializeField] int gravity;
 
     [Header("~~~~~~~Gun Stats~~~~~~~~")]
-    [Range(0, 100)][SerializeField] float shootRate;
-    [Range(0, 100)][SerializeField] int shootDist;
-    [Range(0, 100)][SerializeField] int shootDamage;
-    [Range(0, 100)][SerializeField] int weaponAmmo;
+    [SerializeField] List<gunStats> weaponList = new List<gunStats>();
+    [SerializeField] float shootRate;
+    [SerializeField] int shootDist;
+    [SerializeField] int shootDamage;
+    [SerializeField] int weaponAmmo;
     [SerializeField] GameObject muzzleFlash;
     [SerializeField] GameObject hitEffect;
     [SerializeField] GameObject bloodEffect;
     [SerializeField] AudioSource gunSound;
+    [SerializeField] GameObject weaponModel;
 
     public int ammo;
 
@@ -149,5 +151,14 @@ public class playerController : MonoBehaviour
         ammo += rounds;
     }
 
-  
+    public void gunPick(gunStats gunStats)
+    {
+        shootRate = gunStats.shootRate;
+        shootDist = gunStats.shootDist;
+        shootDamage = gunStats.shootDamage;
+        weaponAmmo = gunStats.weaponAmmo;
+
+
+    }
+
 }
