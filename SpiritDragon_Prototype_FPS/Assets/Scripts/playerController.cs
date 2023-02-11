@@ -22,21 +22,21 @@ public class playerController : MonoBehaviour
     [SerializeField] float shootRate;
     [SerializeField] int shootDist;
     [SerializeField] int shootDamage;
-    [SerializeField] int weaponAmmo;
+    [SerializeField] public int weaponAmmo;
     [SerializeField] GameObject muzzleFlash;
     [SerializeField] GameObject hitEffect;
     [SerializeField] GameObject bloodEffect;
     [SerializeField] AudioSource gunSound;
     [SerializeField] GameObject weaponModel;
+    [SerializeField] Recoil recoilScript;
 
-    public int ammo;
 
     Vector3 move;
     Vector3 playerVelocity;
     int jumpCurrent;
     int HPorg;
-    bool isShooting;
-    public TextMeshProUGUI ammoDisplay;
+   public  bool isShooting;
+  
 
 
     // Start is called before the first frame update
@@ -50,17 +50,17 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ammoDisplay.text = ammo.ToString();
+       
 
         movement();
-        if (!isShooting && Input.GetButton("Shoot") && ammo > 0)
+        if (!isShooting && Input.GetButton("Shoot") && weaponAmmo > 0)
         {           
                 StartCoroutine(shoot());        
         }
 
-        if (ammo <= 0)
+        if (weaponAmmo <= 0)
         {
-            ammo = 0;
+            weaponAmmo = 0;
         }
 
     }
@@ -89,7 +89,8 @@ public class playerController : MonoBehaviour
         isShooting = true;
         gunSound.Play();
         muzzleFlash.SetActive(true);
-        ammo--;
+        recoilScript.Rec();
+        weaponAmmo--;
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
         {
@@ -148,7 +149,7 @@ public class playerController : MonoBehaviour
 
     public void ammoPack(int rounds)
     {
-        ammo += rounds;
+        weaponAmmo += rounds;
     }
 
     public void gunPick(gunStats gunStats)

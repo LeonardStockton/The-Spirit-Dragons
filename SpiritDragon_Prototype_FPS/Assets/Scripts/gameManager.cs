@@ -25,6 +25,7 @@ public class gameManager : MonoBehaviour
     public TextMeshProUGUI timer;
     public float time;
     bool timebool = false;
+    public TextMeshProUGUI ammoDisplay;
 
     [Header("----- Game Goals -----")]
     public int enemiesRemaining;
@@ -42,6 +43,7 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ammoDisplay.text = player.GetComponent<playerController>().weaponAmmo.ToString();
         time -= Time.deltaTime;
         timer.text = time.ToString("F0");
         if (time <= 0 && timebool == false)

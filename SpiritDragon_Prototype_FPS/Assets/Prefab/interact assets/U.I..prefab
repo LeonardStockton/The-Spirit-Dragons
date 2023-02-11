@@ -559,6 +559,7 @@ MonoBehaviour:
   enemiesRemainingText: {fileID: 3907481191072317695}
   timer: {fileID: 5076603567152182925}
   time: 60
+  ammoDisplay: {fileID: 8658770674464516425}
   enemiesRemaining: 0
   isPaused: 0
 --- !u!1 &1754459739857146466

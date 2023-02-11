@@ -1304,7 +1304,7 @@ Transform:
   m_GameObject: {fileID: 304512762219597043}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 20}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 304512762219565271}
@@ -1351,6 +1351,8 @@ MonoBehaviour:
   Hp: 100
   playerFaceSpeed: 10
   viewAngle: 180
+  waitTime: 0
+  roamDist: 0
   shootPos: {fileID: 305891550}
   bullet: {fileID: 673867294353771614, guid: 6257b34b5c10aa745b6b0c34dc46cc0e, type: 3}
   bulletSpeed: 25
