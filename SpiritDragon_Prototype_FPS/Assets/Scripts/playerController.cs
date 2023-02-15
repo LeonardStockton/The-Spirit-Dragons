@@ -11,7 +11,8 @@ public class playerController : MonoBehaviour
     [SerializeField] CharacterController controller;
 
     [Header("~~~~~~Player Stats~~~~~~")]
-    [Range(0, 100)][SerializeField] int playerSpeed;
+    [Range(0, 10)][SerializeField] float playerSpeed;
+    [Range(1.5f, 6)][SerializeField] float playerSprintSpeed;
     [Range(0, 100)][SerializeField] int HP;
     [Range(0, 10)][SerializeField] int jumpTimes;
     [Range(0, 100)][SerializeField] int jumpSpeed;
@@ -22,21 +23,25 @@ public class playerController : MonoBehaviour
     [SerializeField] float shootRate;
     [SerializeField] int shootDist;
     [SerializeField] int shootDamage;
+    [SerializeField] GameObject weaponModel;
+    [SerializeField] AudioSource gunSound;
     [SerializeField] public int weaponAmmo;
+
+    [Header("-------Weapon Extra-------")]
     [SerializeField] GameObject muzzleFlash;
     [SerializeField] GameObject hitEffect;
     [SerializeField] GameObject bloodEffect;
-    [SerializeField] AudioSource gunSound;
-    [SerializeField] GameObject weaponModel;
-    [SerializeField] Recoil recoilScript;
+ 
 
 
     Vector3 move;
     Vector3 playerVelocity;
     int jumpCurrent;
     int HPorg;
-   public  bool isShooting;
-  
+    public bool isShooting;
+    public bool isSprinting;
+    int selectedWeapon;
+
 
 
     // Start is called before the first frame update
@@ -53,6 +58,8 @@ public class playerController : MonoBehaviour
        
 
         movement();
+        sprint();
+        selectFirearm();
         if (!isShooting && Input.GetButton("Shoot") && weaponAmmo > 0)
         {           
                 StartCoroutine(shoot());        
@@ -83,13 +90,27 @@ public class playerController : MonoBehaviour
         playerVelocity.y -= gravity * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
+    void sprint()
+    {
+        if (Input.GetButtonDown("Sprint"))
+        {
+            isSprinting = true;
+            playerSpeed *= playerSprintSpeed;
+        }
+        else if (Input.GetButtonUp("Sprint"))
+        {
+            isSprinting = false;
+            playerSpeed /= playerSprintSpeed;
+        }
+
+    }
 
     IEnumerator shoot()
     {
         isShooting = true;
         gunSound.Play();
         muzzleFlash.SetActive(true);
-        recoilScript.Rec();
+        
         weaponAmmo--;
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
@@ -154,12 +175,37 @@ public class playerController : MonoBehaviour
 
     public void gunPick(gunStats gunStats)
     {
+        weaponList.Add(gunStats);
         shootRate = gunStats.shootRate;
         shootDist = gunStats.shootDist;
         shootDamage = gunStats.shootDamage;
-        weaponAmmo = gunStats.weaponAmmo;
 
+        weaponModel.GetComponent<MeshFilter>().sharedMesh = gunStats.weaponSkin.GetComponent<MeshFilter>().sharedMesh;
+        weaponModel.GetComponent<MeshRenderer>().sharedMaterial = gunStats.weaponSkin.GetComponent<MeshRenderer>().sharedMaterial;
+        selectedWeapon = weaponList.Count - 1;
 
     }
+    void selectFirearm()
+    {
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 && selectedWeapon < weaponList.Count - 1)
+        {
+            selectedWeapon++;
+            changeFirearm();
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") > 0 && selectedWeapon > 0)
+        {
+            selectedWeapon--;
+            changeFirearm();
+        }
+    }
 
+    void changeFirearm()
+    {
+        shootRate = weaponList[selectedWeapon].shootRate;
+        shootDist = weaponList[selectedWeapon].shootDist;
+        shootDamage = weaponList[selectedWeapon].shootDamage;
+
+        weaponModel.GetComponent<MeshFilter>().sharedMesh = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshFilter>().sharedMesh;
+        weaponModel.GetComponent<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshRenderer>().sharedMaterial;
+    }
 }

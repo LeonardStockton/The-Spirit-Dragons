@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8339993106271146843}
   - component: {fileID: 6585421906115035351}
   m_Layer: 0
-  m_Name: 'Sig suppersed '
+  m_Name: Sig suppersed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

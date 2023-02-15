@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b3992271a9721e42bbbf07301c7a3c9, type: 3}
-  m_Name: Pistol semi
+  m_Name: GS 50
   m_EditorClassIdentifier: 
   shootRate: 0.5
   shootDist: 5
   shootDamage: 2
   weaponAmmo: 7
-  weaponSkin: {fileID: 0}
+  weaponSkin: {fileID: 919132149155446097, guid: 8f9696fb6017be144a307b6586855ac0, type: 3}
   weaponFireAud: {fileID: 0}
