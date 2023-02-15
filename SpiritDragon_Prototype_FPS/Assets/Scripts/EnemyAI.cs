@@ -8,12 +8,14 @@ public class EnemyAI : MonoBehaviour, IDamage
     [Header("----- Components -----")]
     [SerializeField] Renderer model;
     [SerializeField] NavMeshAgent agent;
+    [SerializeField] Animator anime;
 
     [Header("----- Stats -----")]
     [SerializeField] Transform headPos;
     [Range(0,100)][SerializeField] int Hp;
     [Range(0, 50)] [SerializeField] int playerFaceSpeed;
     [SerializeField] int viewAngle;
+    [SerializeField] int shootAngle;
     [SerializeField] int waitTime;
     [SerializeField] int roamDist;
 
@@ -41,22 +43,25 @@ public class EnemyAI : MonoBehaviour, IDamage
     // Update is called once per frame
     void Update()
     {
+
+        anime.SetFloat("Speed", agent.velocity.normalized.magnitude);
+
         if (NRange)
         {
-            if (!canSeePlayer() && !pickDest && agent.remainingDistance < 0.1)
+            if (!canSeePlayer() )
             {
-                roam();
+                StartCoroutine(roam());
             }
         }
-        else if (!pickDest&& agent.remainingDistance < 0.1 && agent.destination != gameManager.instance.player.transform.position)
+        else if (agent.destination != gameManager.instance.player.transform.position)
         {
-            roam();
+            StartCoroutine(roam());
         }
     }
 
     bool canSeePlayer()
     {
-        plyrDir = gameManager.instance.player.transform.position - headPos.position;
+        plyrDir = (gameManager.instance.player.transform.position - headPos.position).normalized;
         angleToPlayer = Vector3.Angle(new Vector3(plyrDir.x, 0, plyrDir.z), transform.forward);
 
         Debug.Log(angleToPlayer);
@@ -83,34 +88,32 @@ public class EnemyAI : MonoBehaviour, IDamage
         return false;
     }
 
-    void roam()
+    IEnumerator roam()
     {
-        agent.stoppingDistance = 0;
-        pickDest = true;
-
-
-        Vector3 randDir = Random.insideUnitSphere * roamDist;
-        randDir += startPos;
-
-        NavMeshHit hit;
-        NavMesh.SamplePosition(randDir, out hit, 1, 1);
-        NavMeshPath path = new NavMeshPath();
-
-        if (hit.position != null)
+        if (!pickDest && agent.remainingDistance < .01f)
         {
-            agent.CalculatePath(hit.position, path);
-        }
-        agent.SetPath(path);
-        pickDest = false;
+            agent.stoppingDistance = 0;
+            pickDest = true;
+            yield return new WaitForSeconds(waitTime);
+            pickDest = false;
 
+            Vector3 randDir = Random.insideUnitSphere * roamDist;
+            randDir += startPos;
+
+            NavMeshHit hit;
+            NavMesh.SamplePosition(randDir, out hit, 1, 1);
+
+            agent.SetDestination(hit.position);
+        }
     }
 
     public void takeDamage(int dmg)
     {
         Hp -= dmg;
         StartCoroutine(flshDmg());
+        agent.SetDestination(gameManager.instance.player.transform.position);
 
-        if(Hp <= 0)
+        if (Hp <= 0)
         {
             gameManager.instance.updateGameGoal(-1);
             Destroy(gameObject);
@@ -127,6 +130,7 @@ public class EnemyAI : MonoBehaviour, IDamage
 
     void facePlayer()
     {
+        plyrDir.y = 0;
         Quaternion rot = Quaternion.LookRotation(plyrDir);
         transform.rotation = Quaternion.Lerp(transform.rotation, rot, Time.deltaTime * playerFaceSpeed);
     }
