@@ -10,6 +10,7 @@ public class gameManager : MonoBehaviour
     [Header("----- Player Data -----")]
     public GameObject player;
     public playerController playerScript;
+    public GameObject playerSpwanPOS;
 
     [Header("----- UI -----")]
    

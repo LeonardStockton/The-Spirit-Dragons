@@ -10,6 +10,7 @@ public class playerController : MonoBehaviour
     [Header("~~~~~~~Componets~~~~~~~~")]
     [SerializeField] CharacterController controller;
 
+
     [Header("~~~~~~Player Stats~~~~~~")]
     [Range(0, 10)][SerializeField] float playerSpeed;
     [Range(1.5f, 6)][SerializeField] float playerSprintSpeed;
@@ -60,7 +61,7 @@ public class playerController : MonoBehaviour
         movement();
         sprint();
         selectFirearm();
-        if (!isShooting && Input.GetButton("Shoot") && weaponAmmo > 0)
+        if (!isShooting && weaponList.Count>0 && Input.GetButton("Shoot") && weaponAmmo > 0)
         {           
                 StartCoroutine(shoot());        
         }
@@ -207,5 +208,16 @@ public class playerController : MonoBehaviour
 
         weaponModel.GetComponent<MeshFilter>().sharedMesh = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshFilter>().sharedMesh;
         weaponModel.GetComponent<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshRenderer>().sharedMaterial;
+    }
+
+    public void Spawner()
+    {
+        controller.enabled= false;
+        transform.position = gameManager.instance.playerSpwanPOS.transform.position;
+
+        HP = HPorg;
+        stolenHealth();
+
+        controller.enabled = true;
     }
 }
