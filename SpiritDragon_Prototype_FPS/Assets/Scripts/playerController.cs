@@ -68,7 +68,8 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        StartCoroutine(throwGrenade());
+        Debug.Log(playerVelocity);
         animes.SetFloat("Speed", playerVelocity.normalized.magnitude);
         movement();
         sprint();
@@ -87,13 +88,13 @@ public class playerController : MonoBehaviour
 
     void movement()
     {
-
-        if (controller.isGrounded && playerVelocity.y < 0)
+        if (controller.isGrounded &&   playerVelocity.y < 0)
         {
             playerVelocity.y = 0;
             jumpCurrent = 0;
         }
-        move = ((transform.right * Input.GetAxis("Horizontal") + (transform.forward * Input.GetAxis("Vertical")).normalized));
+        move = ((transform.right * Input.GetAxis("Horizontal") + (transform.forward * Input.GetAxis("Vertical"))));
+        move = move.normalized;
         controller.Move(move * Time.deltaTime * playerSpeed);
         if (Input.GetButtonDown("Jump") && jumpCurrent < jumpTimes)
         {
@@ -102,7 +103,7 @@ public class playerController : MonoBehaviour
 
         }
         playerVelocity.y -= gravity * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
+        controller.Move((playerVelocity + pushBack) * Time.deltaTime);
     }
     void sprint()
     {
@@ -259,7 +260,7 @@ public class playerController : MonoBehaviour
             yield return new WaitForSeconds(grenTimer);
             GameObject explosion = Instantiate(exp, grenadeClone.transform.position, grenadeClone.transform.rotation);
             Destroy(grenadeClone);
-            Destroy(explosion, (float).1);
+            Destroy(explosion, (float).5);
         }
     }
 }
