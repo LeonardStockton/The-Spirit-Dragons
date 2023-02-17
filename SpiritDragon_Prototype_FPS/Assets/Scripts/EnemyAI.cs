@@ -31,12 +31,14 @@ public class EnemyAI : MonoBehaviour, IDamage
     Vector3 startPos;
     bool pickDest;
     float fromStartPos;
+    float speedOrig;
 
     // Start is called before the first frame update
     void Start()
     {
         startPos = transform.position;
         fromStartPos = agent.stoppingDistance;
+        speedOrig = agent.speed;
         roam();
     }
 
@@ -99,26 +101,32 @@ public class EnemyAI : MonoBehaviour, IDamage
             yield return new WaitForSeconds(waitTime);
             pickDest = false;
 
-            Vector3 randDir = Random.insideUnitSphere * roamDist;
-            randDir += startPos;
+            if (agent.isActiveAndEnabled)
+            {
+                Vector3 randDir = Random.insideUnitSphere * roamDist;
+                randDir += startPos;
 
-            NavMeshHit hit;
-            NavMesh.SamplePosition(randDir, out hit, 1, 1);
+                NavMeshHit hit;
+                NavMesh.SamplePosition(randDir, out hit, 1, 1);
 
-            agent.SetDestination(hit.position);
+                agent.SetDestination(hit.position);
+            }
         }
     }
 
     public void takeDamage(int dmg)
     {
-        Hp -= dmg;
-        StartCoroutine(flshDmg());
-        agent.SetDestination(gameManager.instance.player.transform.position);
-
-        if (Hp <= 0)
+        if (agent.isActiveAndEnabled)
         {
-            gameManager.instance.updateGameGoal(-1);
-            Destroy(gameObject);
+            Hp -= dmg;
+            StartCoroutine(flshDmg());
+            agent.SetDestination(gameManager.instance.player.transform.position);
+
+            if (Hp <= 0)
+            {
+                gameManager.instance.updateGameGoal(-1);
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -140,11 +148,16 @@ public class EnemyAI : MonoBehaviour, IDamage
     IEnumerator shoot()
     {
         Shooting = true;
-        GameObject clone = Instantiate(bullet, shootPos.position, bullet.transform.rotation);
-        clone.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
 
+        anime.SetTrigger("Shoot");
         yield return new WaitForSeconds(fireRate);
         Shooting = false;
+    }
+
+    public void createBullet()
+    {
+        GameObject clone = Instantiate(bullet, shootPos.position, bullet.transform.rotation);
+        clone.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
     }
 
     public void OnTriggerEnter(Collider obj)
@@ -162,5 +175,13 @@ public class EnemyAI : MonoBehaviour, IDamage
             agent.stoppingDistance = 0;
             NRange = false;
         }
+    }
+    public void agentStop()
+    {
+        agent.enabled = false;
+    }
+    public void agentStart()
+    {
+        agent.enabled = true; ;
     }
 }
