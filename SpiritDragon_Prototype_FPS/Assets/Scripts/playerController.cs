@@ -67,10 +67,29 @@ public class playerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+
     {
+
+        if (Input.GetAxis("Vertical") >  0  || Input.GetAxis("Vertical") < 0 )
+        {
+
+            animes.SetBool("run", true);
+        }
+        else if(Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0)
+        {
+            animes.SetBool("run", true);
+        }
+        else
+        {
+            animes.SetBool("run", false);
+        }
+       
+       
+           
+        
         StartCoroutine(throwGrenade());
         Debug.Log(playerVelocity);
-        animes.SetFloat("Speed", playerVelocity.normalized.magnitude);
+        //animes.SetFloat("Speed", playerVelocity.normalized.magnitude);
         movement();
         sprint();
         selectFirearm();
@@ -104,6 +123,10 @@ public class playerController : MonoBehaviour
         }
         playerVelocity.y -= gravity * Time.deltaTime;
         controller.Move((playerVelocity + pushBack) * Time.deltaTime);
+
+      
+
+
     }
     void sprint()
     {
