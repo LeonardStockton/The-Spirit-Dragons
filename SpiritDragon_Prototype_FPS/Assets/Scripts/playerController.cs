@@ -19,6 +19,7 @@ public class playerController : MonoBehaviour
     [Range(0, 10)][SerializeField] int jumpTimes;
     [Range(0, 100)][SerializeField] int jumpSpeed;
     [Range(0, 100)][SerializeField] int gravity;
+    [Range(1, 5)][SerializeField] int pushbackResTime;
 
     [Header("~~~~~~~Gun Stats~~~~~~~~")]
     [SerializeField] List<gunStats> weaponList = new List<gunStats>();
@@ -83,10 +84,9 @@ public class playerController : MonoBehaviour
         {
             animes.SetBool("run", false);
         }
-       
-       
-           
-        
+
+        pushBack = Vector3.Lerp(pushBack, Vector3.zero, Time.deltaTime * pushbackResTime);
+        PlayerJumping();
         StartCoroutine(throwGrenade());
         Debug.Log(playerVelocity);
         //animes.SetFloat("Speed", playerVelocity.normalized.magnitude);
@@ -286,4 +286,17 @@ public class playerController : MonoBehaviour
             Destroy(explosion, (float).5);
         }
     }
+
+    public void PlayerJumping()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            animes.SetBool("Jump", true);
+        }
+        if (Input.GetButtonUp("Jump"))
+        {
+            animes.SetBool("Jump", false);
+        }
+    }
+
 }
