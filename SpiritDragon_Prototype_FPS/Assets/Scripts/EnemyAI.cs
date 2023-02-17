@@ -119,6 +119,7 @@ public class EnemyAI : MonoBehaviour, IDamage
         if (agent.isActiveAndEnabled)
         {
             Hp -= dmg;
+            anime.SetTrigger("Dmg");
             StartCoroutine(flshDmg());
             agent.SetDestination(gameManager.instance.player.transform.position);
 
@@ -126,6 +127,8 @@ public class EnemyAI : MonoBehaviour, IDamage
             {
                 gameManager.instance.updateGameGoal(-1);
                 Destroy(gameObject);
+                anime.SetBool("DED", true);
+                agentStop();
             }
         }
     }
