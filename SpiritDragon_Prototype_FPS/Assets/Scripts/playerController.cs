@@ -34,7 +34,15 @@ public class playerController : MonoBehaviour
     [SerializeField] GameObject muzzleFlash;
     [SerializeField] GameObject hitEffect;
     [SerializeField] GameObject bloodEffect;
- 
+
+    [Header("-------Grenade-------")]
+    [SerializeField] int grenTimer;
+    [SerializeField] int throwSpeed;
+    [SerializeField] GameObject gren;
+    [SerializeField] GameObject exp;
+    [SerializeField] Transform throwPos;
+
+
 
 
     Vector3 move;
@@ -242,4 +250,16 @@ public class playerController : MonoBehaviour
         pushBack += dir;
     }
 
+    IEnumerator throwGrenade()
+    {
+        if(Input.GetButtonDown("Grenade"))
+        {
+            GameObject grenadeClone = Instantiate(gren, throwPos.position, gren.transform.rotation);
+            grenadeClone.GetComponent<Rigidbody>().velocity = ((Camera.main.transform.forward * throwSpeed) + new Vector3(0, .5f, 0) * throwSpeed);
+            yield return new WaitForSeconds(grenTimer);
+            GameObject explosion = Instantiate(exp, grenadeClone.transform.position, grenadeClone.transform.rotation);
+            Destroy(grenadeClone);
+            Destroy(explosion, (float).1);
+        }
+    }
 }

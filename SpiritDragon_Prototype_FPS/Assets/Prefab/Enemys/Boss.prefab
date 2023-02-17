@@ -1732,7 +1732,7 @@ GameObject:
   - component: {fileID: 4500916732712160329}
   - component: {fileID: 6441795624830691939}
   - component: {fileID: 1186169710342520978}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1818,9 +1818,9 @@ MonoBehaviour:
   Hp: 75
   playerFaceSpeed: 9
   viewAngle: 180
-  shootAngle: 0
-  waitTime: 0
-  roamDist: 0
+  shootAngle: 15
+  waitTime: 5
+  roamDist: 15
   shootPos: {fileID: 3086974422246116536}
   bullet: {fileID: 673867294353771614, guid: 6257b34b5c10aa745b6b0c34dc46cc0e, type: 3}
   bulletSpeed: 25
