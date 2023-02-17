@@ -43,19 +43,21 @@ public class EnemyAI : MonoBehaviour, IDamage
     // Update is called once per frame
     void Update()
     {
-
-        anime.SetFloat("Speed", agent.velocity.normalized.magnitude);
-
-        if (NRange)
+        if (agent.isActiveAndEnabled)
         {
-            if (!canSeePlayer() )
+            anime.SetFloat("Speed", agent.velocity.normalized.magnitude);
+
+            if (NRange)
+            {
+                if (!canSeePlayer())
+                {
+                    StartCoroutine(roam());
+                }
+            }
+            else if (agent.destination != gameManager.instance.player.transform.position)
             {
                 StartCoroutine(roam());
             }
-        }
-        else if (agent.destination != gameManager.instance.player.transform.position)
-        {
-            StartCoroutine(roam());
         }
     }
 

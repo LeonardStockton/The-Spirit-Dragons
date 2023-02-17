@@ -9,6 +9,7 @@ public class playerController : MonoBehaviour
 {
     [Header("~~~~~~~Componets~~~~~~~~")]
     [SerializeField] CharacterController controller;
+    [SerializeField] Animator animes;
 
 
     [Header("~~~~~~Player Stats~~~~~~")]
@@ -24,6 +25,7 @@ public class playerController : MonoBehaviour
     [SerializeField] float shootRate;
     [SerializeField] int shootDist;
     [SerializeField] int shootDamage;
+    [SerializeField] float weaponZoomMax;
     [SerializeField] GameObject weaponModel;
     [SerializeField] AudioSource gunSound;
     [SerializeField] public int weaponAmmo;
@@ -37,27 +39,29 @@ public class playerController : MonoBehaviour
 
     Vector3 move;
     Vector3 playerVelocity;
+    Vector3 pushBack;
+    float wepZoomOrg;
     int jumpCurrent;
     int HPorg;
+    int selectedWeapon;
     public bool isShooting;
     public bool isSprinting;
-    int selectedWeapon;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-      
         HPorg = HP;
+        wepZoomOrg = Camera.main.fieldOfView;
         stolenHealth();
     }
 
     // Update is called once per frame
     void Update()
     {
-       
 
+        animes.SetFloat("Speed", playerVelocity.normalized.magnitude);
         movement();
         sprint();
         selectFirearm();
@@ -75,6 +79,7 @@ public class playerController : MonoBehaviour
 
     void movement()
     {
+
         if (controller.isGrounded && playerVelocity.y < 0)
         {
             playerVelocity.y = 0;
@@ -146,7 +151,7 @@ public class playerController : MonoBehaviour
         StartCoroutine(youBeenShoot());
         if (HP <= 0)
         {
-            
+            animes.SetBool("Dead", true);   
             gameManager.instance.playerDead();
         }
     }
@@ -220,4 +225,21 @@ public class playerController : MonoBehaviour
 
         controller.enabled = true;
     }
+    public void WeaponCameraFocus()
+    {
+        if (Input.GetButton("Zoom"))
+        {
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, weaponZoomMax, Time.deltaTime * 3);
+        }
+        else if (Camera.main.fieldOfView <= wepZoomOrg)
+        {
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, wepZoomOrg, Time.deltaTime * 6);
+
+        }
+    }
+    public void PushBackDir(Vector3 dir) 
+    {
+        pushBack += dir;
+    }
+
 }
