@@ -85,7 +85,7 @@ public class playerController : MonoBehaviour
             playerVelocity.y = 0;
             jumpCurrent = 0;
         }
-        move = (transform.right * Input.GetAxis("Horizontal") + (transform.forward * Input.GetAxis("Vertical")));
+        move = ((transform.right * Input.GetAxis("Horizontal") + (transform.forward * Input.GetAxis("Vertical")).normalized));
         controller.Move(move * Time.deltaTime * playerSpeed);
         if (Input.GetButtonDown("Jump") && jumpCurrent < jumpTimes)
         {

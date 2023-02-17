@@ -1352,9 +1352,15 @@ MonoBehaviour:
   Hp: 100
   playerFaceSpeed: 10
   viewAngle: 180
+<<<<<<< Updated upstream
   shootAngle: 5
   waitTime: 1
   roamDist: 3
+=======
+  shootAngle: 0
+  waitTime: 0
+  roamDist: 0
+>>>>>>> Stashed changes
   shootPos: {fileID: 305891550}
   bullet: {fileID: 673867294353771614, guid: 6257b34b5c10aa745b6b0c34dc46cc0e, type: 3}
   bulletSpeed: 25
