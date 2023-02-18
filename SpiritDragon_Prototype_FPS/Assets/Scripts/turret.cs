@@ -23,12 +23,12 @@ public class turret : MonoBehaviour, IDamage
     bool Shooting, NRange;
     float angleToPlayer;
     int barrelNum;
-
+    Color basic;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       basic = model.material.color;
     }
 
     // Update is called once per frame
@@ -75,7 +75,6 @@ public class turret : MonoBehaviour, IDamage
 
     IEnumerator flshDmg()
     {
-        Color basic = model.material.color;
         model.material.color = Color.red;
         yield return new WaitForSeconds(.2f);
         model.material.color = basic;

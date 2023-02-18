@@ -37,7 +37,8 @@ public class playerController : MonoBehaviour
     [SerializeField] GameObject bloodEffect;
 
     [Header("-------Grenade-------")]
-    [SerializeField] int grenTimer;
+    [SerializeField] float grenTimer;
+    [SerializeField] int blastRadius;
     [SerializeField] int throwSpeed;
     [SerializeField] GameObject gren;
     [SerializeField] GameObject exp;
@@ -88,7 +89,6 @@ public class playerController : MonoBehaviour
         pushBack = Vector3.Lerp(pushBack, Vector3.zero, Time.deltaTime * pushbackResTime);
         PlayerJumping();
         StartCoroutine(throwGrenade());
-        Debug.Log(playerVelocity);
         //animes.SetFloat("Speed", playerVelocity.normalized.magnitude);
         movement();
         sprint();
@@ -282,6 +282,7 @@ public class playerController : MonoBehaviour
             grenadeClone.GetComponent<Rigidbody>().velocity = ((Camera.main.transform.forward * throwSpeed) + new Vector3(0, .5f, 0) * throwSpeed);
             yield return new WaitForSeconds(grenTimer);
             GameObject explosion = Instantiate(exp, grenadeClone.transform.position, grenadeClone.transform.rotation);
+            explosion.GetComponent<SphereCollider>().radius = blastRadius;
             Destroy(grenadeClone);
             Destroy(explosion, (float).5);
         }

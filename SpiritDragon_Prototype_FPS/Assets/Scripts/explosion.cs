@@ -6,20 +6,34 @@ public class explosion : MonoBehaviour
 {
     [SerializeField] int knockBack;
     [SerializeField] bool push;
-    [SerializeField] int dmg;
+    [SerializeField] int blastRadius;
+    [SerializeField] int grenDmg;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        checkForEnemies();
+    }
+    void checkForEnemies()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, blastRadius);
+        foreach (Collider c in colliders)
         {
-            if (!push)
-                gameManager.instance.playerScript.PushBackDir((transform.position - gameManager.instance.player.transform.position).normalized * knockBack);
-            else
-                gameManager.instance.playerScript.PushBackDir((gameManager.instance.player.transform.position - transform.position).normalized * knockBack);
-
-        }
-        else if (other.GetComponent<IDamage>() != null)
-        {
-            other.GetComponent<Collider>().GetComponent<IDamage>().takeDamage(dmg);
+            Debug.Log(c);
+            if (c.GetComponent<EnemyAI>())
+            {
+                c.GetComponent<EnemyAI>().takeDamage(grenDmg);
+            }
+            else if (c.GetComponent<turret>())
+            {
+                c.GetComponent<turret>().takeDamage(grenDmg);
+                
+            }
+            else if(c.GetComponent<playerController>())
+            {
+                if (!push)
+                    gameManager.instance.playerScript.PushBackDir((transform.position - gameManager.instance.player.transform.position).normalized * knockBack);
+                else
+                    gameManager.instance.playerScript.PushBackDir((gameManager.instance.player.transform.position - transform.position).normalized * knockBack);
+            }
         }
     }
 }
