@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEditor.UIElements;
 //using UnityEditor.Experimental.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,6 +30,12 @@ public class playerController : MonoBehaviour
     [SerializeField] int shootDamage;
     [SerializeField] float weaponZoomMax;
     [SerializeField] GameObject weaponModel;
+    [SerializeField] GameObject trigger;
+    [SerializeField] GameObject slide;
+    [SerializeField] GameObject magazine;
+    [SerializeField] GameObject reciver;
+    [SerializeField] GameObject fireSelect;
+
     [SerializeField] AudioSource gunSound;
     [SerializeField] public int weaponAmmo;
 
@@ -58,7 +66,6 @@ public class playerController : MonoBehaviour
     public bool isSprinting;
 
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -72,12 +79,12 @@ public class playerController : MonoBehaviour
 
     {
 
-        if (Input.GetAxis("Vertical") >  0  || Input.GetAxis("Vertical") < 0 )
+        if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("Vertical") < 0)
         {
 
             animes.SetBool("run", true);
         }
-        else if(Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0)
+        else if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0)
         {
             animes.SetBool("run", true);
         }
@@ -93,9 +100,9 @@ public class playerController : MonoBehaviour
         movement();
         sprint();
         selectFirearm();
-        if (!isShooting && weaponList.Count>0 && Input.GetButton("Shoot") && weaponAmmo > 0)
-        {           
-                StartCoroutine(shoot());        
+        if (!isShooting && weaponList.Count > 0 && Input.GetButton("Shoot") && weaponAmmo > 0)
+        {
+            StartCoroutine(shoot());
         }
 
         if (weaponAmmo <= 0)
@@ -107,7 +114,7 @@ public class playerController : MonoBehaviour
 
     void movement()
     {
-        if (controller.isGrounded &&   playerVelocity.y < 0)
+        if (controller.isGrounded && playerVelocity.y < 0)
         {
             playerVelocity.y = 0;
             jumpCurrent = 0;
@@ -124,7 +131,7 @@ public class playerController : MonoBehaviour
         playerVelocity.y -= gravity * Time.deltaTime;
         controller.Move((playerVelocity + pushBack) * Time.deltaTime);
 
-      
+
 
 
     }
@@ -148,27 +155,27 @@ public class playerController : MonoBehaviour
         isShooting = true;
         gunSound.Play();
         muzzleFlash.SetActive(true);
-        
+
         weaponAmmo--;
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
         {
             Debug.Log(hit.collider.name);
-           
-                if (hit.collider.GetComponent<IDamage>() != null)
-                {
 
-                    hit.collider.GetComponent<IDamage>().takeDamage(shootDamage);
-                   GameObject temp =  Instantiate(bloodEffect, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
-                    Destroy(temp, 2);
-                }
-                else
-                {
-                    GameObject temp =  Instantiate(hitEffect, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
-                    Destroy(temp, 2);
-                }
-               
-          
+            if (hit.collider.GetComponent<IDamage>() != null)
+            {
+
+                hit.collider.GetComponent<IDamage>().takeDamage(shootDamage);
+                GameObject temp = Instantiate(bloodEffect, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
+                Destroy(temp, 2);
+            }
+            else
+            {
+                GameObject temp = Instantiate(hitEffect, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
+                Destroy(temp, 2);
+            }
+
+
         }
         yield return new WaitForSeconds(shootRate);
         muzzleFlash.SetActive(false);
@@ -178,12 +185,12 @@ public class playerController : MonoBehaviour
 
     public void takeDamage(int dmg)
     {
-        HP-=dmg;
+        HP -= dmg;
         stolenHealth();
         StartCoroutine(youBeenShoot());
         if (HP <= 0)
         {
-            animes.SetBool("Dead", true);   
+            animes.SetBool("Dead", true);
             gameManager.instance.playerDead();
         }
     }
@@ -202,7 +209,7 @@ public class playerController : MonoBehaviour
     //for when we add health, weapons, and ammo. *do not erase*
     public void healthPack(int heals)
     {
-        HP+=heals;
+        HP += heals;
         stolenHealth();
     }
 
@@ -217,12 +224,29 @@ public class playerController : MonoBehaviour
         shootRate = gunStats.shootRate;
         shootDist = gunStats.shootDist;
         shootDamage = gunStats.shootDamage;
+        weaponAmmo = gunStats.weaponAmmo;
 
-        weaponModel.GetComponent<MeshFilter>().sharedMesh = gunStats.weaponSkin.GetComponent<MeshFilter>().sharedMesh;
-        weaponModel.GetComponent<MeshRenderer>().sharedMaterial = gunStats.weaponSkin.GetComponent<MeshRenderer>().sharedMaterial;
+        gunPartTirgger(trigger,slide,reciver,magazine,fireSelect);
+
+        weaponModel.GetComponentInChildren<MeshFilter>().sharedMesh = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshFilter>().sharedMesh;
+        weaponModel.GetComponentInChildren<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshRenderer>().sharedMaterial;
         selectedWeapon = weaponList.Count - 1;
 
     }
+
+    public void gunPartTirgger(gunPartTrigger trigger, gunPartTrigger slide, gunPartTrigger reciver,gunPartTrigger mag, gunPartTrigger fireSelect)
+    {
+        trigger = GetComponent<gunPartTrig>().gameObject. ;
+        slide = slide.GetComponent<gunPartTrigger>();
+        reciver = reciver.GetComponent<gunPartTrigger>();
+        mag = mag.GetComponent<gunPartTrigger>();
+        fireSelect = fireSelect.GetComponent<gunPartTrigger>();
+
+        weaponModel.GetComponent<MeshFilter>().sharedMesh = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshFilter>().sharedMesh;
+        weaponModel.GetComponentInChildren<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponentInChildren<MeshRenderer>().sharedMaterial;
+    }
+
+
     void selectFirearm()
     {
         if (Input.GetAxis("Mouse ScrollWheel") > 0 && selectedWeapon < weaponList.Count - 1)
@@ -243,13 +267,14 @@ public class playerController : MonoBehaviour
         shootDist = weaponList[selectedWeapon].shootDist;
         shootDamage = weaponList[selectedWeapon].shootDamage;
 
-        weaponModel.GetComponent<MeshFilter>().sharedMesh = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshFilter>().sharedMesh;
-        weaponModel.GetComponent<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshRenderer>().sharedMaterial;
+        weaponModel.GetComponentInChildren<MeshFilter>().sharedMesh = weaponList[selectedWeapon].weaponSkin.GetComponentInChildren<MeshFilter>().sharedMesh;
+        weaponModel.GetComponentInChildren<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponentInChildren<MeshRenderer>().sharedMaterial;
+
     }
 
     public void Spawner()
     {
-        controller.enabled= false;
+        controller.enabled = false;
         transform.position = gameManager.instance.playerSpwanPOS.transform.position;
 
         HP = HPorg;
@@ -269,14 +294,14 @@ public class playerController : MonoBehaviour
 
         }
     }
-    public void PushBackDir(Vector3 dir) 
+    public void PushBackDir(Vector3 dir)
     {
         pushBack += dir;
     }
 
     IEnumerator throwGrenade()
     {
-        if(Input.GetButtonDown("Grenade"))
+        if (Input.GetButtonDown("Grenade"))
         {
             GameObject grenadeClone = Instantiate(gren, throwPos.position, gren.transform.rotation);
             grenadeClone.GetComponent<Rigidbody>().velocity = ((Camera.main.transform.forward * throwSpeed) + new Vector3(0, .5f, 0) * throwSpeed);

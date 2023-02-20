@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3505935933486223776}
   - component: {fileID: -539556127997663984}
+  - component: {fileID: 9049731372311413631}
   - component: {fileID: 5403376702282677656}
   - component: {fileID: 4921401218217191315}
   - component: {fileID: 988215634857062747}
@@ -53,6 +54,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 54b416b0dd5063c4d8d1bca0ebe001ed, type: 2}
+--- !u!114 &9049731372311413631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505935933486223779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0d2f464138b4246988d1a3bc524020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &5403376702282677656
 Animator:
   serializedVersion: 5
