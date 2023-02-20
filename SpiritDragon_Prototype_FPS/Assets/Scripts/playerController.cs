@@ -226,26 +226,13 @@ public class playerController : MonoBehaviour
         shootDamage = gunStats.shootDamage;
         weaponAmmo = gunStats.weaponAmmo;
 
-        gunPartTirgger(trigger,slide,reciver,magazine,fireSelect);
+        
 
         weaponModel.GetComponentInChildren<MeshFilter>().sharedMesh = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshFilter>().sharedMesh;
         weaponModel.GetComponentInChildren<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshRenderer>().sharedMaterial;
         selectedWeapon = weaponList.Count - 1;
 
     }
-
-    public void gunPartTirgger(gunPartTrigger trigger, gunPartTrigger slide, gunPartTrigger reciver,gunPartTrigger mag, gunPartTrigger fireSelect)
-    {
-        trigger = GetComponent<gunPartTrig>().gameObject. ;
-        slide = slide.GetComponent<gunPartTrigger>();
-        reciver = reciver.GetComponent<gunPartTrigger>();
-        mag = mag.GetComponent<gunPartTrigger>();
-        fireSelect = fireSelect.GetComponent<gunPartTrigger>();
-
-        weaponModel.GetComponent<MeshFilter>().sharedMesh = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshFilter>().sharedMesh;
-        weaponModel.GetComponentInChildren<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponentInChildren<MeshRenderer>().sharedMaterial;
-    }
-
 
     void selectFirearm()
     {
