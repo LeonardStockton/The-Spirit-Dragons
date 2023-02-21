@@ -22,6 +22,7 @@ public class turBull : MonoBehaviour
     }
     private void OnTriggerEnter(Collider obj)
     {
+        
         if (obj.CompareTag("Player"))
         {
             gameManager.instance.playerScript.takeDamage(bulletDmg);

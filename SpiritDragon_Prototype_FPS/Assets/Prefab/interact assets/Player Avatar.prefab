@@ -1521,7 +1521,6 @@ GameObject:
   - component: {fileID: 1923528210567746184}
   - component: {fileID: 1295468908301846576}
   - component: {fileID: 5499337577639479538}
-  - component: {fileID: 6968960020280844200}
   - component: {fileID: 1295468908301846577}
   - component: {fileID: 1295468908301846579}
   m_Layer: 3
@@ -1573,13 +1572,18 @@ MonoBehaviour:
   jumpTimes: 1
   jumpSpeed: 14
   gravity: 40
-  pushbackResTime: 0
+  pushbackResTime: 3
   weaponList: []
   shootRate: 0
   shootDist: 0
   shootDamage: 0
   weaponZoomMax: 0
   weaponModel: {fileID: 4899213869398027958}
+  trigger: {fileID: 0}
+  slide: {fileID: 0}
+  magazine: {fileID: 0}
+  reciver: {fileID: 0}
+  fireSelect: {fileID: 0}
   gunSound: {fileID: 0}
   weaponAmmo: 0
   muzzleFlash: {fileID: 0}
@@ -1613,20 +1617,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &6968960020280844200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1295468908301846578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a181e67449eb91c46a8ff4c1e383724e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCharacter: {fileID: 1295468908301846578}
-  animes: {fileID: 5499337577639479538}
 --- !u!143 &1295468908301846577
 CharacterController:
   m_ObjectHideFlags: 0

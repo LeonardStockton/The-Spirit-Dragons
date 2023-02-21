@@ -1748,7 +1748,7 @@ Transform:
   m_GameObject: {fileID: 6887295846610673370}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -18.22756, y: -0.00000047683716, z: 34.81304}
-  m_LocalScale: {x: 6.5, y: 6.5, z: 6.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8776336576507174885}
@@ -1813,10 +1813,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 2483616079307105965}
   agent: {fileID: 9068451799766661274}
-  anime: {fileID: 6450171645346807627}
+  anim: {fileID: 6450171645346807627}
   headPos: {fileID: 8605559933706819834}
-  Hp: 75
+  HP: 0
   playerFaceSpeed: 9
+  speedChase: 4
   viewAngle: 180
   shootAngle: 15
   waitTime: 5
@@ -1824,7 +1825,8 @@ MonoBehaviour:
   shootPos: {fileID: 3086974422246116536}
   bullet: {fileID: 673867294353771614, guid: 6257b34b5c10aa745b6b0c34dc46cc0e, type: 3}
   bulletSpeed: 25
-  fireRate: 15
+  fireRate: 1
+  playerNRange: 0
 --- !u!136 &6441795624830691939
 CapsuleCollider:
   m_ObjectHideFlags: 0

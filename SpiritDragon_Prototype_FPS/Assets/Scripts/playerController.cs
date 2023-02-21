@@ -90,7 +90,6 @@ public class playerController : MonoBehaviour
         }
 
         pushBack = Vector3.Lerp(pushBack, Vector3.zero, Time.deltaTime * pushbackResTime);
-        PlayerJumping();
         StartCoroutine(throwGrenade());
         //animes.SetFloat("Speed", playerVelocity.normalized.magnitude);
         movement();
@@ -120,6 +119,7 @@ public class playerController : MonoBehaviour
         controller.Move(move * Time.deltaTime * playerSpeed);
         if (Input.GetButtonDown("Jump") && jumpCurrent < jumpTimes)
         {
+            animes.SetBool("Jump", true);
             jumpCurrent++;
             playerVelocity.y = jumpSpeed;
 
@@ -295,17 +295,4 @@ public class playerController : MonoBehaviour
             Destroy(explosion, (float).5);
         }
     }
-
-    public void PlayerJumping()
-    {
-        if (Input.GetButtonDown("Jump"))
-        {
-            animes.SetBool("Jump", true);
-        }
-        if (Input.GetButtonUp("Jump"))
-        {
-            animes.SetBool("Jump", false);
-        }
-    }
-
 }

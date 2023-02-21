@@ -790,7 +790,7 @@ GameObject:
   - component: {fileID: 5041363535182097242}
   - component: {fileID: 1525081116759325796}
   - component: {fileID: 8877797379727759785}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Foot Soldier
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -806,7 +806,7 @@ Transform:
   m_GameObject: {fileID: 3586099167488941670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.000002, y: -0.00000047683716, z: 34.81304}
-  m_LocalScale: {x: 4.5, y: 4.5, z: 4.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8278866746704028373}
@@ -871,18 +871,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 669527677088295663}
   agent: {fileID: 7968600729379739277}
-  anime: {fileID: 6980091678354216373}
+  anim: {fileID: 6980091678354216373}
   headPos: {fileID: 1251636839061048668}
-  Hp: 75
-  playerFaceSpeed: 9
+  HP: 6
+  playerFaceSpeed: 15
+  speedChase: 4
   viewAngle: 180
-  shootAngle: 0
-  waitTime: 0
-  roamDist: 0
+  shootAngle: 25
+  waitTime: 3
+  roamDist: 5
   shootPos: {fileID: 4952295259362529311}
   bullet: {fileID: 673867294353771614, guid: 6257b34b5c10aa745b6b0c34dc46cc0e, type: 3}
   bulletSpeed: 25
-  fireRate: 10
+  fireRate: 0.75
+  weaponCollider: {fileID: 0}
+  bullVelY: 0
+  playerNRange: 0
 --- !u!136 &1525081116759325796
 CapsuleCollider:
   m_ObjectHideFlags: 0

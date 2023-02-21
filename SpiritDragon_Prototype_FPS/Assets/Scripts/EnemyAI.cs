@@ -25,6 +25,8 @@ public class EnemyAI : MonoBehaviour, IDamage
     [SerializeField] GameObject bullet;
     [SerializeField] int bulletSpeed;
     [SerializeField] float fireRate;
+    [SerializeField] Collider weaponCollider;
+    [SerializeField] float bullVelY;
 
     Vector3 playerDir;
     bool isShooting;
@@ -34,7 +36,6 @@ public class EnemyAI : MonoBehaviour, IDamage
     bool destinationChosen;
     float stoppingDistanceOrig;
     float speedOrg;
-    int bullVecY;
 
     // Start is called before the first frame update
     void Start()
@@ -92,12 +93,12 @@ public class EnemyAI : MonoBehaviour, IDamage
     bool canSeePlayer()
     {
         playerDir = (gameManager.instance.player.transform.position - headPos.position).normalized;
-        angleToPlayer = Vector3.Angle(new Vector3(playerDir.x, 0, playerDir.z), transform.forward);
+        angleToPlayer = Vector3.Angle(playerDir, transform.forward); ;
 
-        Debug.Log(angleToPlayer);
-        Debug.DrawRay(headPos.position, playerDir);
-
+        
         RaycastHit hit;
+        
+
         if (Physics.Raycast(headPos.position, playerDir, out hit))
         {
             if (hit.collider.CompareTag("Player") && angleToPlayer <= viewAngle)
@@ -167,8 +168,9 @@ public class EnemyAI : MonoBehaviour, IDamage
     public void createBullet()
     {
         GameObject bulletClone = Instantiate(bullet, shootPos.position, bullet.transform.rotation);
-        bulletClone.GetComponent<Rigidbody>().velocity = playerDir * bulletSpeed;
+        bulletClone.GetComponent<Rigidbody>().velocity = (playerDir + new Vector3(Random.Range(-.3f, .3f), bullVelY, Random.Range(-.3f, .3f))) * bulletSpeed;
     }
+
 
     public void agentStop()
     {
