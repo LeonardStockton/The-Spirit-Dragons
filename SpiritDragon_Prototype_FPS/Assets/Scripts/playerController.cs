@@ -30,19 +30,15 @@ public class playerController : MonoBehaviour
     [SerializeField] int shootDamage;
     [SerializeField] float weaponZoomMax;
     [SerializeField] GameObject weaponModel;
-    [SerializeField] GameObject trigger;
-    [SerializeField] GameObject slide;
-    [SerializeField] GameObject magazine;
-    [SerializeField] GameObject reciver;
-    [SerializeField] GameObject fireSelect;
+
 
     [SerializeField] AudioSource gunSound;
     [SerializeField] public int weaponAmmo;
 
     [Header("-------Weapon Extra-------")]
-    [SerializeField] GameObject muzzleFlash;
-    [SerializeField] GameObject hitEffect;
-    [SerializeField] GameObject bloodEffect;
+    //[SerializeField] GameObject muzzleFlash;
+    //[SerializeField] GameObject hitEffect;
+    //[SerializeField] GameObject bloodEffect;
 
     [Header("-------Grenade-------")]
     [SerializeField] float grenTimer;
@@ -154,7 +150,7 @@ public class playerController : MonoBehaviour
     {
         isShooting = true;
         gunSound.Play();
-        muzzleFlash.SetActive(true);
+        //muzzleFlash.SetActive(true);
 
         weaponAmmo--;
         RaycastHit hit;
@@ -166,19 +162,19 @@ public class playerController : MonoBehaviour
             {
 
                 hit.collider.GetComponent<IDamage>().takeDamage(shootDamage);
-                GameObject temp = Instantiate(bloodEffect, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
-                Destroy(temp, 2);
+                //GameObject temp = Instantiate(bloodEffect, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
+                //Destroy(temp, 2);
             }
             else
             {
-                GameObject temp = Instantiate(hitEffect, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
-                Destroy(temp, 2);
+                //GameObject temp = Instantiate(hitEffect, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
+                //Destroy(temp, 2);
             }
 
 
         }
         yield return new WaitForSeconds(shootRate);
-        muzzleFlash.SetActive(false);
+        //muzzleFlash.SetActive(false);
         isShooting = false;
     }
 

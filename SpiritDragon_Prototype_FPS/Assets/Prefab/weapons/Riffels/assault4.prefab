@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11fcc142cfc0ce04ab6881016f765067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 71c5d7821b83729409860304f04f3497, type: 2}
+  weapon: {fileID: 11400000, guid: 3f1809d2cd2168d4ba9d6fb81cfd584d, type: 2}
 --- !u!135 &4276340851962577512
 SphereCollider:
   m_ObjectHideFlags: 0

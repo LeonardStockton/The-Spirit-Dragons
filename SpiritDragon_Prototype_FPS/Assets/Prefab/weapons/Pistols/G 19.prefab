@@ -56,7 +56,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11fcc142cfc0ce04ab6881016f765067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 8215bc2ba3f976f4eb8b8f419e432318, type: 2}
+  weapon: {fileID: 11400000, guid: 76892f7d56db5da4fb2f6765332b5255, type: 2}
 --- !u!23 &2484422996334997850
 MeshRenderer:
   m_ObjectHideFlags: 0
