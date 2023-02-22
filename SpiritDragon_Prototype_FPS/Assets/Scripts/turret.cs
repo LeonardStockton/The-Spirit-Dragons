@@ -68,6 +68,7 @@ public class turret : MonoBehaviour, IDamage
 
         if (Hp <= 0)
         {
+            gameManager.instance.updateGameGoal(-1);
             Destroy(gameObject);
         }
     }

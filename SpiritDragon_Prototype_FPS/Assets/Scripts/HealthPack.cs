@@ -13,7 +13,7 @@ public class HealthPack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0f, 60 *Time.deltaTime, 0f, Space.Self);
+        transform.Rotate(0f, 10 *Time.deltaTime, 0f, Space.Self);
         
     }
 
