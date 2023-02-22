@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Sig suppersed GS
   m_EditorClassIdentifier: 
   shootRate: 0.5
-  shootDist: 5
-  shootDamage: 2
+  shootDist: 6
+  shootDamage: 5
   weaponAmmo: 7
   weaponSkin: {fileID: 919132149155446097, guid: ca1c64f7c147fb0479f9ef03e264a372, type: 3}
   weaponFireAud: {fileID: 0}

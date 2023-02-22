@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootRate: 0.75
   shootDist: 45
-  shootDamage: 20
+  shootDamage: 5
   weaponAmmo: 15
   weaponSkin: {fileID: 919132149155446097, guid: 726e329e1719c8f42949342e6a5b42e3, type: 3}
   weaponFireAud: {fileID: 0}

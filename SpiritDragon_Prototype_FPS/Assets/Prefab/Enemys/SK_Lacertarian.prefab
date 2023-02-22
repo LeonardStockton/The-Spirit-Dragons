@@ -1235,7 +1235,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3776057000569744548}
   m_LocalRotation: {x: -0, y: -0.025300872, z: -0, w: 0.9996799}
-  m_LocalPosition: {x: -17.89, y: 0.001, z: 4.201}
+  m_LocalPosition: {x: -17.89, y: 0, z: 4.201}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1280,7 +1280,7 @@ MonoBehaviour:
   agent: {fileID: 7623683421144591457}
   anim: {fileID: 7623683421144591460}
   headPos: {fileID: 8518460623930034814}
-  HP: 5
+  HP: 15
   playerFaceSpeed: 12
   speedChase: 5
   viewAngle: 120
@@ -1329,7 +1329,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!135 &7623683421144591463
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1342,7 +1342,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 15
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &3907077421686170076
 GameObject:
   m_ObjectHideFlags: 0
