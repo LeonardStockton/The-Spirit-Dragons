@@ -36,14 +36,17 @@ public class EnemyAI : MonoBehaviour, IDamage
     bool destinationChosen;
     float stoppingDistanceOrig;
     float speedOrg;
+    Color orgColor;
 
     // Start is called before the first frame update
     void Start()
     {
+        agentStart();
         startPos = transform.position;
         stoppingDistanceOrig = agent.stoppingDistance;
         speedOrg = agent.speed;
         roam();
+        orgColor = model.material.color;
     }
 
     // Update is called once per frame
@@ -93,14 +96,15 @@ public class EnemyAI : MonoBehaviour, IDamage
     bool canSeePlayer()
     {
         playerDir = (gameManager.instance.player.transform.position - headPos.position).normalized;
-        angleToPlayer = Vector3.Angle(playerDir, transform.forward); ;
+        angleToPlayer = Vector3.Angle(new Vector3(playerDir.x, 0, playerDir.z), transform.forward); 
 
-        
+        Debug.Log(angleToPlayer);
+        Debug.DrawRay(headPos.position,playerDir);
+
         RaycastHit hit;
-        
-
         if (Physics.Raycast(headPos.position, playerDir, out hit))
         {
+            Debug.Log(hit.collider.GetComponent<Collider>());
             if (hit.collider.CompareTag("Player") && angleToPlayer <= viewAngle)
             {
                 agent.stoppingDistance = stoppingDistanceOrig;
@@ -145,7 +149,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     {
         model.material.color = Color.red;
         yield return new WaitForSeconds(0.15f);
-        model.material.color = Color.white;
+        model.material.color = orgColor;
 
     }
 
@@ -160,7 +164,6 @@ public class EnemyAI : MonoBehaviour, IDamage
     {
         isShooting = true;
         anim.SetTrigger("Shoot");
-        createBullet();
         yield return new WaitForSeconds(fireRate);
         isShooting = false;
     }

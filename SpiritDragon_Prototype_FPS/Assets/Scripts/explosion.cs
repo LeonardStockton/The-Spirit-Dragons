@@ -14,6 +14,7 @@ public class explosion : MonoBehaviour
     }
     void checkForEnemies()
     {
+
         Collider[] colliders = Physics.OverlapSphere(transform.position, blastRadius);
         foreach (Collider c in colliders)
         {
