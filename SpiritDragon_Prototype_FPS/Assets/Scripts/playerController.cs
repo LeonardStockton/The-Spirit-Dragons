@@ -11,17 +11,18 @@ public class playerController : MonoBehaviour
 {
     [Header("~~~~~~~Componets~~~~~~~~")]
     [SerializeField] CharacterController controller;
+    [SerializeField] AudioSource aud;
     //[SerializeField] Animator animes;
 
 
     [Header("~~~~~~Player Stats~~~~~~")]
-    [Range(0, 10)][SerializeField] float playerSpeed;
-    [Range(1.5f, 6)][SerializeField] float playerSprintSpeed;
-    [Range(0, 100)][SerializeField] int HP;
-    [Range(0, 10)][SerializeField] int jumpTimes;
-    [Range(0, 100)][SerializeField] int jumpSpeed;
-    [Range(0, 100)][SerializeField] int gravity;
-    [Range(1, 5)][SerializeField] int pushbackResTime;
+    [Range(0, 10)] [SerializeField] float playerSpeed;
+    [Range(1.5f, 6)] [SerializeField] float playerSprintSpeed;
+    [Range(0, 100)] [SerializeField] int HP;
+    [Range(0, 10)] [SerializeField] int jumpTimes;
+    [Range(0, 100)] [SerializeField] int jumpSpeed;
+    [Range(0, 100)] [SerializeField] int gravity;
+    [Range(1, 5)] [SerializeField] int pushbackResTime;
 
     [Header("~~~~~~~Gun Stats~~~~~~~~")]
     [SerializeField] List<gunStats> weaponList = new List<gunStats>();
@@ -48,7 +49,9 @@ public class playerController : MonoBehaviour
     [SerializeField] GameObject exp;
     [SerializeField] Transform throwPos;
 
-
+    [Header("-------Audio-------")]
+    [SerializeField] AudioClip[] audJump;
+    [Range(0, 1)] [SerializeField] float audJumpVol;
 
 
     Vector3 move;
@@ -122,6 +125,7 @@ public class playerController : MonoBehaviour
             //animes.SetBool("Jump", true);
             jumpCurrent++;
             playerVelocity.y = jumpSpeed;
+            aud.PlayOneShot(audJump[Random.Range(0, audJump.Length)], audJumpVol);
 
         }
         playerVelocity.y -= gravity * Time.deltaTime;
