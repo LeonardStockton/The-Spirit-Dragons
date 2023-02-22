@@ -11,7 +11,7 @@ public class playerController : MonoBehaviour
 {
     [Header("~~~~~~~Componets~~~~~~~~")]
     [SerializeField] CharacterController controller;
-    [SerializeField] Animator animes;
+    //[SerializeField] Animator animes;
 
 
     [Header("~~~~~~Player Stats~~~~~~")]
@@ -75,19 +75,19 @@ public class playerController : MonoBehaviour
 
     {
 
-        if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("Vertical") < 0)
-        {
+        //if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("Vertical") < 0)
+        //{
 
-            animes.SetBool("run", true);
-        }
-        else if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0)
-        {
-            animes.SetBool("run", true);
-        }
-        else
-        {
-            animes.SetBool("run", false);
-        }
+        //    animes.SetBool("run", true);
+        //}
+        //else if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0)
+        //{
+        //    animes.SetBool("run", true);
+        //}
+        //else
+        //{
+        //    animes.SetBool("run", false);
+        //}
 
         pushBack = Vector3.Lerp(pushBack, Vector3.zero, Time.deltaTime * pushbackResTime);
         StartCoroutine(throwGrenade());
@@ -119,17 +119,13 @@ public class playerController : MonoBehaviour
         controller.Move(move * Time.deltaTime * playerSpeed);
         if (Input.GetButtonDown("Jump") && jumpCurrent < jumpTimes)
         {
-            animes.SetBool("Jump", true);
+            //animes.SetBool("Jump", true);
             jumpCurrent++;
             playerVelocity.y = jumpSpeed;
 
         }
         playerVelocity.y -= gravity * Time.deltaTime;
         controller.Move((playerVelocity + pushBack) * Time.deltaTime);
-
-
-
-
     }
     void sprint()
     {
@@ -186,7 +182,7 @@ public class playerController : MonoBehaviour
         StartCoroutine(youBeenShoot());
         if (HP <= 0)
         {
-            animes.SetBool("Dead", true);
+            //animes.SetBool("Dead", true);
             gameManager.instance.playerDead();
         }
     }
