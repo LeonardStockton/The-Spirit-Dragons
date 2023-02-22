@@ -236,7 +236,11 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
+<<<<<<< Updated upstream
     m_Motion: {fileID: 7400000, guid: 5519c95458c5986419e3901e12cdd0f0, type: 2}
+=======
+    m_Motion: {fileID: 7400000, guid: 7e1949ae106522a42a3850cfad26b239, type: 3}
+>>>>>>> Stashed changes
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -244,7 +248,11 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
+<<<<<<< Updated upstream
     m_Motion: {fileID: 7400000, guid: 68db9e332de815b41bbd31d655c1b895, type: 2}
+=======
+    m_Motion: {fileID: 7400000, guid: 5f8e79dc80532fe409e707d1a5706dd0, type: 3}
+>>>>>>> Stashed changes
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
