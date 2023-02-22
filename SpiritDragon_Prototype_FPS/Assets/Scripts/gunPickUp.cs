@@ -11,6 +11,7 @@ public class gunPickUp : MonoBehaviour
     {
         if (weaponGrab.CompareTag("Player"))
         {
+          
             gameManager.instance.playerScript.gunPick(weapon);
             Destroy(gameObject);
         }
