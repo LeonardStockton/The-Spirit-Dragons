@@ -12103,6 +12103,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5043334183692626470, guid: 5591d62660f0c314888fbec2bbdc4e3e, type: 3}
+      propertyPath: m_Name
+      value: CurrentWeapon
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5591d62660f0c314888fbec2bbdc4e3e, type: 3}
 --- !u!4 &925494154 stripped
@@ -14049,7 +14053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8491817737968359291, guid: 7eb8bb6c9f6626f4993def1efcd45cef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.067341
+      value: 10.091
       objectReference: {fileID: 0}
     - target: {fileID: 8491817737968359291, guid: 7eb8bb6c9f6626f4993def1efcd45cef, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14057,7 +14061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8491817737968359291, guid: 7eb8bb6c9f6626f4993def1efcd45cef, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.21578541
+      value: -3.467
       objectReference: {fileID: 0}
     - target: {fileID: 8491817737968359291, guid: 7eb8bb6c9f6626f4993def1efcd45cef, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19449,6 +19453,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1295468908301846576, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
+      propertyPath: weaponList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1295468908301846578, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
       propertyPath: m_Name
       value: Player Avatar

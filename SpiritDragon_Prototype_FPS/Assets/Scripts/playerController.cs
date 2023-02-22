@@ -82,7 +82,7 @@ public class playerController : MonoBehaviour
     void Update()
 
     {
-
+        
         //if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("Vertical") < 0)
         //{
 
