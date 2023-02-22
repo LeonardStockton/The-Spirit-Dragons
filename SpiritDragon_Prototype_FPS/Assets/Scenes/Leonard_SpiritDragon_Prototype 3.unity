@@ -260,25 +260,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: G 19
       objectReference: {fileID: 0}
-    - target: {fileID: 1955037908531889025, guid: 88a6e44e421e85e4b96e6f0e7e50df45, type: 3}
-      propertyPath: m_Radius
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2952527909733786508, guid: 88a6e44e421e85e4b96e6f0e7e50df45, type: 3}
       propertyPath: m_RootOrder
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2952527909733786508, guid: 88a6e44e421e85e4b96e6f0e7e50df45, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2952527909733786508, guid: 88a6e44e421e85e4b96e6f0e7e50df45, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2952527909733786508, guid: 88a6e44e421e85e4b96e6f0e7e50df45, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2952527909733786508, guid: 88a6e44e421e85e4b96e6f0e7e50df45, type: 3}
       propertyPath: m_LocalPosition.x

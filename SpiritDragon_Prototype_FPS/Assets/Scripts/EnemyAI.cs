@@ -98,13 +98,13 @@ public class EnemyAI : MonoBehaviour, IDamage
         playerDir = (gameManager.instance.player.transform.position - headPos.position).normalized;
         angleToPlayer = Vector3.Angle(new Vector3(playerDir.x, 0, playerDir.z), transform.forward); 
 
-        Debug.Log(angleToPlayer);
+       
         Debug.DrawRay(headPos.position,playerDir);
 
         RaycastHit hit;
         if (Physics.Raycast(headPos.position, playerDir, out hit))
         {
-            Debug.Log(hit.collider.GetComponent<Collider>());
+            
             if (hit.collider.CompareTag("Player") && angleToPlayer <= viewAngle)
             {
                 agent.stoppingDistance = stoppingDistanceOrig;
