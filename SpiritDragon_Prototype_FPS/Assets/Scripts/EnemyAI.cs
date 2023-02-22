@@ -80,6 +80,7 @@ public class EnemyAI : MonoBehaviour, IDamage
 
     IEnumerator roam()
     {
+
         if (!destinationChosen && agent.remainingDistance < .01f)
         {
             agent.stoppingDistance = 0;
@@ -87,7 +88,7 @@ public class EnemyAI : MonoBehaviour, IDamage
             agent.speed = speedOrg;
             yield return new WaitForSeconds(waitTime);
             destinationChosen = false;
-
+            
             if (agent.isActiveAndEnabled)
             {
                 Vector3 randDir = Random.insideUnitSphere * roamDist;
@@ -207,5 +208,12 @@ public class EnemyAI : MonoBehaviour, IDamage
             agent.stoppingDistance = 0;
         }
     }
+
+    public void stepSound()
+    {
+        aud.PlayOneShot(audSteps[Random.Range(0, audSteps.Length)], audStepsVol);
+    }
+
+
 }
 
