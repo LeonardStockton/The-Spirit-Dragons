@@ -11719,6 +11719,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6979028672970355000, guid: bd2564289e4d74c409840719d2a8ecfd, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 6979028673131836217, guid: bd2564289e4d74c409840719d2a8ecfd, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 6979028673912079521, guid: bd2564289e4d74c409840719d2a8ecfd, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 6979028674008967441, guid: bd2564289e4d74c409840719d2a8ecfd, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 6979028674041530125, guid: bd2564289e4d74c409840719d2a8ecfd, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 6979028674163621183, guid: bd2564289e4d74c409840719d2a8ecfd, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 6979028674442915221, guid: bd2564289e4d74c409840719d2a8ecfd, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 6979028674535094860, guid: bd2564289e4d74c409840719d2a8ecfd, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 6979028674951872383, guid: bd2564289e4d74c409840719d2a8ecfd, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 6979028675038225093, guid: bd2564289e4d74c409840719d2a8ecfd, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -11771,6 +11807,14 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 3586099167488941670, guid: a604980dc3e7303489eb5f0c0fed058a, type: 3}
+    - target: {fileID: 6979028675073628570, guid: bd2564289e4d74c409840719d2a8ecfd, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 6979028675086322480, guid: bd2564289e4d74c409840719d2a8ecfd, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2564289e4d74c409840719d2a8ecfd, type: 3}
 --- !u!1001 &1067771860
@@ -16660,6 +16704,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Spawn POS base
       objectReference: {fileID: 0}
+    - target: {fileID: 2527166143232432716, guid: 136d903e7f9694344805ab83edaf506e, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 2962449322935492588, guid: 136d903e7f9694344805ab83edaf506e, type: 3}
       propertyPath: m_RootOrder
       value: 6
