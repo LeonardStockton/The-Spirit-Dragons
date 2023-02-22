@@ -52,6 +52,8 @@ public class playerController : MonoBehaviour
     [Header("-------Audio-------")]
     [SerializeField] AudioClip[] audJump;
     [Range(0, 1)] [SerializeField] float audJumpVol;
+    [SerializeField] AudioClip[] audSteps;
+    [Range(0, 1)] [SerializeField] float audStepsVol;
 
 
     Vector3 move;
@@ -63,6 +65,7 @@ public class playerController : MonoBehaviour
     int selectedWeapon;
     public bool isShooting;
     public bool isSprinting;
+    bool isPlayingSteps;
 
 
     // Start is called before the first frame update
@@ -130,7 +133,34 @@ public class playerController : MonoBehaviour
         }
         playerVelocity.y -= gravity * Time.deltaTime;
         controller.Move((playerVelocity + pushBack) * Time.deltaTime);
+
+        if (controller.isGrounded &&  move.normalized.magnitude > 0.5f && !isPlayingSteps)
+        {
+            StartCoroutine(playSteps());
+        }
+
     }
+
+    IEnumerator playSteps()
+    {
+
+        isPlayingSteps = true;
+
+        aud.PlayOneShot(audSteps[Random.Range(0, audSteps.Length)], audStepsVol);
+
+        if (isSprinting)
+        {
+            yield return new WaitForSeconds(0.3f);
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        isPlayingSteps = false;
+
+    }
+
     void sprint()
     {
         if (Input.GetButtonDown("Sprint"))
