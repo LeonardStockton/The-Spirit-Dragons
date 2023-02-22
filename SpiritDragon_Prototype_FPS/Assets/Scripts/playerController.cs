@@ -54,6 +54,8 @@ public class playerController : MonoBehaviour
     [Range(0, 1)] [SerializeField] float audJumpVol;
     [SerializeField] AudioClip[] audSteps;
     [Range(0, 1)] [SerializeField] float audStepsVol;
+    [SerializeField] AudioClip[] audDmg;
+    [Range(0, 1)] [SerializeField] float audDmgVol;
 
 
     Vector3 move;
@@ -214,6 +216,7 @@ public class playerController : MonoBehaviour
         HP -= dmg;
         stolenHealth();
         StartCoroutine(youBeenShoot());
+        aud.PlayOneShot(audDmg[Random.Range(0, audDmg.Length)], audDmgVol);
         if (HP <= 0)
         {
             //animes.SetBool("Dead", true);
