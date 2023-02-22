@@ -1539,8 +1539,8 @@ Transform:
   m_GameObject: {fileID: 1295468908301846578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3076570211639912364}
   - {fileID: 5221156188212118069}
@@ -1579,16 +1579,8 @@ MonoBehaviour:
   shootDamage: 0
   weaponZoomMax: 0
   weaponModel: {fileID: 4899213869398027958}
-  trigger: {fileID: 0}
-  slide: {fileID: 0}
-  magazine: {fileID: 0}
-  reciver: {fileID: 0}
-  fireSelect: {fileID: 0}
   gunSound: {fileID: 0}
   weaponAmmo: 0
-  muzzleFlash: {fileID: 0}
-  hitEffect: {fileID: 0}
-  bloodEffect: {fileID: 0}
   grenTimer: 2
   blastRadius: 0
   throwSpeed: 10
@@ -3834,8 +3826,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3076570211639912361}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 1.7, z: 0.25}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: 0.11, y: 1.844, z: 0.082}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7225134082325922442}
@@ -5743,8 +5735,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4899213869398027958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.059, y: -0.0526, z: 0.092}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0.569, y: -0.683, z: 0.484}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3076570211639912364}

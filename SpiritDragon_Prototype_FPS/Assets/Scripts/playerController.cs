@@ -149,7 +149,7 @@ public class playerController : MonoBehaviour
     IEnumerator shoot()
     {
         isShooting = true;
-        gunSound.Play();
+       // gunSound.Play();
         //muzzleFlash.SetActive(true);
 
         weaponAmmo--;
