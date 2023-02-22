@@ -9,6 +9,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     [SerializeField] Renderer model;
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Animator anim;
+    [SerializeField] AudioSource aud;
 
     [Header("----- Stats -----")]
     [SerializeField] Transform headPos;
@@ -27,6 +28,12 @@ public class EnemyAI : MonoBehaviour, IDamage
     [SerializeField] float fireRate;
     [SerializeField] Collider weaponCollider;
     [SerializeField] float bullVelY;
+
+    [Header("-------Audio-------")]
+    [SerializeField] AudioClip[] audSteps;
+    [Range(0, 1)] [SerializeField] float audStepsVol;
+    [SerializeField] AudioClip[] audDmg;
+    [Range(0, 1)] [SerializeField] float audDmgVol;
 
     Vector3 playerDir;
     bool isShooting;
@@ -127,6 +134,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     public void takeDamage(int dmg)
     {
         HP -= dmg;
+        aud.PlayOneShot(audDmg[Random.Range(0, audDmg.Length)], audDmgVol);
 
         if (HP <= 0)
         {
