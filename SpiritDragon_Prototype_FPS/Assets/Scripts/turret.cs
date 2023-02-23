@@ -81,7 +81,6 @@ public class turret : MonoBehaviour, IDamage
         if (Hp <= 0)
         {
             Dead();
-            aud.PlayOneShot(audDeath[Random.Range(0, audDeath.Length)], audDeathVol);
             Destroy(gameObject);
         }
     }
@@ -98,6 +97,7 @@ public class turret : MonoBehaviour, IDamage
         barrelNum = barrels.Count;
         for (int i = 0; i < barrelNum; i++)
         {
+            aud.PlayOneShot(Shot, audShotVol);
             GameObject clone = Instantiate(bullet, barrels[i].position, bullet.transform.rotation);
             Transform bulletForm = clone.transform;
             bulletForm.transform.GetComponent<turBull>().SendBull(plyrDir);

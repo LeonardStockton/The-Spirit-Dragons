@@ -4923,8 +4923,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockBack: 100
   push: 1
-  blastRadius: 10
-  grenDmg: 10
+  blastRadius: 5
+  grenDmg: 100
 --- !u!198 &6486611423265981852
 ParticleSystem:
   m_ObjectHideFlags: 0
