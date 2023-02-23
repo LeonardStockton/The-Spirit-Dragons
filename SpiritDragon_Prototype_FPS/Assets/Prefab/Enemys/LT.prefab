@@ -696,7 +696,7 @@ Animator:
   m_GameObject: {fileID: 2880974650166838196}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 8cf152a0a06b3dc47a7c6d40918d95a9, type: 3}
-  m_Controller: {fileID: 9100000, guid: b57365aa3e6ac59459ccf1b4e46db351, type: 2}
+  m_Controller: {fileID: 9100000, guid: a2c03cc85f500bd459de5fc122896b9a, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -717,9 +717,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!135 &5866666021091860914
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -728,11 +728,11 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2880974650166838196}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 5
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &5866666021091860912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2513,6 +2513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7764563220363128909, guid: 8e5196cfc74804744ac59a2b9bc29af9, type: 3}
+    - {fileID: 4276340851962577512, guid: 8e5196cfc74804744ac59a2b9bc29af9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8e5196cfc74804744ac59a2b9bc29af9, type: 3}
 --- !u!4 &3374809174905435391 stripped
 Transform:
