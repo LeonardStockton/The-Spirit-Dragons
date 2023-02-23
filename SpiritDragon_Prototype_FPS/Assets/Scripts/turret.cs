@@ -81,7 +81,6 @@ public class turret : MonoBehaviour, IDamage
         if (Hp <= 0)
         {
             Dead();
-
             Destroy(gameObject);
         }
     }
