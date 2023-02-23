@@ -135,7 +135,6 @@ public class EnemyAI : MonoBehaviour, IDamage
     public void takeDamage(int dmg)
     {
         HP -= dmg;
-        aud.PlayOneShot(audDmg[Random.Range(0, audDmg.Length)], audDmgVol);
 
         if (HP <= 0)
         {
@@ -146,8 +145,9 @@ public class EnemyAI : MonoBehaviour, IDamage
         }
         else
         {
-            anim.SetTrigger("Damage");
+            anim.SetTrigger("Dmg");
             StartCoroutine(flashDmg());
+            aud.PlayOneShot(audDmg[Random.Range(0, audDmg.Length)], audDmgVol);
 
 
             agent.SetDestination(gameManager.instance.player.transform.position);

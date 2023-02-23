@@ -12,13 +12,13 @@ public class Spawner : MonoBehaviour
     int enemiesSpawned;
     bool playerInRange;
     bool isSpawning;
-    Transform randomSpawnPoint;
+   
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager.instance.updateGameGoal(spawnMaxNum);
-        Spawn();
+        
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
     {
         if ((playerInRange && !isSpawning) && (enemiesSpawned < spawnMaxNum))
         {
-            //StartCoroutine(spawn());
+            StartCoroutine(spawn());
             
         }
     }
@@ -39,28 +39,15 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    //IEnumerator spawn()
-    //{
-    //    isSpawning = true;
-    //    //randomSpawnPoint = spawnPos[Random.Range(0, spawnPos.Length)];
-
-    //    for (int i = 0; i < spawnPos.Length; i++){
-    //        Instantiate(enemy, spawnPos[i].position, spawnPos[i].rotation);
-    //        enemiesSpawned++;
-    //    }
-
-
-    //    yield return new WaitForSeconds(timer);
-    //    isSpawning = false;
-    //}
-
-    void Spawn()
+    IEnumerator spawn()
     {
-        for (int i = 0; i < spawnPos.Length; i++)
-        {
-            Instantiate(enemy, spawnPos[i].position, spawnPos[i].rotation);
-            enemiesSpawned++;
-
-        }
+        isSpawning = true;
+        Instantiate(enemy, spawnPos[Random.Range(0, spawnPos.Length)].position, enemy.transform.rotation);
+        enemiesSpawned++;
+        yield return new WaitForSeconds(timer);
+        isSpawning = false;
     }
 }
+
+
+
