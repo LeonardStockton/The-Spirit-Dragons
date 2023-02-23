@@ -24,9 +24,6 @@ public class gameManager : MonoBehaviour
     public GameObject playerGrenPickUpScreen;
     public Image playerHpBar;
     public TextMeshProUGUI enemiesRemainingText;
-    public TextMeshProUGUI timer;
-    public float time;
-    bool timebool = false;
     public TextMeshProUGUI ammoDisplay;
     public TextMeshProUGUI grenDisplay;
 
@@ -48,13 +45,7 @@ public class gameManager : MonoBehaviour
     {
         ammoDisplay.text = player.GetComponent<playerController>().weaponAmmo.ToString();
         grenDisplay.text = player.GetComponent<playerController>().Grenades.ToString();
-        time -= Time.deltaTime;
-        timer.text = time.ToString("F0");
-        if (time <= 0 && timebool == false)
-        {
-            timebool = true;
-            playerDead();
-        }
+       
 
         if (Input.GetButtonDown("Cancel") && activeMenu == null)
         {
