@@ -297,7 +297,7 @@ MonoBehaviour:
   aud: {fileID: 485184036}
   playerSpeed: 3
   playerSprintSpeed: 1.5
-  HP: 50
+  HP: 100
   jumpTimes: 1
   jumpSpeed: 14
   gravity: 40
@@ -308,10 +308,10 @@ MonoBehaviour:
   shootDamage: 0
   weaponZoomMax: 0
   weaponModel: {fileID: 4899213869398027958}
-  gunSound: {fileID: 0}
   weaponAmmo: 0
+  Grenades: 0
   grenTimer: 2
-  blastRadius: 0
+  blastRadius: 2
   throwSpeed: 10
   gren: {fileID: 4539594117897660148, guid: 3bb82bea8cfb5fd4bb88aa45d8743481, type: 3}
   exp: {fileID: 6486611423265981850, guid: b244079a7bb73f448bb19fefa087bef9, type: 3}
@@ -338,6 +338,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 17a48d0893aa2b640be77ba291c0a4b2, type: 3}
   - {fileID: 8300000, guid: 9fac3efa1eb31ec44b3aeb63d5eabc89, type: 3}
   audDmgVol: 0.5
+  audGunShot:
+  - {fileID: 8300000, guid: d3247579c549643a5b3a95f9224eaf3c, type: 3}
+  audGunVol: 0
   isShooting: 0
   isSprinting: 0
 --- !u!95 &5499337577639479538

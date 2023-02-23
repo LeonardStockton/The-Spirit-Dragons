@@ -1026,7 +1026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -1301,7 +1301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -1322,7 +1322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -1343,7 +1343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -1516,7 +1516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -1537,7 +1537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -1645,7 +1645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -1728,7 +1728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -1839,7 +1839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -2032,7 +2032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -2148,7 +2148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -2406,7 +2406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -2745,7 +2745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -2827,7 +2827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -3173,7 +3173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -3194,7 +3194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1
   increaseDecreasAmount: 1
@@ -3936,12 +3936,12 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307615479}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ba8891149fb21bd46af963810d638a11, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4042,7 +4042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -4296,7 +4296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -4844,6 +4844,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 499240, guid: ef77650fcc7dfd64a8d614922d90c382, type: 3}
   m_PrefabInstance: {fileID: 67568457}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &414417206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 414417208}
+  - component: {fileID: 414417209}
+  m_Layer: 8
+  m_Name: PostProcessing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &414417208
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414417206}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.444807, y: 2.554101, z: 0.16994143}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 29
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &414417209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414417206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 3cab8a9742ebf7e449d4504b763f467f, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1001 &416774789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5211,7 +5260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -5302,7 +5351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -5413,7 +5462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -5434,7 +5483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -5460,7 +5509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -5792,7 +5841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -5813,7 +5862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -6378,7 +6427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -6810,7 +6859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -6841,7 +6890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -7002,7 +7051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -7871,7 +7920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -7962,7 +8011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -8207,7 +8256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -8457,6 +8506,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 454994, guid: abfbd13ce6faa9e48ae2b9da1b4dd476, type: 3}
   m_PrefabInstance: {fileID: 626044466}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &695469049 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3076570211639912361, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
+  m_PrefabInstance: {fileID: 1680344782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &695469050 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3076570211639912364, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
+  m_PrefabInstance: {fileID: 1680344782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &695469054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695469049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 695469050}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 328
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1001 &695746060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8637,7 +8756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -8886,7 +9005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -8912,7 +9031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -14059,7 +14178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -14144,7 +14263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -14400,7 +14519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -14419,11 +14538,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 120586, guid: e15828603e27c5e42b39860e4f55da70, type: 3}
   m_PrefabInstance: {fileID: 1599529536}
   m_PrefabAsset: {fileID: 0}
---- !u!108 &845255991 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 10886990, guid: e15828603e27c5e42b39860e4f55da70, type: 3}
-  m_PrefabInstance: {fileID: 1599529536}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &845255992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14436,7 +14550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 845255991}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -15049,7 +15163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -15170,7 +15284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -16414,7 +16528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -16775,7 +16889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -16963,7 +17077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -17805,7 +17919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -17923,7 +18037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -17944,7 +18058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -18135,7 +18249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -18190,7 +18304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -18693,7 +18807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -19552,7 +19666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -20102,7 +20216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -20344,7 +20458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -20455,7 +20569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -20673,7 +20787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -20783,7 +20897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -21018,7 +21132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -21192,7 +21306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -21297,7 +21411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -22572,7 +22686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -22968,7 +23082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -23724,11 +23838,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 135472, guid: 8b5797a18349fb546be8acddc71151ff, type: 3}
   m_PrefabInstance: {fileID: 1219418112}
   m_PrefabAsset: {fileID: 0}
---- !u!108 &1531241520 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 10828764, guid: 8b5797a18349fb546be8acddc71151ff, type: 3}
-  m_PrefabInstance: {fileID: 1219418112}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1531241521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23741,7 +23850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 1531241520}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -23757,7 +23866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1
   increaseDecreasAmount: 1
@@ -23778,7 +23887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -24025,7 +24134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -24364,7 +24473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -24614,7 +24723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -24955,7 +25064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -25133,7 +25242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -25341,26 +25450,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1295468908301846576, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
-      propertyPath: HP
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1295468908301846576, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
-      propertyPath: blastRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1295468908301846576, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
-      propertyPath: audGunShot.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1295468908301846576, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
-      propertyPath: weaponList.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1295468908301846576, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
-      propertyPath: audGunShot.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: d3247579c549643a5b3a95f9224eaf3c, type: 3}
     - target: {fileID: 1295468908301846578, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
       propertyPath: m_Name
       value: Player Avatar
@@ -25368,18 +25457,6 @@ PrefabInstance:
     - target: {fileID: 1923528210567746184, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
       propertyPath: m_RootOrder
       value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1923528210567746184, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1923528210567746184, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1923528210567746184, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1923528210567746184, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25670,7 +25747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -26437,7 +26514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -27228,7 +27305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -27397,7 +27474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -27418,7 +27495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -27872,7 +27949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -28611,7 +28688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -28722,7 +28799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -28800,7 +28877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -28926,7 +29003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -29344,7 +29421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -29467,7 +29544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -29835,7 +29912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
@@ -31109,7 +31186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef3fed097aaee3439fef8ee57364116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  lightt: {fileID: 0}
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
