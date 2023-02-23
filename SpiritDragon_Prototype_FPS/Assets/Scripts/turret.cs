@@ -6,6 +6,7 @@ public class turret : MonoBehaviour, IDamage
 {
     [Header("----- Components -----")]
     [SerializeField] Renderer model;
+    [SerializeField] AudioSource aud;
 
     [Header("----- Stats -----")]
     [SerializeField] Transform headPos;
@@ -18,6 +19,13 @@ public class turret : MonoBehaviour, IDamage
     [SerializeField] GameObject bullet;
     [SerializeField] int bulletSpeed;
     [SerializeField] float fireRate;
+
+    [Header("-------Audio-------")]
+    [SerializeField] AudioClip[] audDmg;
+    [Range(0, 1)] [SerializeField] float audDmgVol;
+    [SerializeField] AudioClip[] audDeath;
+    [Range(0, 1)] [SerializeField] float audDeathVol;
+
 
     Vector3 plyrDir;
     bool Shooting, NRange;
@@ -65,10 +73,12 @@ public class turret : MonoBehaviour, IDamage
     {
         Hp -= dmg;
         StartCoroutine(flshDmg());
+        aud.PlayOneShot(audDmg[Random.Range(0, audDmg.Length)], audDmgVol);
 
         if (Hp <= 0)
         {
-            gameManager.instance.updateGameGoal(-1);
+            
+            aud.PlayOneShot(audDeath[Random.Range(0, audDeath.Length)], audDeathVol);
             Destroy(gameObject);
         }
     }
