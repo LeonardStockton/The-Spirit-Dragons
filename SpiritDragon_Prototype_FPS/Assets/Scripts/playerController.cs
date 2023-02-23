@@ -15,13 +15,13 @@ public class playerController : MonoBehaviour
 
 
     [Header("~~~~~~Player Stats~~~~~~")]
-    [Range(0, 10)] [SerializeField] float playerSpeed;
-    [Range(1.5f, 6)] [SerializeField] float playerSprintSpeed;
-    [Range(0, 100)] [SerializeField] int HP;
-    [Range(0, 10)] [SerializeField] int jumpTimes;
-    [Range(0, 100)] [SerializeField] int jumpSpeed;
-    [Range(0, 100)] [SerializeField] int gravity;
-    [Range(1, 5)] [SerializeField] int pushbackResTime;
+    [Range(0, 10)][SerializeField] float playerSpeed;
+    [Range(1.5f, 6)][SerializeField] float playerSprintSpeed;
+    [Range(0, 100)][SerializeField] int HP;
+    [Range(0, 10)][SerializeField] int jumpTimes;
+    [Range(0, 100)][SerializeField] int jumpSpeed;
+    [Range(0, 100)][SerializeField] int gravity;
+    [Range(1, 5)][SerializeField] int pushbackResTime;
 
     [Header("~~~~~~~Gun Stats~~~~~~~~")]
     [SerializeField] List<gunStats> weaponList = new List<gunStats>();
@@ -44,11 +44,11 @@ public class playerController : MonoBehaviour
 
     [Header("-------Audio-------")]
     [SerializeField] AudioClip[] audJump;
-    [Range(0, 1)] [SerializeField] float audJumpVol;
+    [Range(0, 1)][SerializeField] float audJumpVol;
     [SerializeField] AudioClip[] audSteps;
-    [Range(0, 1)] [SerializeField] float audStepsVol;
+    [Range(0, 1)][SerializeField] float audStepsVol;
     [SerializeField] AudioClip[] audDmg;
-    [Range(0, 1)] [SerializeField] float audDmgVol;
+    [Range(0, 1)][SerializeField] float audDmgVol;
     [SerializeField] AudioClip[] audGunShot;
     [Range(0, 1)][SerializeField] float audGunVol;
 
@@ -62,8 +62,8 @@ public class playerController : MonoBehaviour
     public bool isShooting;
     public bool isSprinting;
     bool isPlayingSteps;
-    int firstGunPickup=0;
-   
+    int firstGunPickup = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -109,7 +109,7 @@ public class playerController : MonoBehaviour
         }
         playerVelocity.y -= gravity * Time.deltaTime;
         controller.Move((playerVelocity + pushBack) * Time.deltaTime);
-        if (controller.isGrounded &&  move.normalized.magnitude > 0.5f && !isPlayingSteps)
+        if (controller.isGrounded && move.normalized.magnitude > 0.5f && !isPlayingSteps)
         {
             StartCoroutine(playSteps());
         }
@@ -163,7 +163,6 @@ public class playerController : MonoBehaviour
         isShooting = false;
     }
 
-
     public void takeDamage(int dmg)
     {
         HP -= dmg;
@@ -216,63 +215,49 @@ public class playerController : MonoBehaviour
         weaponModel.GetComponentInChildren<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshRenderer>().sharedMaterial;
         selectedWeapon = weaponList.Count - 1;
 
-       
+
         if (weaponModel.GetComponent<MeshFilter>().mesh.name == "shotgun2 Instance")
         {
-           
-            
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
         }
         if (weaponModel.GetComponent<MeshFilter>().mesh.name == "pistol3 Instance")
         {
-            
-
             Vector3 newPos = new Vector3(0.57f, -0.95f, 1.83f);
             weaponModel.transform.localPosition = newPos;
-
         }
         if (weaponModel.GetComponent<MeshFilter>().mesh.name == "assault4 Instance")
         {
-           
-
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
-
         }
-        
-        
-        UpdateGunUI(selectedWeapon,firstGunPickup);
+        UpdateGunUI(selectedWeapon, firstGunPickup);
         ++firstGunPickup;
     }
 
-    public void UpdateGunUI(int GunPos, int condition=0)
-{
-    if(weaponList[GunPos].shootDamage==5 && condition==0)
+    public void UpdateGunUI(int GunPos, int condition = 0)
     {
-       gameManager.instance.CurrentGunImagePistol.enabled=true;
-       gameManager.instance.CurrentGunImageShotgun.enabled=false;
-       gameManager.instance.CurrentGunImageAssaultRifle.enabled=false;
+        if (weaponList[GunPos].shootDamage == 5 && condition == 0)
+        {
+            gameManager.instance.CurrentGunImagePistol.enabled = true;
+            gameManager.instance.CurrentGunImageShotgun.enabled = false;
+            gameManager.instance.CurrentGunImageAssaultRifle.enabled = false;
+        }
+        else if (weaponList[GunPos].shootDamage == 25 && condition == 0)
+        {
+            gameManager.instance.CurrentGunImagePistol.enabled = false;
+            gameManager.instance.CurrentGunImageShotgun.enabled = true;
+            gameManager.instance.CurrentGunImageAssaultRifle.enabled = false;
+        }
+        else if (weaponList[GunPos].shootDamage == 10 && condition == 0)
+        {
+            gameManager.instance.CurrentGunImagePistol.enabled = false;
+            gameManager.instance.CurrentGunImageShotgun.enabled = false;
+            gameManager.instance.CurrentGunImageAssaultRifle.enabled = true;
+        }
 
-        
+
     }
-
-   else if(weaponList[GunPos].shootDamage==25 && condition==0 )
-    {
-       gameManager.instance.CurrentGunImagePistol.enabled=false;
-       gameManager.instance.CurrentGunImageShotgun.enabled=true;
-       gameManager.instance.CurrentGunImageAssaultRifle.enabled=false;
-    }
-
-    else if(weaponList[GunPos].shootDamage==10 && condition==0)
-    {
-        gameManager.instance.CurrentGunImagePistol.enabled=false;
-       gameManager.instance.CurrentGunImageShotgun.enabled=false;
-       gameManager.instance.CurrentGunImageAssaultRifle.enabled=true;
-    }
-
-
-}
 
     void selectFirearm()
     {
@@ -296,7 +281,7 @@ public class playerController : MonoBehaviour
 
         UpdateGunUI(selectedWeapon);
 
-       
+
         weaponModel.GetComponentInChildren<MeshFilter>().sharedMesh = weaponList[selectedWeapon].weaponSkin.GetComponentInChildren<MeshFilter>().sharedMesh;
         weaponModel.GetComponentInChildren<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponentInChildren<MeshRenderer>().sharedMaterial;
         if (weaponModel.GetComponent<MeshFilter>().mesh.name == "shotgun2 Instance")
