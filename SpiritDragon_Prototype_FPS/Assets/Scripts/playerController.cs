@@ -33,6 +33,7 @@ public class playerController : MonoBehaviour
     [SerializeField] GameObject weaponModel;
     [SerializeField] AudioSource gunSound;
     [SerializeField] public int weaponAmmo;
+    [SerializeField] public int Grenades;
 
     [Header("-------Weapon Extra-------")]
     //[SerializeField] GameObject muzzleFlash;
@@ -245,6 +246,11 @@ public class playerController : MonoBehaviour
         weaponAmmo += rounds;
     }
 
+    public void grenPack(int nades)
+    {
+        Grenades += nades;
+    }
+
     public void gunPick(gunStats gunStats)
     {
         weaponList.Add(gunStats);
@@ -315,7 +321,7 @@ public class playerController : MonoBehaviour
 
     IEnumerator throwGrenade()
     {
-        if (Input.GetButtonDown("Grenade"))
+        if (Input.GetButtonDown("Grenade") && Grenades > 0)
         {
             GameObject grenadeClone = Instantiate(gren, throwPos.position, gren.transform.rotation);
             grenadeClone.GetComponent<Rigidbody>().velocity = ((Camera.main.transform.forward * throwSpeed) + new Vector3(0, .5f, 0) * throwSpeed);
@@ -324,6 +330,7 @@ public class playerController : MonoBehaviour
             explosion.GetComponent<SphereCollider>().radius = blastRadius;
             Destroy(grenadeClone);
             Destroy(explosion, (float).5);
+            Grenades--;
         }
     }
 }

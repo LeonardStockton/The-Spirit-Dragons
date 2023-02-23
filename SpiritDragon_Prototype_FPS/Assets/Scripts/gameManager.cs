@@ -21,12 +21,14 @@ public class gameManager : MonoBehaviour
     public GameObject playerDamageFlashScreen;
     public GameObject playerHealthPickUpScreen;
     public GameObject playerAmmoPickUpScreen;
+    public GameObject playerGrenPickUpScreen;
     public Image playerHpBar;
     public TextMeshProUGUI enemiesRemainingText;
     public TextMeshProUGUI timer;
     public float time;
     bool timebool = false;
     public TextMeshProUGUI ammoDisplay;
+    public TextMeshProUGUI grenDisplay;
 
     [Header("----- Game Goals -----")]
     public int enemiesRemaining;
@@ -45,6 +47,7 @@ public class gameManager : MonoBehaviour
     void Update()
     {
         ammoDisplay.text = player.GetComponent<playerController>().weaponAmmo.ToString();
+        grenDisplay.text = player.GetComponent<playerController>().Grenades.ToString();
         time -= Time.deltaTime;
         timer.text = time.ToString("F0");
         if (time <= 0 && timebool == false)
