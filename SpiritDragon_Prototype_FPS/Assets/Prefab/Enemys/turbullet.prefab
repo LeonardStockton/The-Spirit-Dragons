@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.25
-  bulletDmg: 5
+  bulletDmg: 3
   timer: 5
 --- !u!135 &6564665786906940077
 SphereCollider:
