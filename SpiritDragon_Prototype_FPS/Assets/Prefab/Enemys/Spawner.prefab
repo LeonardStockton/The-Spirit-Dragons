@@ -112,9 +112,3 @@ MonoBehaviour:
   timer: 2
   spawnPos:
   - {fileID: 6979028674442915220}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
