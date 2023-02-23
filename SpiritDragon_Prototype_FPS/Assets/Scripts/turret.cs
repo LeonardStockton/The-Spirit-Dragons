@@ -15,6 +15,8 @@ public class turret : MonoBehaviour, IDamage
     [SerializeField] int viewAngle;
 
     [Header("----- Gun -----")]
+    [SerializeField] AudioClip Shot;
+    [Range(0, 1)] [SerializeField] float audShotVol;
     [SerializeField] List<Transform> barrels;
     [SerializeField] GameObject bullet;
     [SerializeField] int bulletSpeed;
@@ -99,6 +101,7 @@ public class turret : MonoBehaviour, IDamage
             Transform bulletForm = clone.transform;
             bulletForm.transform.GetComponent<turBull>().SendBull(plyrDir);
             clone.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
+            aud.PlayOneShot(Shot, audShotVol);
             yield return new WaitForSeconds(fireRate / barrelNum);
         }
         Shooting = false;
