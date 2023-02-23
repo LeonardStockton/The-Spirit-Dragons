@@ -749,8 +749,8 @@ MonoBehaviour:
   agent: {fileID: 5866666021091860915}
   anim: {fileID: 8813750449775838068}
   aud: {fileID: 1143150648427177595}
-  headPos: {fileID: 0}
-  HP: 100
+  headPos: {fileID: 9122395562699119105}
+  HP: 36
   playerFaceSpeed: 9
   speedChase: 4
   viewAngle: 180

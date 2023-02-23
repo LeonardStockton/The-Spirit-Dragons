@@ -31,8 +31,6 @@ public class playerController : MonoBehaviour
     [SerializeField] int shootDamage;
     [SerializeField] float weaponZoomMax;
     [SerializeField] GameObject weaponModel;
-
-
     [SerializeField] AudioSource gunSound;
     [SerializeField] public int weaponAmmo;
 
@@ -181,7 +179,7 @@ public class playerController : MonoBehaviour
     IEnumerator shoot()
     {
         isShooting = true;
-       // gunSound.Play();
+        
         //muzzleFlash.SetActive(true);
 
         weaponAmmo--;
