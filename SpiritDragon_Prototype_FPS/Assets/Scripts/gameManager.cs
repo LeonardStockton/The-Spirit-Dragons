@@ -23,7 +23,10 @@ public class gameManager : MonoBehaviour
     public GameObject playerAmmoPickUpScreen;
     public GameObject playerGrenPickUpScreen;
     public Image playerHpBar;
-    public Image CurrentGunImage;
+    public Image CurrentGunImagePistol;
+    public Image CurrentGunImageShotgun;
+    public Image CurrentGunImageAssaultRifle;
+
     public TextMeshProUGUI enemiesRemainingText;
     public TextMeshProUGUI ammoDisplay;
     public TextMeshProUGUI grenDisplay;

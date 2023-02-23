@@ -62,6 +62,8 @@ public class playerController : MonoBehaviour
     public bool isShooting;
     public bool isSprinting;
     bool isPlayingSteps;
+    int firstGunPickup=0;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -213,25 +215,64 @@ public class playerController : MonoBehaviour
         weaponModel.GetComponentInChildren<MeshFilter>().sharedMesh = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshFilter>().sharedMesh;
         weaponModel.GetComponentInChildren<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshRenderer>().sharedMaterial;
         selectedWeapon = weaponList.Count - 1;
+
+       
         if (weaponModel.GetComponent<MeshFilter>().mesh.name == "shotgun2 Instance")
         {
-
+           
+            
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
         }
         if (weaponModel.GetComponent<MeshFilter>().mesh.name == "pistol3 Instance")
         {
+            
+
             Vector3 newPos = new Vector3(0.57f, -0.95f, 1.83f);
             weaponModel.transform.localPosition = newPos;
 
         }
         if (weaponModel.GetComponent<MeshFilter>().mesh.name == "assault4 Instance")
         {
+           
+
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
 
         }
+        
+        
+        UpdateGunUI(selectedWeapon,firstGunPickup);
+        ++firstGunPickup;
     }
+
+    public void UpdateGunUI(int GunPos, int condition=0)
+{
+    if(weaponList[GunPos].shootDamage==5 && condition==0)
+    {
+       gameManager.instance.CurrentGunImagePistol.enabled=true;
+       gameManager.instance.CurrentGunImageShotgun.enabled=false;
+       gameManager.instance.CurrentGunImageAssaultRifle.enabled=false;
+
+        
+    }
+
+   else if(weaponList[GunPos].shootDamage==25 && condition==0 )
+    {
+       gameManager.instance.CurrentGunImagePistol.enabled=false;
+       gameManager.instance.CurrentGunImageShotgun.enabled=true;
+       gameManager.instance.CurrentGunImageAssaultRifle.enabled=false;
+    }
+
+    else if(weaponList[GunPos].shootDamage==10 && condition==0)
+    {
+        gameManager.instance.CurrentGunImagePistol.enabled=false;
+       gameManager.instance.CurrentGunImageShotgun.enabled=false;
+       gameManager.instance.CurrentGunImageAssaultRifle.enabled=true;
+    }
+
+
+}
 
     void selectFirearm()
     {
@@ -252,6 +293,9 @@ public class playerController : MonoBehaviour
         shootRate = weaponList[selectedWeapon].shootRate;
         shootDist = weaponList[selectedWeapon].shootDist;
         shootDamage = weaponList[selectedWeapon].shootDamage;
+
+        UpdateGunUI(selectedWeapon);
+
        
         weaponModel.GetComponentInChildren<MeshFilter>().sharedMesh = weaponList[selectedWeapon].weaponSkin.GetComponentInChildren<MeshFilter>().sharedMesh;
         weaponModel.GetComponentInChildren<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponentInChildren<MeshRenderer>().sharedMaterial;
