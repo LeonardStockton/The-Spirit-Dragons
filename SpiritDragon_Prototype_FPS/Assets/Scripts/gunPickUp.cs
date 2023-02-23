@@ -16,4 +16,10 @@ public class gunPickUp : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void Update()
+    {
+        transform.Rotate(0f, 0.3f, 0f, Space.Self);
+    }
+
 }
