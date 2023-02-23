@@ -12107,6 +12107,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CurrentWeapon
       objectReference: {fileID: 0}
+    - target: {fileID: 6850905732205794434, guid: 5591d62660f0c314888fbec2bbdc4e3e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5591d62660f0c314888fbec2bbdc4e3e, type: 3}
 --- !u!4 &925494154 stripped
