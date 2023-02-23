@@ -14585,6 +14585,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 986984829}
     - target: {fileID: 1754459739255068902, guid: 5591d62660f0c314888fbec2bbdc4e3e, type: 3}
+      propertyPath: CurrentGunImage
+      value: 
+      objectReference: {fileID: 534853157}
+    - target: {fileID: 1754459739255068902, guid: 5591d62660f0c314888fbec2bbdc4e3e, type: 3}
       propertyPath: playerGrenPickUpScreen
       value: 
       objectReference: {fileID: 912996755}
