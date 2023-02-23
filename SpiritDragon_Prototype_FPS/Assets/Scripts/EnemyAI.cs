@@ -135,9 +135,10 @@ public class EnemyAI : MonoBehaviour, IDamage
     public void takeDamage(int dmg)
     {
         HP -= dmg;
-
+        StartCoroutine(flashDmg());
         if (HP <= 0)
         {
+            
             GetComponent<CapsuleCollider>().enabled = false;
             gameManager.instance.updateGameGoal(-1);
             anim.SetBool("DED", true);
@@ -146,7 +147,7 @@ public class EnemyAI : MonoBehaviour, IDamage
         else
         {
             anim.SetTrigger("Dmg");
-            StartCoroutine(flashDmg());
+            
             aud.PlayOneShot(audDmg[Random.Range(0, audDmg.Length)], audDmgVol);
 
 
@@ -157,7 +158,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     IEnumerator flashDmg()
     {
         model.material.color = Color.red;
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.2f);
         model.material.color = orgColor;
 
     }
