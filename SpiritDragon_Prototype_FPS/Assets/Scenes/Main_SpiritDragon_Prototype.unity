@@ -11987,7 +11987,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1666939635, guid: 5591d62660f0c314888fbec2bbdc4e3e, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1666939635, guid: 5591d62660f0c314888fbec2bbdc4e3e, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -14212,7 +14212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9120685970747248065, guid: 7eb8bb6c9f6626f4993def1efcd45cef, type: 3}
       propertyPath: m_Name
-      value: 'semi shotgun '
+      value: semi shotgun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7eb8bb6c9f6626f4993def1efcd45cef, type: 3}
@@ -17551,7 +17551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 427725346986370217, guid: 8e5196cfc74804744ac59a2b9bc29af9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -34.827126
+      value: 12.3
       objectReference: {fileID: 0}
     - target: {fileID: 427725346986370217, guid: 8e5196cfc74804744ac59a2b9bc29af9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17559,7 +17559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 427725346986370217, guid: 8e5196cfc74804744ac59a2b9bc29af9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -59.369938
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 427725346986370217, guid: 8e5196cfc74804744ac59a2b9bc29af9, type: 3}
       propertyPath: m_LocalRotation.w
