@@ -7,6 +7,7 @@ public class turret : MonoBehaviour, IDamage
     [Header("----- Components -----")]
     [SerializeField] Renderer model;
     [SerializeField] AudioSource aud;
+    [SerializeField] GameObject DedExpl;
 
     [Header("----- Stats -----")]
     [SerializeField] Transform headPos;
@@ -79,7 +80,7 @@ public class turret : MonoBehaviour, IDamage
 
         if (Hp <= 0)
         {
-            
+            Dead();
             aud.PlayOneShot(audDeath[Random.Range(0, audDeath.Length)], audDeathVol);
             Destroy(gameObject);
         }
@@ -123,4 +124,8 @@ public class turret : MonoBehaviour, IDamage
         }
     }
 
+    public void Dead()
+    {
+        Instantiate(DedExpl, transform.position, transform.rotation);
+    }
 }
