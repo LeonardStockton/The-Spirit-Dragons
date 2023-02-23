@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class HealthPack : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -26,11 +20,8 @@ public class HealthPack : MonoBehaviour
         }
     }
 
-
     IEnumerator health()
-    {
-        
-       
+    {   
         gameManager.instance.playerHealthPickUpScreen.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         gameManager.instance.playerHealthPickUpScreen.SetActive(false);

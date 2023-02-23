@@ -12,7 +12,6 @@ public class playerController : MonoBehaviour
     [Header("~~~~~~~Componets~~~~~~~~")]
     [SerializeField] CharacterController controller;
     [SerializeField] AudioSource aud;
-    //[SerializeField] Animator animes;
 
 
     [Header("~~~~~~Player Stats~~~~~~")]
@@ -32,15 +31,8 @@ public class playerController : MonoBehaviour
     [SerializeField] float weaponZoomMax;
     [SerializeField] GameObject weaponModel;
 
-
-    [SerializeField] AudioSource gunSound;
     [SerializeField] public int weaponAmmo;
     [SerializeField] public int Grenades;
-
-    [Header("-------Weapon Extra-------")]
-    //[SerializeField] GameObject muzzleFlash;
-    //[SerializeField] GameObject hitEffect;
-    //[SerializeField] GameObject bloodEffect;
 
     [Header("-------Grenade-------")]
     [SerializeField] float grenTimer;
@@ -57,7 +49,8 @@ public class playerController : MonoBehaviour
     [Range(0, 1)] [SerializeField] float audStepsVol;
     [SerializeField] AudioClip[] audDmg;
     [Range(0, 1)] [SerializeField] float audDmgVol;
-
+    [SerializeField] AudioClip[] audGunShot;
+    [Range(0, 1)][SerializeField] float audGunVol;
 
     Vector3 move;
     Vector3 playerVelocity;
@@ -70,7 +63,6 @@ public class playerController : MonoBehaviour
     public bool isSprinting;
     bool isPlayingSteps;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -81,26 +73,9 @@ public class playerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-
     {
-        
-        //if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("Vertical") < 0)
-        //{
-
-        //    animes.SetBool("run", true);
-        //}
-        //else if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0)
-        //{
-        //    animes.SetBool("run", true);
-        //}
-        //else
-        //{
-        //    animes.SetBool("run", false);
-        //}
-
         pushBack = Vector3.Lerp(pushBack, Vector3.zero, Time.deltaTime * pushbackResTime);
         StartCoroutine(throwGrenade());
-        //animes.SetFloat("Speed", playerVelocity.normalized.magnitude);
         movement();
         sprint();
         selectFirearm();
@@ -108,12 +83,10 @@ public class playerController : MonoBehaviour
         {
             StartCoroutine(shoot());
         }
-
         if (weaponAmmo <= 0)
         {
             weaponAmmo = 0;
         }
-
     }
 
     void movement()
@@ -128,29 +101,22 @@ public class playerController : MonoBehaviour
         controller.Move(move * Time.deltaTime * playerSpeed);
         if (Input.GetButtonDown("Jump") && jumpCurrent < jumpTimes)
         {
-            //animes.SetBool("Jump", true);
             jumpCurrent++;
             playerVelocity.y = jumpSpeed;
             aud.PlayOneShot(audJump[Random.Range(0, audJump.Length)], audJumpVol);
-
         }
         playerVelocity.y -= gravity * Time.deltaTime;
         controller.Move((playerVelocity + pushBack) * Time.deltaTime);
-
         if (controller.isGrounded &&  move.normalized.magnitude > 0.5f && !isPlayingSteps)
         {
             StartCoroutine(playSteps());
         }
-
     }
 
     IEnumerator playSteps()
     {
-
         isPlayingSteps = true;
-
         aud.PlayOneShot(audSteps[Random.Range(0, audSteps.Length)], audStepsVol);
-
         if (isSprinting)
         {
             yield return new WaitForSeconds(0.3f);
@@ -159,9 +125,7 @@ public class playerController : MonoBehaviour
         {
             yield return new WaitForSeconds(0.5f);
         }
-
         isPlayingSteps = false;
-
     }
 
     void sprint()
@@ -176,15 +140,12 @@ public class playerController : MonoBehaviour
             isSprinting = false;
             playerSpeed /= playerSprintSpeed;
         }
-
     }
 
     IEnumerator shoot()
     {
         isShooting = true;
-       // gunSound.Play();
-        //muzzleFlash.SetActive(true);
-
+        aud.PlayOneShot(audGunShot[Random.Range(0, audGunShot.Length)], audGunVol);
         weaponAmmo--;
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
@@ -193,21 +154,10 @@ public class playerController : MonoBehaviour
 
             if (hit.collider.GetComponent<IDamage>() != null)
             {
-
                 hit.collider.GetComponent<IDamage>().takeDamage(shootDamage);
-                //GameObject temp = Instantiate(bloodEffect, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
-                //Destroy(temp, 2);
             }
-            else
-            {
-                //GameObject temp = Instantiate(hitEffect, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
-                //Destroy(temp, 2);
-            }
-
-
         }
         yield return new WaitForSeconds(shootRate);
-        //muzzleFlash.SetActive(false);
         isShooting = false;
     }
 
@@ -220,7 +170,6 @@ public class playerController : MonoBehaviour
         aud.PlayOneShot(audDmg[Random.Range(0, audDmg.Length)], audDmgVol);
         if (HP <= 0)
         {
-            //animes.SetBool("Dead", true);
             gameManager.instance.playerDead();
         }
     }
@@ -261,10 +210,6 @@ public class playerController : MonoBehaviour
         shootDamage = gunStats.shootDamage;
         weaponAmmo = gunStats.weaponAmmo;
 
-
-        
-
-
         weaponModel.GetComponentInChildren<MeshFilter>().sharedMesh = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshFilter>().sharedMesh;
         weaponModel.GetComponentInChildren<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshRenderer>().sharedMaterial;
         selectedWeapon = weaponList.Count - 1;
@@ -286,7 +231,6 @@ public class playerController : MonoBehaviour
             weaponModel.transform.localPosition = newPos;
 
         }
-
     }
 
     void selectFirearm()
@@ -301,7 +245,6 @@ public class playerController : MonoBehaviour
             selectedWeapon--;
             changeFirearm();
         }
-        
     }
 
     void changeFirearm()
