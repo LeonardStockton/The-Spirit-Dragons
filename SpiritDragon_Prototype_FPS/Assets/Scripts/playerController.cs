@@ -240,7 +240,7 @@ public class playerController : MonoBehaviour
             selectedWeapon++;
             changeFirearm();
         }
-        else if (Input.GetAxis("Mouse ScrollWheel") > 0 && selectedWeapon > 0)
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0 && selectedWeapon > 0)
         {
             selectedWeapon--;
             changeFirearm();

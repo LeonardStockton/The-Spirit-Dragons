@@ -24,6 +24,8 @@ public class EnemyAI : MonoBehaviour, IDamage
     [Header("----- Gun -----")]
     [SerializeField] Transform shootPos;
     [SerializeField] GameObject bullet;
+    [SerializeField] GameObject Gren;
+    [SerializeField] GameObject explo;
     [SerializeField] int bulletSpeed;
     [SerializeField] float fireRate;
     [SerializeField] Collider weaponCollider;
@@ -173,14 +175,22 @@ public class EnemyAI : MonoBehaviour, IDamage
     {
         isShooting = true;
         anim.SetTrigger("Shoot");
-        yield return new WaitForSeconds(fireRate);
+        if(Gren != null)
+        {
+            GameObject grenClone = Instantiate(Gren, shootPos.position, Gren.transform.rotation);
+            grenClone.GetComponent<Rigidbody>().velocity = (playerDir + new Vector3(Random.Range(-.3f, .3f), bullVelY, Random.Range(-.3f, .3f))) * bulletSpeed;
+            Instantiate(explo, grenClone.transform.position, grenClone.transform.rotation);
+            Destroy(grenClone, 1);
+            anim.SetTrigger("Shoot");
+        }
+        yield return new WaitForSeconds(fireRate * 2);
         isShooting = false;
     }
 
     public void createBullet()
     {
         GameObject bulletClone = Instantiate(bullet, shootPos.position, bullet.transform.rotation);
-        bulletClone.GetComponent<Rigidbody>().velocity = (playerDir + new Vector3(Random.Range(-.3f, .3f), bullVelY, Random.Range(-.3f, .3f))) * bulletSpeed;
+        bulletClone.GetComponent<Rigidbody>().velocity = (playerDir + new Vector3(Random.Range(-.3f, .3f), 0, Random.Range(-.3f, .3f))) * bulletSpeed;
     }
 
 

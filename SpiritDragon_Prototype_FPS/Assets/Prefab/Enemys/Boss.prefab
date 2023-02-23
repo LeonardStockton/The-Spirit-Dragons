@@ -1937,7 +1937,7 @@ Animator:
   m_GameObject: {fileID: 6887295846610673370}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 8cf152a0a06b3dc47a7c6d40918d95a9, type: 3}
-  m_Controller: {fileID: 9100000, guid: b57365aa3e6ac59459ccf1b4e46db351, type: 2}
+  m_Controller: {fileID: 9100000, guid: a2c03cc85f500bd459de5fc122896b9a, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1995,10 +1995,12 @@ MonoBehaviour:
   roamDist: 15
   shootPos: {fileID: 3086974422246116536}
   bullet: {fileID: 7905007233913547341, guid: 394593e34beb4b544a83d0eaa7d1f862, type: 3}
+  Gren: {fileID: 0}
+  explo: {fileID: 6486611423265981850, guid: 9e5a559991278664cbdbc5cf0635f642, type: 3}
   bulletSpeed: 25
   fireRate: 0.2
   weaponCollider: {fileID: 0}
-  bullVelY: 0
+  bullVelY: 0.5
   audSteps:
   - {fileID: 8300000, guid: 3a5f9c731325e264199dd21010467537, type: 3}
   - {fileID: 8300000, guid: 9dd423c10b13f744c9f0b02cc58c3723, type: 3}

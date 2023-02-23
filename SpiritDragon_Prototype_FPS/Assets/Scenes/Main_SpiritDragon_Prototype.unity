@@ -16554,6 +16554,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4500916732712160329, guid: 2bae6fee641e2684e8fc47bbb9a0a329, type: 3}
+      propertyPath: explo
+      value: 
+      objectReference: {fileID: 6486611423265981850, guid: 9e5a559991278664cbdbc5cf0635f642, type: 3}
     - target: {fileID: 5029588950400146335, guid: 2bae6fee641e2684e8fc47bbb9a0a329, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -19073,9 +19077,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1295468908301846576, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
+      propertyPath: audGunShot.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295468908301846576, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
       propertyPath: weaponList.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1295468908301846576, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
+      propertyPath: audGunShot.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d3247579c549643a5b3a95f9224eaf3c, type: 3}
     - target: {fileID: 1295468908301846578, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
       propertyPath: m_Name
       value: Player Avatar
