@@ -253,7 +253,7 @@ public class playerController : MonoBehaviour
         Grenades += nades;
     }
 
-    public void gunPick(gunStats gunStats)
+    public void gunPick(gunStats gunStats, string gunName)
     {
         weaponList.Add(gunStats);
         shootRate = gunStats.shootRate;
@@ -261,11 +261,31 @@ public class playerController : MonoBehaviour
         shootDamage = gunStats.shootDamage;
         weaponAmmo = gunStats.weaponAmmo;
 
+
         
+
 
         weaponModel.GetComponentInChildren<MeshFilter>().sharedMesh = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshFilter>().sharedMesh;
         weaponModel.GetComponentInChildren<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshRenderer>().sharedMaterial;
         selectedWeapon = weaponList.Count - 1;
+        if (weaponModel.GetComponent<MeshFilter>().mesh.name == "shotgun2 Instance")
+        {
+
+            Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
+            weaponModel.transform.localPosition = newPos;
+        }
+        if (weaponModel.GetComponent<MeshFilter>().mesh.name == "pistol3 Instance")
+        {
+            Vector3 newPos = new Vector3(0.57f, -0.95f, 1.83f);
+            weaponModel.transform.localPosition = newPos;
+
+        }
+        if (weaponModel.GetComponent<MeshFilter>().mesh.name == "assault4 Instance")
+        {
+            Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
+            weaponModel.transform.localPosition = newPos;
+
+        }
 
     }
 
@@ -281,6 +301,7 @@ public class playerController : MonoBehaviour
             selectedWeapon--;
             changeFirearm();
         }
+        
     }
 
     void changeFirearm()
@@ -288,10 +309,28 @@ public class playerController : MonoBehaviour
         shootRate = weaponList[selectedWeapon].shootRate;
         shootDist = weaponList[selectedWeapon].shootDist;
         shootDamage = weaponList[selectedWeapon].shootDamage;
-
+       
         weaponModel.GetComponentInChildren<MeshFilter>().sharedMesh = weaponList[selectedWeapon].weaponSkin.GetComponentInChildren<MeshFilter>().sharedMesh;
         weaponModel.GetComponentInChildren<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponentInChildren<MeshRenderer>().sharedMaterial;
+        if (weaponModel.GetComponent<MeshFilter>().mesh.name == "shotgun2 Instance")
+        {
 
+            Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
+            weaponModel.transform.localPosition = newPos;
+        }
+        if (weaponModel.GetComponent<MeshFilter>().mesh.name == "pistol3 Instance")
+        {
+            Vector3 newPos = new Vector3(0.57f, -0.95f, 1.83f);
+            weaponModel.transform.localPosition = newPos;
+
+        }
+
+        if (weaponModel.GetComponent<MeshFilter>().mesh.name == "assault4 Instance")
+        {
+            Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
+            weaponModel.transform.localPosition = newPos;
+
+        }
     }
 
     public void Spawner()
