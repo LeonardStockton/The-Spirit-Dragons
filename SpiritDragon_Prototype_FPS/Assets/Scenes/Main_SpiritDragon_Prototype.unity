@@ -2019,11 +2019,11 @@ Transform:
   - {fileID: 1927503376}
   - {fileID: 233364943}
   - {fileID: 608976617}
+  - {fileID: 8225967524932227553}
   - {fileID: 990879483}
   - {fileID: 1146543491}
   - {fileID: 2013814299}
   - {fileID: 2134295143}
-  - {fileID: 8225967524932227553}
   - {fileID: 614261494}
   - {fileID: 1257827247}
   - {fileID: 1572730268}
@@ -11787,7 +11787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6850905732205794434, guid: 5591d62660f0c314888fbec2bbdc4e3e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7969154403704579233, guid: 5591d62660f0c314888fbec2bbdc4e3e, type: 3}
       propertyPath: m_SizeDelta.x
@@ -13296,6 +13296,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6979028675038225092, guid: bd2564289e4d74c409840719d2a8ecfd, type: 3}
+      propertyPath: m_Radius
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 6979028675038225093, guid: bd2564289e4d74c409840719d2a8ecfd, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -13344,6 +13348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 6979028675038225114, guid: bd2564289e4d74c409840719d2a8ecfd, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 3586099167488941670, guid: a604980dc3e7303489eb5f0c0fed058a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2564289e4d74c409840719d2a8ecfd, type: 3}
 --- !u!1001 &1067771860
@@ -22968,7 +22976,7 @@ Transform:
   - {fileID: 2044838894}
   - {fileID: 285705099818222526}
   m_Father: {fileID: 307615480}
-  m_RootOrder: 140
+  m_RootOrder: 136
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &8874125069001530150
 BoxCollider:
