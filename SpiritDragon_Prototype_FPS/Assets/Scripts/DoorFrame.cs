@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class DoorFrame : MonoBehaviour
 {
+    [SerializeField] Animator anim;
     // Start is called before the first frame update
-    void Start()
+    void OnTriggerStay(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            anim.SetBool("Open", true);
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerExit(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            anim.SetBool("Open", false);
+        }
+
     }
+   
 }
