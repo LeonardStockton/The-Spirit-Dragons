@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: e41c6f8a206b4ba419083b06b71ca427, type: 2}
+  rot: {x: 0, y: 0.3, z: 0}
 --- !u!135 &2424531666840767148
 SphereCollider:
   m_ObjectHideFlags: 0

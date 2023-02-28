@@ -16,5 +16,4 @@ MonoBehaviour:
   shootDist: 100
   shootDamage: 35
   weaponAmmo: 5
-  weaponSkin: {fileID: 100000, guid: b5742c35cad19b945bc129c719875b2d, type: 3}
-  weaponFireAud: {fileID: 0}
+  weaponSkin: {fileID: 3965193259864922775, guid: 2f50a70b00fbad24e95b251f52f14a9b, type: 3}
