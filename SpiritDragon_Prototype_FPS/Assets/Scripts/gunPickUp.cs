@@ -6,11 +6,9 @@ using UnityEngine;
 public class gunPickUp : MonoBehaviour
 {
     [SerializeField] gunStats weapon;
-    [SerializeField] Vector3 rot;
 
     private void OnTriggerEnter(Collider weaponGrab)
     {
-        Debug.Log(weaponGrab);
         if (weaponGrab.CompareTag("Player"))
         {
                 gameManager.instance.playerScript.gunPick(weapon, "G 19");
@@ -20,7 +18,7 @@ public class gunPickUp : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(rot, Space.Self);
+        transform.Rotate(0f, 0.3f, 0f, Space.Self);
     }
 
 }
