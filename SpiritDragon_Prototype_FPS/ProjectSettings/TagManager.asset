@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - WeaponPickup
   - GrenPickUp
+  - LvlLoad
   layers:
   - Default
   - TransparentFX
