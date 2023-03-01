@@ -12,8 +12,7 @@ public class gameManager : MonoBehaviour
     public playerController playerScript;
     public GameObject playerSpwanPOS;
 
-    [Header("----- UI -----")]
-   
+    [Header("----- UI -----")]   
     public GameObject activeMenu;
     public GameObject pauseMenu;
     public GameObject winMenu;
@@ -26,7 +25,6 @@ public class gameManager : MonoBehaviour
     public Image CurrentGunImagePistol;
     public Image CurrentGunImageShotgun;
     public Image CurrentGunImageAssaultRifle;
-
     public TextMeshProUGUI enemiesRemainingText;
     public TextMeshProUGUI ammoDisplay;
     public TextMeshProUGUI grenDisplay;
@@ -34,7 +32,7 @@ public class gameManager : MonoBehaviour
     [Header("----- Game Goals -----")]
     public int enemiesRemaining;
 
-
+    /*---------------------------------------------------------------------------------*/
     public bool isPaused;
 
     void Awake()

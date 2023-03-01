@@ -30,7 +30,6 @@ public class playerController : MonoBehaviour
     [SerializeField] int shootDamage;
     [SerializeField] float weaponZoomMax;
     [SerializeField] GameObject weaponModel;
-
     [SerializeField] public int weaponAmmo;
     [SerializeField] public int Grenades;
 
