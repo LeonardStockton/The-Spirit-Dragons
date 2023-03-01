@@ -29,6 +29,10 @@ public class gameManager : MonoBehaviour
     public TextMeshProUGUI ammoDisplay;
     public TextMeshProUGUI grenDisplay;
 
+    [Header("----- Game Resource -----")]
+    public GameObject sceneLoader;
+    public levelLoader loaderScript;
+
     [Header("----- Game Goals -----")]
     public int enemiesRemaining;
 
@@ -40,6 +44,8 @@ public class gameManager : MonoBehaviour
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<playerController>();
+        sceneLoader = GameObject.FindGameObjectWithTag("LvlLoad");
+        loaderScript = sceneLoader.GetComponent<levelLoader>();
     }
 
     // Update is called once per frame
