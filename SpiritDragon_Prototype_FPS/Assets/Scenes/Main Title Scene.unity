@@ -852,6 +852,61 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &147082011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 147082013}
+  - component: {fileID: 147082012}
+  m_Layer: 0
+  m_Name: LocalPlayerPrefs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &147082012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147082011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c995910d4a8b441afa0149600f144b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _CanUse: 1
+  menuController: {fileID: 1680202006}
+  volumeTextValue: {fileID: 1585306726}
+  volumeSlider: {fileID: 2051038495}
+  controllerSensivityTextValue: {fileID: 1294442385}
+  conrollerSensSlider: {fileID: 971565765}
+  qualityDropdown: {fileID: 1065367842}
+  brightnessSlider: {fileID: 1254516247}
+  brightnessTexTValue: {fileID: 4262955}
+  invertYtoggle: {fileID: 1170193519}
+  fullScreenToggel: {fileID: 681095493}
+--- !u!4 &147082013
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147082011}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 195.59842, y: 97.152565, z: 6.3893666}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &187408198
 GameObject:
   m_ObjectHideFlags: 0
@@ -9117,7 +9172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1528080589
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9825,14 +9880,14 @@ MonoBehaviour:
   defualSensivityValue: 4
   mainControllerSens: 4
   invertYtoggle: {fileID: 1170193519}
-  fullScreenToggel: {fileID: 0}
+  fullScreenToggel: {fileID: 681095493}
   brightnessSlider: {fileID: 1254516247}
   brightnessTexTValue: {fileID: 4262955}
   defualtBrightness: 1
   _newGameLevel: Level 1 Scene
   noSaveFile: {fileID: 1880766518}
-  resolutionDropdown: {fileID: 1065367842}
-  qualityDropdown: {fileID: 0}
+  resolutionDropdown: {fileID: 1500655985}
+  qualityDropdown: {fileID: 1065367842}
   confermationPrompt: {fileID: 1744807535}
 --- !u!4 &1680202007
 Transform:
@@ -10344,15 +10399,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Material: {fileID: 2100000, guid: 7a257ecb665a22f4282772b5ba725022, type: 2}
+  m_Color: {r: 0.6509434, g: 0.12632862, b: 0.12632862, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9d801fa023793fa4aa3440a30690f5f4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10387,7 +10442,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -884.3669, y: -526.5172}
+  m_AnchoredPosition: {x: -884.3669, y: -468}
   m_SizeDelta: {x: 151.2662, y: 146.6057}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1760172350

@@ -103,7 +103,7 @@ public class MainMenuControler : MonoBehaviour
 
     public void VolumeApply()
     {
-        PlayerPrefs.SetFloat("masterVaolume", AudioListener.volume);
+        PlayerPrefs.SetFloat("MasterVolume", AudioListener.volume);
         //show prompt 
         StartCoroutine(ConfermationBox());
     }
@@ -118,12 +118,12 @@ public class MainMenuControler : MonoBehaviour
     {
         //invert y
         if (invertYtoggle.isOn)
-        { PlayerPrefs.SetInt("masterInvertY", 1); }
+        { PlayerPrefs.SetInt("MasterInvertY", 1); }
         //not inverted 
         else
-        { PlayerPrefs.SetInt("masterInvertY", 0); }
+        { PlayerPrefs.SetInt("MasterInvertY", 0); }
 
-        PlayerPrefs.SetFloat("masterSen", mainControllerSens);
+        PlayerPrefs.SetFloat("MasterSen", mainControllerSens);
         StartCoroutine(ConfermationBox());
     }
 
@@ -145,13 +145,13 @@ public class MainMenuControler : MonoBehaviour
 
     public void GraphicsApply()
     {
-        PlayerPrefs.SetFloat("_MasterBrightness", _BrightnessLevel);
+        PlayerPrefs.SetFloat("MasterBrightness", _BrightnessLevel);
         //chage the Brightness with post processing.
 
-        PlayerPrefs.SetInt("_MasterQuality Level", _QualityLevel);
+        PlayerPrefs.SetInt("MasterQualityLevel", _QualityLevel);
         QualitySettings.SetQualityLevel(_QualityLevel);
 
-        PlayerPrefs.SetInt("_MasterFullScreen", (_IsFullScreen ? 1 : 0));
+        PlayerPrefs.SetInt("MasterFullScreen", (_IsFullScreen ? 1 : 0));
         Screen.fullScreen = _IsFullScreen;
 
         StartCoroutine(ConfermationBox());
