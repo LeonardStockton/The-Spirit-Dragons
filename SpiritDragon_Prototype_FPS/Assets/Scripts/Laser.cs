@@ -39,4 +39,22 @@ public class Laser : MonoBehaviour
             else lr.SetPosition(1, transform.forward * 1000);
         }
     }
+    IEnumerator laserDmg (RaycastHit hit)
+    {
+        if (hit.collider)
+        {
+            lr.SetPosition(1, hit.point);
+            if (hit.collider.GetComponent<IDamage>() != null)
+            {
+                hit.collider.GetComponent<IDamage>().takeDamage(lsrdmg);
+                yield return new WaitForSeconds(.2f);
+            }
+            else if (hit.collider.GetComponent<playerController>() != null)
+            {
+                hit.collider.GetComponent<playerController>().takeDamage(lsrdmg);
+                yield return new WaitForSeconds(.2f);
+            }
+        }
+    }
 }
+
