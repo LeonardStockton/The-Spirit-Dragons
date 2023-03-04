@@ -37,6 +37,11 @@ public class EnemyAI : MonoBehaviour, IDamage
     [SerializeField] AudioClip[] audDmg;
     [Range(0, 1)] [SerializeField] float audDmgVol;
 
+    [Header("----- BossParts -----")]
+    [SerializeField] GameObject Laser;
+    [SerializeField] Transform lsrFirePt;
+    [SerializeField] int lsrDmg;
+
     Vector3 playerDir;
     bool isShooting;
     public bool playerNRange;
@@ -56,6 +61,10 @@ public class EnemyAI : MonoBehaviour, IDamage
         speedOrg = agent.speed;
         roam();
         orgColor = model.material.color;
+        if (this.CompareTag("Boss"))
+        {
+            Laser.GetComponent<LineRenderer>().enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -188,11 +197,23 @@ public class EnemyAI : MonoBehaviour, IDamage
 
     public void createBullet()
     {
-        GameObject bulletClone = Instantiate(bullet, shootPos.position, bullet.transform.rotation);
-        bulletClone.GetComponent<Rigidbody>().velocity = (playerDir + new Vector3(Random.Range(-.3f, .3f), 0, Random.Range(-.3f, .3f))) * bulletSpeed;
+        if (this.CompareTag("Boss"))
+        {
+            //GameObject lrclne = Instantiate(Laser, lsrFirePt.position, Laser.transform.rotation);
+            StartCoroutine(shootLaser());
+        }else
+        {
+            GameObject bulletClone = Instantiate(bullet, shootPos.position, bullet.transform.rotation);
+            bulletClone.GetComponent<Rigidbody>().velocity = (playerDir + new Vector3(Random.Range(-.3f, .3f), 0, Random.Range(-.3f, .3f))) * bulletSpeed;
+        }
     }
 
-
+    IEnumerator shootLaser()
+    {
+        Laser.GetComponent<LineRenderer>().enabled = true; 
+        yield return new WaitForSeconds(1);
+        Laser.GetComponent<LineRenderer>().enabled = false;
+    }
     public void agentStop()
     {
         agent.enabled = false;
