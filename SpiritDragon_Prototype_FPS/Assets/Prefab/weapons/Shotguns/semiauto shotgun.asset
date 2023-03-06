@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: semiauto shotgun
   m_EditorClassIdentifier: 
   shootRate: 0.25
+  gunName: Semi shotgun
   shootDist: 6
   shootDamage: 25
   weaponAmmo: 15
