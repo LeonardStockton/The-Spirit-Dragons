@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b3992271a9721e42bbbf07301c7a3c9, type: 3}
-  m_Name: Riffle 3
+  m_Name: Rifle 4
   m_EditorClassIdentifier: 
   shootRate: 0.334
+  gunName: rifle 4
   shootDist: 30
   shootDamage: 10
   weaponAmmo: 30
-  weaponSkin: {fileID: 7548371801309006098, guid: 8a34bf4e7062f6d499a5079effaa76e6, type: 3}
-  weaponFireAud: {fileID: 0}
+  weaponSkin: {fileID: 1055044367888023059, guid: 8e5196cfc74804744ac59a2b9bc29af9, type: 3}

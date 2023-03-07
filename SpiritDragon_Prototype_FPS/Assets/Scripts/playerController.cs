@@ -26,6 +26,9 @@ public class playerController : MonoBehaviour
     [Header("~~~~~~~Gun Stats~~~~~~~~")]
     [SerializeField] List<gunStats> weaponList = new List<gunStats>();
     [SerializeField] float shootRate;
+    [SerializeField] GameObject bull;
+    [SerializeField] Transform weaponBarrel;
+    [SerializeField] float bulletSpeed;
     [SerializeField] int shootDist;
     [SerializeField] int shootDamage;
     [SerializeField] float weaponZoomMax;
@@ -58,6 +61,9 @@ public class playerController : MonoBehaviour
     int jumpCurrent;
     int HPorg;
     int selectedWeapon;
+    public int rifleAmmo;
+    public int shotgunAmmo;
+    public int pistolAmmo;
     public bool isShooting;
     public bool isSprinting;
     bool isPlayingSteps;
@@ -79,6 +85,7 @@ public class playerController : MonoBehaviour
         StartCoroutine(throwGrenade());
         movement();
         sprint();
+        Debug.Log(shotgunAmmo);
         selectFirearm();
         if (!isShooting && weaponList.Count > 0 && Input.GetButton("Shoot") && weaponAmmo > 0)
         {
@@ -88,6 +95,7 @@ public class playerController : MonoBehaviour
         {
             weaponAmmo = 0;
         }
+      
     }
 
     void movement()
@@ -148,6 +156,22 @@ public class playerController : MonoBehaviour
         isShooting = true;
         aud.PlayOneShot(audGunShot[Random.Range(0, audGunShot.Length)], audGunVol);
         weaponAmmo--;
+        if(weaponList[selectedWeapon].gunName.Contains("shotgun"))
+        {
+            shotgunAmmo--;
+            GameObject clone = Instantiate(bull, weaponBarrel.position, bull.transform.rotation);
+            Transform bulletForm = clone.transform;
+            bulletForm.transform.GetComponent<turBull>().SendBull(transform.forward);
+            clone.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
+        }
+        if (weaponList[selectedWeapon].gunName.Contains("pistol"))
+        {
+            pistolAmmo--;
+        }
+        if (weaponList[selectedWeapon].gunName.Contains("rifle"))
+        {
+            rifleAmmo--;
+        }
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
         {
@@ -194,7 +218,18 @@ public class playerController : MonoBehaviour
 
     public void ammoPack(int rounds)
     {
-        weaponAmmo += rounds;
+        if (weaponList[selectedWeapon].name.Contains("shotgun"))
+        {
+            shotgunAmmo = rounds;
+        }
+        if (weaponList[selectedWeapon].name.Contains("GS"))
+        {
+            pistolAmmo = rounds;
+        }
+        if (weaponList[selectedWeapon].name.Contains("Rifle"))
+        {
+            rifleAmmo = rounds;
+        }
     }
 
     public void grenPack(int nades)
@@ -208,27 +243,44 @@ public class playerController : MonoBehaviour
         shootRate = gunStats.shootRate;
         shootDist = gunStats.shootDist;
         shootDamage = gunStats.shootDamage;
-        weaponAmmo = weaponAmmo + gunStats.weaponAmmo;
+        Debug.Log(gunName);
+        if(gunName.Contains("GS"))
+        {
+            pistolAmmo = pistolAmmo + gunStats.weaponAmmo;
+        }
+        else if (gunName.Contains("shotgun"))
+        {
+            shotgunAmmo = shotgunAmmo + gunStats.weaponAmmo;
+        }
+        else if (gunName.Contains("rifle"))
+        {
+            rifleAmmo = rifleAmmo + gunStats.weaponAmmo;
+        }
 
         weaponModel.GetComponentInChildren<MeshFilter>().sharedMesh = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshFilter>().sharedMesh;
         weaponModel.GetComponentInChildren<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshRenderer>().sharedMaterial;
         selectedWeapon = weaponList.Count - 1;
 
-
-        if (weaponModel.GetComponent<MeshFilter>().mesh.name == "shotgun2 Instance")
+        if (gunName.Contains("shotgun"))
         {
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
+            weaponAmmo = shotgunAmmo;
+            weaponBarrel.localPosition = new Vector3(0.009f, 0.573f, 2.714f);
         }
-        if (weaponModel.GetComponent<MeshFilter>().mesh.name == "pistol3 Instance")
+        if (gunName.Contains("GS"))
         {
             Vector3 newPos = new Vector3(0.57f, -0.95f, 1.83f);
             weaponModel.transform.localPosition = newPos;
+            weaponAmmo = pistolAmmo;
+            weaponBarrel.localPosition = new Vector3(-0.028f, 0.403f, 0.547f);
         }
-        if (weaponModel.GetComponent<MeshFilter>().mesh.name == "assault4 Instance")
+        if (gunName.Contains("Rifle"))
         {
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
+            weaponAmmo = rifleAmmo;
+            weaponBarrel.localPosition = new Vector3(0.048f, 0.469f, 2.402f);
         }
         UpdateGunUI(selectedWeapon, firstGunPickup);
         ++firstGunPickup;
@@ -236,19 +288,19 @@ public class playerController : MonoBehaviour
 
     public void UpdateGunUI(int GunPos, int condition = 0)
     {
-        if (weaponList[GunPos].shootDamage == 5 && condition == 0)
+        if (weaponList[selectedWeapon].name.Contains("GS"))
         {
             gameManager.instance.CurrentGunImagePistol.enabled = true;
             gameManager.instance.CurrentGunImageShotgun.enabled = false;
             gameManager.instance.CurrentGunImageAssaultRifle.enabled = false;
         }
-        else if (weaponList[GunPos].shootDamage == 25 && condition == 0)
+        else if (weaponList[selectedWeapon].name.Contains("shotgun"))
         {
             gameManager.instance.CurrentGunImagePistol.enabled = false;
             gameManager.instance.CurrentGunImageShotgun.enabled = true;
             gameManager.instance.CurrentGunImageAssaultRifle.enabled = false;
         }
-        else if (weaponList[GunPos].shootDamage == 10 && condition == 0)
+        else if (weaponList[selectedWeapon].name.Contains("Rifle"))
         {
             gameManager.instance.CurrentGunImagePistol.enabled = false;
             gameManager.instance.CurrentGunImageShotgun.enabled = false;
@@ -283,24 +335,26 @@ public class playerController : MonoBehaviour
 
         weaponModel.GetComponentInChildren<MeshFilter>().sharedMesh = weaponList[selectedWeapon].weaponSkin.GetComponentInChildren<MeshFilter>().sharedMesh;
         weaponModel.GetComponentInChildren<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponentInChildren<MeshRenderer>().sharedMaterial;
-        if (weaponModel.GetComponent<MeshFilter>().mesh.name == "shotgun2 Instance")
+        if (weaponList[selectedWeapon].name.Contains("shotgun"))
         {
-
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
+            weaponAmmo = shotgunAmmo;
+            weaponBarrel.localPosition = new Vector3(0.009f, 0.573f, 2.714f);
         }
-        if (weaponModel.GetComponent<MeshFilter>().mesh.name == "pistol3 Instance")
+        if (weaponList[selectedWeapon].name.Contains("GS"))
         {
             Vector3 newPos = new Vector3(0.57f, -0.95f, 1.83f);
             weaponModel.transform.localPosition = newPos;
-
+            weaponAmmo = pistolAmmo;
+            weaponBarrel.localPosition = new Vector3(-0.028f, 0.403f, 0.547f);
         }
-
-        if (weaponModel.GetComponent<MeshFilter>().mesh.name == "assault4 Instance")
+        if (weaponList[selectedWeapon].name.Contains("Rifle"))
         {
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
-
+            weaponAmmo = rifleAmmo;
+            weaponBarrel.localPosition = new Vector3(0.048f, 0.469f, 2.402f);
         }
     }
 

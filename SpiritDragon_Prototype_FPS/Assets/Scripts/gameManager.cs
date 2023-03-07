@@ -22,6 +22,7 @@ public class gameManager : MonoBehaviour
     public GameObject playerAmmoPickUpScreen;
     public GameObject playerGrenPickUpScreen;
     public Image playerHpBar;
+    public Image activeGunImage;
     public Image CurrentGunImagePistol;
     public Image CurrentGunImageShotgun;
     public Image CurrentGunImageAssaultRifle;
