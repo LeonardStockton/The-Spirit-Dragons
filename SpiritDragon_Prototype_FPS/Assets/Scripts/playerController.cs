@@ -26,6 +26,8 @@ public class playerController : MonoBehaviour
     [Header("~~~~~~~Gun Stats~~~~~~~~")]
     [SerializeField] List<gunStats> weaponList = new List<gunStats>();
     [SerializeField] float shootRate;
+    [SerializeField] GameObject bull;
+    [SerializeField] float bulletSpeed;
     [SerializeField] int shootDist;
     [SerializeField] int shootDamage;
     [SerializeField] float weaponZoomMax;
@@ -150,6 +152,8 @@ public class playerController : MonoBehaviour
     IEnumerator shoot()
     {
         isShooting = true;
+        GameObject bulletClone = Instantiate(bull, weaponModel.transform.position, bull.transform.rotation);
+        bulletClone.GetComponent<Rigidbody>().velocity = (transform.forward + new Vector3(Random.Range(-.3f, .3f), 0, Random.Range(-.3f, .3f))) * bulletSpeed;
         aud.PlayOneShot(audGunShot[Random.Range(0, audGunShot.Length)], audGunVol);
         weaponAmmo--;
         if(weaponList[selectedWeapon].gunName.Contains("shotgun"))

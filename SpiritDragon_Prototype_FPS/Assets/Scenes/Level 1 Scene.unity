@@ -27227,6 +27227,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1295468908301846576, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
+      propertyPath: bull
+      value: 
+      objectReference: {fileID: 6645153200069889873, guid: d615dd82c075f3447800968daa9f5860, type: 3}
+    - target: {fileID: 1295468908301846576, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
       propertyPath: audGunVol
       value: 0.5
       objectReference: {fileID: 0}

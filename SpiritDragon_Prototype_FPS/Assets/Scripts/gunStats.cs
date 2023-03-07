@@ -13,4 +13,6 @@ public class gunStats : ScriptableObject
     public int shootDamage;
     public int weaponAmmo;
     public GameObject weaponSkin;
+
+   
 }
