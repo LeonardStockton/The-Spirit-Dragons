@@ -27,7 +27,6 @@ public class playerController : MonoBehaviour
     [SerializeField] List<gunStats> weaponList = new List<gunStats>();
     [SerializeField] float shootRate;
     [SerializeField] GameObject bull;
-    [SerializeField] Transform weaponBarrel;
     [SerializeField] float bulletSpeed;
     [SerializeField] int shootDist;
     [SerializeField] int shootDamage;
@@ -95,7 +94,6 @@ public class playerController : MonoBehaviour
         {
             weaponAmmo = 0;
         }
-      
     }
 
     void movement()
@@ -154,15 +152,13 @@ public class playerController : MonoBehaviour
     IEnumerator shoot()
     {
         isShooting = true;
+        GameObject bulletClone = Instantiate(bull, weaponModel.transform.position, bull.transform.rotation);
+        bulletClone.GetComponent<Rigidbody>().velocity = (transform.forward + new Vector3(Random.Range(-.3f, .3f), 0, Random.Range(-.3f, .3f))) * bulletSpeed;
         aud.PlayOneShot(audGunShot[Random.Range(0, audGunShot.Length)], audGunVol);
         weaponAmmo--;
         if(weaponList[selectedWeapon].gunName.Contains("shotgun"))
         {
             shotgunAmmo--;
-            GameObject clone = Instantiate(bull, weaponBarrel.position, bull.transform.rotation);
-            Transform bulletForm = clone.transform;
-            bulletForm.transform.GetComponent<turBull>().SendBull(transform.forward);
-            clone.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
         }
         if (weaponList[selectedWeapon].gunName.Contains("pistol"))
         {
@@ -261,26 +257,23 @@ public class playerController : MonoBehaviour
         weaponModel.GetComponentInChildren<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshRenderer>().sharedMaterial;
         selectedWeapon = weaponList.Count - 1;
 
-        if (gunName.Contains("shotgun"))
+        if (weaponList[selectedWeapon].name.Contains("shotgun"))
         {
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
             weaponAmmo = shotgunAmmo;
-            weaponBarrel.localPosition = new Vector3(0.009f, 0.573f, 2.714f);
         }
-        if (gunName.Contains("GS"))
+        if (weaponList[selectedWeapon].name.Contains("GS"))
         {
             Vector3 newPos = new Vector3(0.57f, -0.95f, 1.83f);
             weaponModel.transform.localPosition = newPos;
             weaponAmmo = pistolAmmo;
-            weaponBarrel.localPosition = new Vector3(-0.028f, 0.403f, 0.547f);
         }
-        if (gunName.Contains("Rifle"))
+        if (weaponList[selectedWeapon].name.Contains("Rifle"))
         {
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
             weaponAmmo = rifleAmmo;
-            weaponBarrel.localPosition = new Vector3(0.048f, 0.469f, 2.402f);
         }
         UpdateGunUI(selectedWeapon, firstGunPickup);
         ++firstGunPickup;
@@ -340,21 +333,18 @@ public class playerController : MonoBehaviour
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
             weaponAmmo = shotgunAmmo;
-            weaponBarrel.localPosition = new Vector3(0.009f, 0.573f, 2.714f);
         }
         if (weaponList[selectedWeapon].name.Contains("GS"))
         {
             Vector3 newPos = new Vector3(0.57f, -0.95f, 1.83f);
             weaponModel.transform.localPosition = newPos;
             weaponAmmo = pistolAmmo;
-            weaponBarrel.localPosition = new Vector3(-0.028f, 0.403f, 0.547f);
         }
         if (weaponList[selectedWeapon].name.Contains("Rifle"))
         {
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
             weaponAmmo = rifleAmmo;
-            weaponBarrel.localPosition = new Vector3(0.048f, 0.469f, 2.402f);
         }
     }
 
