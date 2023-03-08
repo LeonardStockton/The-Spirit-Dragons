@@ -9,7 +9,7 @@ public class playerData
     public int _Health;
     public float[] postion;
 
-    public playerData( gameManager.instance.playerController _player)
+    public  playerData( playerController _player)
     {
         _Level = _player._Level;;
         _Health = _player._Health;
@@ -17,6 +17,19 @@ public class playerData
         postion[0] = _player.transform.position.x;
         postion[1] = _player.transform.position.y;
         postion[2] = _player.transform.position.z;
+        #region UI methods
+
+
+        void ChangeLevel(int _Amount)
+        {
+            _Level += _Amount;
+        }
+
+        void ChangeHealth(int _Amount)
+        {
+            _Health += _Amount;
+        }
+        #endregion
 
     }
 }

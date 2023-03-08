@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -106,5 +107,22 @@ public class gameManager : MonoBehaviour
         pause();
         activeMenu = menu;
         activeMenu.SetActive(true);
+    }
+
+    public void SavePlayer (playerController player)
+    {
+        SavingSystem.SavePlayer(player);
+    }
+
+    public void LoadPlayer(playerController player)
+    {
+        level = playerData._Level;
+        HP = playerData._Health;
+
+        Vector3 pos;
+        pos.x =data.position[0] ;
+        pos.y = data.position[0];
+        pos.z = data.position[0];
+        transform.position = pos;
     }
 }
