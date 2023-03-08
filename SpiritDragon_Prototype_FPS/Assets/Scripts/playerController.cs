@@ -120,6 +120,20 @@ public class playerController : MonoBehaviour
         }
     }
 
+    void sprint()
+    {
+        if (Input.GetButtonDown("Sprint"))
+        {
+            isSprinting = true;
+            playerSpeed *= playerSprintSpeed;
+        }
+        else if (Input.GetButtonUp("Sprint"))
+        {
+            isSprinting = false;
+            playerSpeed /= playerSprintSpeed;
+        }
+    }
+
     IEnumerator playSteps()
     {
         isPlayingSteps = true;
@@ -135,18 +149,60 @@ public class playerController : MonoBehaviour
         isPlayingSteps = false;
     }
 
-    void sprint()
+    public void takeDamage(int dmg)
     {
-        if (Input.GetButtonDown("Sprint"))
+        HP -= dmg;
+        stolenHealth();
+        StartCoroutine(youBeenShoot());
+        aud.PlayOneShot(audDmg[Random.Range(0, audDmg.Length)], audDmgVol);
+        if (HP <= 0)
         {
-            isSprinting = true;
-            playerSpeed *= playerSprintSpeed;
+            gameManager.instance.playerDead();
         }
-        else if (Input.GetButtonUp("Sprint"))
+    }
+
+    public int GetPlayerHealth() 
+    {
+        return HP;
+    }
+
+    public void stolenHealth()
+    {
+        gameManager.instance.playerHpBar.fillAmount = (float)HP / (float)HPorg;
+    }
+
+    //for when we add health, weapons, and ammo. *do not erase*
+    public void healthPack(int heals)
+    {
+        HP += heals;
+        stolenHealth();
+    }
+    IEnumerator youBeenShoot()
+    {
+        gameManager.instance.playerDamageFlashScreen.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        gameManager.instance.playerDamageFlashScreen.SetActive(false);
+    }
+
+    public void ammoPack(int rounds)
+    {
+        if (weaponList[selectedWeapon].name.Contains("shotgun"))
         {
-            isSprinting = false;
-            playerSpeed /= playerSprintSpeed;
+            shotgunAmmo = rounds;
         }
+        if (weaponList[selectedWeapon].name.Contains("GS"))
+        {
+            pistolAmmo = rounds;
+        }
+        if (weaponList[selectedWeapon].name.Contains("Rifle"))
+        {
+            rifleAmmo = rounds;
+        }
+    }
+
+    public void grenPack(int nades)
+    {
+        Grenades += nades;
     }
 
     IEnumerator shoot()
@@ -181,58 +237,7 @@ public class playerController : MonoBehaviour
         yield return new WaitForSeconds(shootRate);
         isShooting = false;
     }
-
-    public void takeDamage(int dmg)
-    {
-        HP -= dmg;
-        stolenHealth();
-        StartCoroutine(youBeenShoot());
-        aud.PlayOneShot(audDmg[Random.Range(0, audDmg.Length)], audDmgVol);
-        if (HP <= 0)
-        {
-            gameManager.instance.playerDead();
-        }
-    }
-
-    public void stolenHealth()
-    {
-        gameManager.instance.playerHpBar.fillAmount = (float)HP / (float)HPorg;
-    }
-
-    IEnumerator youBeenShoot()
-    {
-        gameManager.instance.playerDamageFlashScreen.SetActive(true);
-        yield return new WaitForSeconds(0.1f);
-        gameManager.instance.playerDamageFlashScreen.SetActive(false);
-    }
-    //for when we add health, weapons, and ammo. *do not erase*
-    public void healthPack(int heals)
-    {
-        HP += heals;
-        stolenHealth();
-    }
-
-    public void ammoPack(int rounds)
-    {
-        if (weaponList[selectedWeapon].name.Contains("shotgun"))
-        {
-            shotgunAmmo = rounds;
-        }
-        if (weaponList[selectedWeapon].name.Contains("GS"))
-        {
-            pistolAmmo = rounds;
-        }
-        if (weaponList[selectedWeapon].name.Contains("Rifle"))
-        {
-            rifleAmmo = rounds;
-        }
-    }
-
-    public void grenPack(int nades)
-    {
-        Grenades += nades;
-    }
-
+   
     public void gunPick(gunStats gunStats, string gunName)
     {
         weaponList.Add(gunStats);
@@ -347,17 +352,7 @@ public class playerController : MonoBehaviour
             weaponAmmo = rifleAmmo;
         }
     }
-
-    public void Spawner()
-    {
-        controller.enabled = false;
-        transform.position = gameManager.instance.playerSpwanPOS.transform.position;
-
-        HP = HPorg;
-        stolenHealth();
-
-        controller.enabled = true;
-    }
+    
     public void WeaponCameraFocus()
     {
         if (Input.GetButton("Zoom"))
@@ -370,6 +365,7 @@ public class playerController : MonoBehaviour
 
         }
     }
+    
     public void PushBackDir(Vector3 dir)
     {
         pushBack += dir;
@@ -389,4 +385,16 @@ public class playerController : MonoBehaviour
             Destroy(explosion, (float).5);
         }
     }
+   
+    public void Spawner()
+    {
+        controller.enabled = false;
+        transform.position = gameManager.instance.playerSpwanPOS.transform.position;
+
+        HP = HPorg;
+        stolenHealth();
+
+        controller.enabled = true;
+    }
+
 }

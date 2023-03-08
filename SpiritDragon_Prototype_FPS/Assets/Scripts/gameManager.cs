@@ -12,6 +12,10 @@ public class gameManager : MonoBehaviour
     public GameObject player;
     public playerController playerScript;
     public GameObject playerSpwanPOS;
+    public int HP;
+    public int level;
+    public int playerLevel;
+    public int playerHealth;
 
     [Header("----- UI -----")]   
     public GameObject activeMenu;
@@ -30,6 +34,7 @@ public class gameManager : MonoBehaviour
     public TextMeshProUGUI enemiesRemainingText;
     public TextMeshProUGUI ammoDisplay;
     public TextMeshProUGUI grenDisplay;
+    
 
     [Header("----- Game Resource -----")]
     public GameObject sceneLoader;
@@ -40,6 +45,7 @@ public class gameManager : MonoBehaviour
 
     /*---------------------------------------------------------------------------------*/
     public bool isPaused;
+    public float Volume;
 
     void Awake()
     {
@@ -109,20 +115,23 @@ public class gameManager : MonoBehaviour
         activeMenu.SetActive(true);
     }
 
+  
     public void SavePlayer (playerController player)
     {
         SavingSystem.SavePlayer(player);
     }
 
-    public void LoadPlayer(playerController player)
+    public void LoadPlayer()
     {
-        level = playerData._Level;
-        HP = playerData._Health;
+        playerData data = SavingSystem.PlayerLoad();
+        level = data._Level ;
+        HP = data._Health;
 
         Vector3 pos;
-        pos.x =data.position[0] ;
-        pos.y = data.position[0];
-        pos.z = data.position[0];
+        pos.x =data.postion[0];
+        pos.y = data.postion[1];
+        pos.z = data.postion[2];
         transform.position = pos;
     }
+    
 }
