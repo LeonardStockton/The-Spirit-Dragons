@@ -27,6 +27,7 @@ public class playerController : MonoBehaviour
     [SerializeField] List<gunStats> weaponList = new List<gunStats>();
     [SerializeField] float shootRate;
     [SerializeField] GameObject bull;
+    [SerializeField] GameObject barrel;
     [SerializeField] float bulletSpeed;
     [SerializeField] int shootDist;
     [SerializeField] int shootDamage;
@@ -80,6 +81,7 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         pushBack = Vector3.Lerp(pushBack, Vector3.zero, Time.deltaTime * pushbackResTime);
         StartCoroutine(throwGrenade());
         movement();
@@ -208,8 +210,8 @@ public class playerController : MonoBehaviour
     IEnumerator shoot()
     {
         isShooting = true;
-        GameObject bulletClone = Instantiate(bull, weaponModel.transform.position, bull.transform.rotation);
-        bulletClone.GetComponent<Rigidbody>().velocity = (transform.forward + new Vector3(Random.Range(-.3f, .3f), 0, Random.Range(-.3f, .3f))) * bulletSpeed;
+        GameObject bulletClone = Instantiate(bull, barrel.transform.position, bull.transform.rotation);
+        bulletClone.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
         aud.PlayOneShot(audGunShot[Random.Range(0, audGunShot.Length)], audGunVol);
         weaponAmmo--;
         if(weaponList[selectedWeapon].gunName.Contains("shotgun"))
@@ -267,18 +269,21 @@ public class playerController : MonoBehaviour
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
             weaponAmmo = shotgunAmmo;
+            barrel.transform.localPosition = new Vector3(1.326f, -1.029f, 6.418f);
         }
         if (weaponList[selectedWeapon].name.Contains("GS"))
         {
             Vector3 newPos = new Vector3(0.57f, -0.95f, 1.83f);
             weaponModel.transform.localPosition = newPos;
             weaponAmmo = pistolAmmo;
+            barrel.transform.localPosition = new Vector3(0.561f, -0.539f, 2.345f);
         }
         if (weaponList[selectedWeapon].name.Contains("Rifle"))
         {
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
             weaponAmmo = rifleAmmo;
+            barrel.transform.localPosition = new Vector3(1.311f, -0.878f, 6.714f);
         }
         UpdateGunUI(selectedWeapon, firstGunPickup);
         ++firstGunPickup;
@@ -338,18 +343,21 @@ public class playerController : MonoBehaviour
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
             weaponAmmo = shotgunAmmo;
+            barrel.transform.localPosition = new Vector3(1.326f, -1.029f, 6.418f);
         }
         if (weaponList[selectedWeapon].name.Contains("GS"))
         {
             Vector3 newPos = new Vector3(0.57f, -0.95f, 1.83f);
             weaponModel.transform.localPosition = newPos;
             weaponAmmo = pistolAmmo;
+            barrel.transform.localPosition = new Vector3(0.561f, -0.539f, 2.345f);
         }
         if (weaponList[selectedWeapon].name.Contains("Rifle"))
         {
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
             weaponAmmo = rifleAmmo;
+            barrel.transform.localPosition = new Vector3(1.311f, -0.878f, 6.714f);
         }
     }
     
