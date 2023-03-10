@@ -85,8 +85,7 @@ public class playerController : MonoBehaviour
         pushBack = Vector3.Lerp(pushBack, Vector3.zero, Time.deltaTime * pushbackResTime);
         StartCoroutine(throwGrenade());
         movement();
-        sprint();
-        Debug.Log(shotgunAmmo);
+        sprint();  
         selectFirearm();
         if (!isShooting && weaponList.Count > 0 && Input.GetButton("Shoot") && weaponAmmo > 0)
         {
@@ -211,7 +210,8 @@ public class playerController : MonoBehaviour
     {
         isShooting = true;
         GameObject bulletClone = Instantiate(bull, barrel.transform.position, bull.transform.rotation);
-        bulletClone.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
+        bulletClone.GetComponent<Rigidbody>().velocity = barrel.transform.forward * (bull.GetComponent<turBull>().getSpeed());
+        bulletClone.GetComponent<Rigidbody>().velocity = barrel.transform.forward * (bull.GetComponent<turBull>().getSpeed());
         aud.PlayOneShot(audGunShot[Random.Range(0, audGunShot.Length)], audGunVol);
         weaponAmmo--;
         if(weaponList[selectedWeapon].gunName.Contains("shotgun"))
@@ -226,7 +226,7 @@ public class playerController : MonoBehaviour
         {
             rifleAmmo--;
         }
-        RaycastHit hit;
+       /* RaycastHit hit;
         if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
         {
             Debug.Log(hit.collider.name);
@@ -235,7 +235,7 @@ public class playerController : MonoBehaviour
             {
                 hit.collider.GetComponent<IDamage>().takeDamage(shootDamage);
             }
-        }
+        }*/
         yield return new WaitForSeconds(shootRate);
         isShooting = false;
     }
@@ -246,7 +246,6 @@ public class playerController : MonoBehaviour
         shootRate = gunStats.shootRate;
         shootDist = gunStats.shootDist;
         shootDamage = gunStats.shootDamage;
-        Debug.Log(gunName);
         if(gunName.Contains("GS"))
         {
             pistolAmmo = pistolAmmo + gunStats.weaponAmmo;
@@ -347,6 +346,7 @@ public class playerController : MonoBehaviour
         }
         if (weaponList[selectedWeapon].name.Contains("GS"))
         {
+
             Vector3 newPos = new Vector3(0.57f, -0.95f, 1.83f);
             weaponModel.transform.localPosition = newPos;
             weaponAmmo = pistolAmmo;
