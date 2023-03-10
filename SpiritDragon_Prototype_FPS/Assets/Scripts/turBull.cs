@@ -22,19 +22,10 @@ public class turBull : MonoBehaviour
     }
     private void OnTriggerEnter(Collider obj)
     {
-        Debug.Log(obj);
         if (obj.CompareTag("Player"))
         {
             gameManager.instance.playerScript.takeDamage(bulletDmg);
         }
-        else if(obj.GetComponent<IDamage>() != null)
-        {
-            obj.GetComponent<IDamage>().takeDamage(bulletDmg);
-        }
         Destroy(gameObject);
-    }
-    public float getSpeed()
-    {
-        return speed;
     }
 }
