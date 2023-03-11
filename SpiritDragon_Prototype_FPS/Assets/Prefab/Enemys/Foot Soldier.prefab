@@ -959,6 +959,7 @@ MonoBehaviour:
   agent: {fileID: 7968600729379739277}
   anim: {fileID: 6980091678354216373}
   aud: {fileID: 799176818}
+  miniMapObj: {fileID: 2960055097501458922}
   headPos: {fileID: 1251636839061048668}
   HP: 6
   playerFaceSpeed: 15
@@ -967,10 +968,13 @@ MonoBehaviour:
   shootAngle: 25
   waitTime: 3
   roamDist: 5
+  bdyClnWait: 0
   shootPos: {fileID: 4952295259362529311}
   bullet: {fileID: 673867294353771614, guid: 6257b34b5c10aa745b6b0c34dc46cc0e, type: 3}
+  Gren: {fileID: 0}
+  explo: {fileID: 0}
   bulletSpeed: 25
-  fireRate: 0.75
+  fireRate: 0.5
   weaponCollider: {fileID: 0}
   bullVelY: 0
   audSteps:
@@ -988,6 +992,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7421a2d60e734ec4a9e5ab79cfee851e, type: 3}
   - {fileID: 8300000, guid: 827b7fdaf2b36484eb2f048f34034569, type: 3}
   audDmgVol: 0.5
+  Laser: {fileID: 0}
+  lsrFirePt: {fileID: 0}
+  lsrDmg: 0
   playerNRange: 0
 --- !u!136 &1525081116759325796
 CapsuleCollider:

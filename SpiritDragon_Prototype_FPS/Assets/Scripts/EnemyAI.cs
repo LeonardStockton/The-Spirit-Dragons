@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Animator anim;
     [SerializeField] AudioSource aud;
+    [SerializeField] GameObject miniMapObj;
 
     [Header("----- Stats -----")]
     [SerializeField] Transform headPos;
@@ -20,6 +21,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     [SerializeField] int shootAngle;
     [SerializeField] int waitTime;
     [SerializeField] int roamDist;
+    [SerializeField] int bdyClnWait;
 
     [Header("----- Gun -----")]
     [SerializeField] Transform shootPos;
@@ -153,6 +155,8 @@ public class EnemyAI : MonoBehaviour, IDamage
             gameManager.instance.updateGameGoal(-1);
             anim.SetBool("DED", true);
             agent.enabled = false;
+            StartCoroutine(deathCleanup());
+            miniMapObj.SetActive(false);
         }
         else
         {
@@ -244,6 +248,11 @@ public class EnemyAI : MonoBehaviour, IDamage
         aud.PlayOneShot(audSteps[Random.Range(0, audSteps.Length)], audStepsVol);
     }
 
+    IEnumerator deathCleanup()
+    {
+        yield return new WaitForSeconds(bdyClnWait);
+        Destroy(this);
+    }
 
 }
 

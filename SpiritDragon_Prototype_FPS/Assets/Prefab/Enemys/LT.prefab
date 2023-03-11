@@ -749,6 +749,7 @@ MonoBehaviour:
   agent: {fileID: 5866666021091860915}
   anim: {fileID: 8813750449775838068}
   aud: {fileID: 1143150648427177595}
+  miniMapObj: {fileID: 4173246534716113921}
   headPos: {fileID: 9122395562699119105}
   HP: 36
   playerFaceSpeed: 9
@@ -757,8 +758,11 @@ MonoBehaviour:
   shootAngle: 25
   waitTime: 5
   roamDist: 15
+  bdyClnWait: 0
   shootPos: {fileID: 3374809174905435391}
   bullet: {fileID: 7905007233913547341, guid: 394593e34beb4b544a83d0eaa7d1f862, type: 3}
+  Gren: {fileID: 0}
+  explo: {fileID: 0}
   bulletSpeed: 25
   fireRate: 1
   weaponCollider: {fileID: 0}
@@ -778,6 +782,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7421a2d60e734ec4a9e5ab79cfee851e, type: 3}
   - {fileID: 8300000, guid: 827b7fdaf2b36484eb2f048f34034569, type: 3}
   audDmgVol: 0.5
+  Laser: {fileID: 0}
+  lsrFirePt: {fileID: 0}
+  lsrDmg: 0
   playerNRange: 0
 --- !u!195 &5866666021091860915
 NavMeshAgent:
