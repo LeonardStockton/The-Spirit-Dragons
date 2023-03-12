@@ -190,6 +190,7 @@ public class playerController : MonoBehaviour
         if (weaponList[selectedWeapon].name.Contains("shotgun"))
         {
             shotgunAmmo += rounds;
+
         }
         if (weaponList[selectedWeapon].name.Contains("GS"))
         {
@@ -199,6 +200,7 @@ public class playerController : MonoBehaviour
         {
             rifleAmmo += rounds;
         }
+        UpdateGunUI(selectedWeapon);
     }
 
     public void grenPack(int nades)
@@ -206,12 +208,21 @@ public class playerController : MonoBehaviour
         Grenades += nades;
     }
 
+    IEnumerator recoil()
+    {
+        weaponModel.transform.localPosition = new Vector3(weaponModel.transform.localPosition.x, weaponModel.transform.localPosition.y, weaponModel.transform.localPosition.z - (float)(.05 * shootDamage));
+        weaponModel.transform.localRotation = Quaternion.Lerp(weaponModel.transform.localRotation, new Quaternion(0, 5, 0, (float)(20 * shootDamage)), shootRate/2);
+        yield return new WaitForSeconds(shootRate / 2);
+        weaponModel.transform.localPosition = new Vector3(weaponModel.transform.localPosition.x , weaponModel.transform.localPosition.y, weaponModel.transform.localPosition.z + (float)(.05 * shootDamage));
+        weaponModel.transform.localRotation = Quaternion.Lerp(weaponModel.transform.localRotation, new Quaternion(0, -5, 0, (float)(20 * shootDamage)), shootRate / 2);
+    }
     IEnumerator shoot()
     {
         isShooting = true;
         GameObject bulletClone = Instantiate(bull, barrel.transform.position, bull.transform.rotation);
         bulletClone.GetComponent<Rigidbody>().velocity = barrel.transform.forward * bulletSpeed;
         aud.PlayOneShot(audGunShot[Random.Range(0, audGunShot.Length)], audGunVol);
+        StartCoroutine(recoil());
         weaponAmmo--;
         if(weaponList[selectedWeapon].gunName.Contains("shotgun"))
         {
@@ -247,6 +258,7 @@ public class playerController : MonoBehaviour
         shootDamage = gunStats.shootDamage;
         if(gunName.Contains("GS"))
         {
+
             pistolAmmo = pistolAmmo + gunStats.weaponAmmo;
         }
         else if (gunName.Contains("shotgun"))
@@ -307,7 +319,7 @@ public class playerController : MonoBehaviour
             gameManager.instance.CurrentGunImageShotgun.enabled = false;
             gameManager.instance.CurrentGunImageAssaultRifle.enabled = true;
         }
-
+        gameManager.instance.ammoDisplay.text = weaponAmmo.ToString(); 
 
     }
 
