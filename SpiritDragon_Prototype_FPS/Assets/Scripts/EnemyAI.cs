@@ -65,6 +65,7 @@ public class EnemyAI : MonoBehaviour, IDamage
         orgColor = model.material.color;
         if (this.CompareTag("Boss"))
         {
+            gameManager.instance.updateGameGoal(1);
             Laser.GetComponent<LineRenderer>().enabled = false;
         }
     }
