@@ -25,6 +25,7 @@ public class PlayerBull : MonoBehaviour
         if (obj.GetComponent<IDamage>() != null)
         {
             obj.GetComponent<IDamage>().takeDamage(bulletDmg);
+            Destroy(gameObject);
         }
         Destroy(gameObject);
     }

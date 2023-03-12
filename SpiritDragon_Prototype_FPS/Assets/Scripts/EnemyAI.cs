@@ -68,6 +68,7 @@ public class EnemyAI : MonoBehaviour, IDamage
             gameManager.instance.updateGameGoal(1);
             Laser.GetComponent<LineRenderer>().enabled = false;
         }
+        this.GetComponentInChildren<SphereCollider>().gameObject.layer = 3;
     }
 
     // Update is called once per frame

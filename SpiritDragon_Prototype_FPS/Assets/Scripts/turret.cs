@@ -40,6 +40,7 @@ public class turret : MonoBehaviour, IDamage
     void Start()
     {
        basic = model.material.color;
+        this.GetComponentInChildren<SphereCollider>().gameObject.layer = 3;
     }
 
     // Update is called once per frame
@@ -106,6 +107,7 @@ public class turret : MonoBehaviour, IDamage
             yield return new WaitForSeconds(fireRate / barrelNum);
         }
         Shooting = false;
+
     }
 
     public void OnTriggerEnter(Collider obj)

@@ -373,12 +373,12 @@ GameObject:
   - component: {fileID: 4893680097139450578}
   - component: {fileID: 4893680097139450582}
   - component: {fileID: 4893680097139450583}
-  - component: {fileID: 4893680097139450580}
   - component: {fileID: 4893680097139450581}
   - component: {fileID: 4893680097139450600}
   - component: {fileID: 4893680097139450601}
   - component: {fileID: 1092526036}
   - component: {fileID: 2097994632}
+  - component: {fileID: 2437948369665067824}
   m_Layer: 6
   m_Name: Sphere
   m_TagString: Enemy
@@ -455,19 +455,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &4893680097139450580
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4893680097139450579}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4893680097139450581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,7 +536,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.5959892
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -645,7 +632,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.58792496
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -721,6 +708,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &2437948369665067824
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4893680097139450579}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.78
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.0000019073486, y: 0.0000009536743, z: -0.0000009536743}
 --- !u!1 &4893680097387427840
 GameObject:
   m_ObjectHideFlags: 0
