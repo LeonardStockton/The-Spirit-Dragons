@@ -253,7 +253,8 @@ public class EnemyAI : MonoBehaviour, IDamage
     IEnumerator deathCleanup()
     {
         yield return new WaitForSeconds(bdyClnWait);
-        Destroy(this);
+        this.GetComponentInChildren<MeshRenderer>().enabled = false;
+        model.enabled = false;
     }
 
 }

@@ -968,7 +968,7 @@ MonoBehaviour:
   shootAngle: 25
   waitTime: 3
   roamDist: 5
-  bdyClnWait: 0
+  bdyClnWait: 30
   shootPos: {fileID: 4952295259362529311}
   bullet: {fileID: 673867294353771614, guid: 6257b34b5c10aa745b6b0c34dc46cc0e, type: 3}
   Gren: {fileID: 0}
