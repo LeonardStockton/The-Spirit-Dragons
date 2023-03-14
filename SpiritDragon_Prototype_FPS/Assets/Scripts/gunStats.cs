@@ -10,7 +10,7 @@ public class gunStats : ScriptableObject
     public float shootRate;
     public string gunName;
     public int shootDist;
-    public int shootDamage;
+    public float shootDamage;
     public int weaponAmmo;
     public GameObject weaponSkin;
 

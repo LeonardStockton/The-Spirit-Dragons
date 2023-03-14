@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor.Animations;
+
 public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
@@ -34,6 +36,7 @@ public class gameManager : MonoBehaviour
     public TextMeshProUGUI enemiesRemainingText;
     public TextMeshProUGUI ammoDisplay;
     public TextMeshProUGUI grenDisplay;
+    public GameObject gameMenu;
     
 
     [Header("----- Game Resource -----")]
@@ -46,6 +49,7 @@ public class gameManager : MonoBehaviour
     /*---------------------------------------------------------------------------------*/
     public bool isPaused;
     public float Volume;
+    public float GameDifficultyValue;
 
     void Awake()
     {
@@ -54,6 +58,7 @@ public class gameManager : MonoBehaviour
         playerScript = player.GetComponent<playerController>();
         sceneLoader = GameObject.FindGameObjectWithTag("LvlLoad");
         loaderScript = sceneLoader.GetComponent<levelLoader>();
+
     }
 
     // Update is called once per frame

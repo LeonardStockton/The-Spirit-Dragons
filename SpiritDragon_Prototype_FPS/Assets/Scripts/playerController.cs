@@ -31,7 +31,7 @@ public class playerController : MonoBehaviour
     [SerializeField] ParticleSystem impactEffect;
     [SerializeField] TrailRenderer bullTrail;
     [SerializeField] int shootDist;
-    [SerializeField] int shootDamage;
+    [SerializeField] float shootDamage;
     [SerializeField] float weaponZoomMax;
     [SerializeField] GameObject weaponModel;
     [SerializeField] public int weaponAmmo;
@@ -69,6 +69,9 @@ public class playerController : MonoBehaviour
     public bool isSprinting;
     bool isPlayingSteps;
     int firstGunPickup = 0;
+    public float enemyMultiplyer;
+    public float enemyDefaultValue=1;
+
 
 
     // Start is called before the first frame update
@@ -243,7 +246,7 @@ public class playerController : MonoBehaviour
 
             if (hit.collider.GetComponent<IDamage>() != null)
             {
-                hit.collider.GetComponent<IDamage>().takeDamage(shootDamage);
+                hit.collider.GetComponent<IDamage>().takeDamage((int)shootDamage);
             }
         }
         yield return new WaitForSeconds(shootRate);
@@ -271,10 +274,9 @@ public class playerController : MonoBehaviour
         weaponList.Add(gunStats);
         shootRate = gunStats.shootRate;
         shootDist = gunStats.shootDist;
-        shootDamage = gunStats.shootDamage;
+        shootDamage = (gunStats.shootDamage * gameManager.instance.GameDifficultyValue);
         if(gunName.Contains("GS"))
         {
-
             pistolAmmo = pistolAmmo + gunStats.weaponAmmo;
         }
         else if (gunName.Contains("shotgun"))

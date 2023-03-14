@@ -23,7 +23,10 @@ public class buttonFunctions : MonoBehaviour
         gameManager.instance.unPause();
         gameManager.instance.playerScript.Spawner();
     }
-
+    public void Easy()
+    {
+        gameManager.instance.playerScript.enemyMultiplyer = 2;
+    }
     public void quit()
     {
         Application.Quit();

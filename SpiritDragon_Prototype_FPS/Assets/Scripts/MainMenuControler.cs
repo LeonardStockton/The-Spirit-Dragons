@@ -5,9 +5,12 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using Unity.VisualScripting;
+using System;
 
 public class MainMenuControler : MonoBehaviour
 {
+    public static MainMenuControler instance;
+
     [Header("~~~~~~Audio settings~~~~~")]
     [SerializeField] private TMP_Text volumeTextValue = null;
     [SerializeField] private Slider volumeSlider = null;
@@ -36,6 +39,9 @@ public class MainMenuControler : MonoBehaviour
     public string _newGameLevel;
     private string levelToLoad;
     [SerializeField] private GameObject noSaveFile = null;
+    public float [] enemyDifficulty;
+    public TMP_Dropdown gameDifficulty;
+
 
     [Header("Resolutions Settings")]
     public TMP_Dropdown resolutionDropdown;
@@ -47,7 +53,6 @@ public class MainMenuControler : MonoBehaviour
 
     [Header("~~confermation~~")]
     [SerializeField] private GameObject confermationPrompt = null;
-
 
     // Start is called before the first frame update
     void Start()
@@ -76,6 +81,14 @@ public class MainMenuControler : MonoBehaviour
     {
 
     }
+    public void GameDif()
+    {
+        if (gameDifficulty.value == 0) { enemyDifficulty[0] = gameManager.instance.GameDifficultyValue = 2f; }
+        else if (gameDifficulty.value == 1) { enemyDifficulty[1] = gameManager.instance.GameDifficultyValue = 1f; }
+        else if(gameDifficulty.value == 2) { enemyDifficulty[2] = gameManager.instance.GameDifficultyValue= 0.5f; }
+        else { enemyDifficulty[3] = gameManager.instance.GameDifficultyValue = 0.25f; }
+    }
+   
     public void NewGameDialog()
     {
         SceneManager.LoadScene(_newGameLevel);
@@ -105,11 +118,11 @@ public class MainMenuControler : MonoBehaviour
         volumeTextValue.text = volume.ToString("0.0");
         AudioListener.volume = _SFXVolume;
         volumeSFXTextValue.text = _SFXVolume.ToString("0.0");
-        if (volume == AudioListener.volume ++)
+        if (volume == AudioListener.volume ++||_SFXVolume == AudioListener.volume++)
         {
             volumeAudioSource.PlayOneShot(volumeAudioClip);
         }
-        if (_SFXVolume == AudioListener.volume++)
+        if (_SFXVolume == AudioListener.volume--||_SFXVolume == AudioListener.volume--)
         {
             volumeAudioSource.PlayOneShot(volumeAudioClip);
         }
