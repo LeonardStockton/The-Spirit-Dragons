@@ -53,6 +53,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     float stoppingDistanceOrig;
     float speedOrg;
     Color orgColor;
+    int shootLsr;
 
     // Start is called before the first frame update
     void Start()
@@ -68,7 +69,6 @@ public class EnemyAI : MonoBehaviour, IDamage
             gameManager.instance.updateGameGoal(1);
             Laser.GetComponent<LineRenderer>().enabled = false;
         }
-        this.GetComponentInChildren<SphereCollider>().gameObject.layer = 3;
     }
 
     // Update is called once per frame
@@ -199,6 +199,13 @@ public class EnemyAI : MonoBehaviour, IDamage
         }
         yield return new WaitForSeconds(fireRate * 2);
         isShooting = false;
+        shootLsr = Random.Range(1, 5);
+        if(shootLsr == 2)
+        {
+            agent.SetDestination(transform.position);
+            anim.SetTrigger("Laser");
+        }
+
     }
 
     public void createBullet()
@@ -217,7 +224,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     IEnumerator shootLaser()
     {
         Laser.GetComponent<LineRenderer>().enabled = true; 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.2f);
         Laser.GetComponent<LineRenderer>().enabled = false;
     }
     public void agentStop()
