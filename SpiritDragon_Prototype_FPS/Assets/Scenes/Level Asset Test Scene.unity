@@ -28194,6 +28194,10 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1295468908301846576, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
+      propertyPath: bullTrail
+      value: 
+      objectReference: {fileID: 8252676843787283548, guid: 6257b34b5c10aa745b6b0c34dc46cc0e, type: 3}
+    - target: {fileID: 1295468908301846576, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
       propertyPath: bulletSpeed
       value: 5
       objectReference: {fileID: 0}
@@ -28201,6 +28205,10 @@ PrefabInstance:
       propertyPath: gunAnimator
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1295468908301846576, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
+      propertyPath: impactEffect
+      value: 
+      objectReference: {fileID: 448555418424459825, guid: 5c8ddd874f4ddef42b9ca91f4c54b1df, type: 3}
     - target: {fileID: 1295468908301846578, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
       propertyPath: m_Name
       value: Player Avatar

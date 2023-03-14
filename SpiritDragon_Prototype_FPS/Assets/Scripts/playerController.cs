@@ -26,9 +26,10 @@ public class playerController : MonoBehaviour
     [Header("~~~~~~~Gun Stats~~~~~~~~")]
     [SerializeField] List<gunStats> weaponList = new List<gunStats>();
     [SerializeField] float shootRate;
-    [SerializeField] GameObject bull;
     [SerializeField] GameObject barrel;
-    [SerializeField] float bulletSpeed;
+    [SerializeField] ParticleSystem shootEffect;
+    [SerializeField] ParticleSystem impactEffect;
+    [SerializeField] TrailRenderer bullTrail;
     [SerializeField] int shootDist;
     [SerializeField] int shootDamage;
     [SerializeField] float weaponZoomMax;
@@ -219,8 +220,6 @@ public class playerController : MonoBehaviour
     IEnumerator shoot()
     {
         isShooting = true;
-        GameObject bulletClone = Instantiate(bull, barrel.transform.position, bull.transform.rotation);
-        bulletClone.GetComponent<Rigidbody>().velocity = barrel.transform.forward * bulletSpeed;
         aud.PlayOneShot(audGunShot[Random.Range(0, audGunShot.Length)], audGunVol);
         StartCoroutine(recoil());
         weaponAmmo--;
@@ -236,9 +235,10 @@ public class playerController : MonoBehaviour
         {
             rifleAmmo--;
         }
-        RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
+        if (Physics.Raycast(barrel.transform.position, barrel.transform.forward, out RaycastHit hit, shootDist))
         {
+            TrailRenderer trail = Instantiate(bullTrail, barrel.transform.position, Quaternion.identity);
+            StartCoroutine(SpawnTrail(trail, hit));
             Debug.Log(hit.collider.name);
 
             if (hit.collider.GetComponent<IDamage>() != null)
@@ -249,7 +249,23 @@ public class playerController : MonoBehaviour
         yield return new WaitForSeconds(shootRate);
         isShooting = false;
     }
-   
+   public IEnumerator SpawnTrail(TrailRenderer trail, RaycastHit hit)
+    {
+        float time = 0;
+        Vector3 startPos = trail.transform.position;
+
+        while(time < 1)
+        {
+            trail.transform.position = Vector3.Lerp(startPos, hit.point, time);
+            time += Time.deltaTime / trail.time;
+
+            yield return null;
+        }
+        trail.transform.position = hit.point;
+        Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+
+        Destroy(trail.gameObject, trail.time);
+    }
     public void gunPick(gunStats gunStats, string gunName)
     {
         weaponList.Add(gunStats);
