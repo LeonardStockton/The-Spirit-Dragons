@@ -180,6 +180,10 @@ public class playerController : MonoBehaviour
     public void healthPack(int heals)
     {
         HP += heals;
+        if (HP > HPorg)
+        {
+            HP = HPorg;
+        }
         stolenHealth();
     }
     IEnumerator youBeenShoot()
@@ -242,7 +246,7 @@ public class playerController : MonoBehaviour
         {
             TrailRenderer trail = Instantiate(bullTrail, barrel.transform.position, Quaternion.identity);
             StartCoroutine(SpawnTrail(trail, hit));
-            Debug.Log(hit.collider.name);
+            
 
             if (hit.collider.GetComponent<IDamage>() != null)
             {

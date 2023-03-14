@@ -197,6 +197,10 @@ public class EnemyAI : MonoBehaviour, IDamage
             Destroy(grenClone, 1);
             anim.SetTrigger("Shoot");
         }
+        if(this.CompareTag("Boss"))
+        {
+            createBullet();
+        }
         yield return new WaitForSeconds(fireRate * 2);
         isShooting = false;
         shootLsr = Random.Range(1, 5);
@@ -210,22 +214,32 @@ public class EnemyAI : MonoBehaviour, IDamage
 
     public void createBullet()
     {
-        if (this.CompareTag("Boss"))
-        {
-            //GameObject lrclne = Instantiate(Laser, lsrFirePt.position, Laser.transform.rotation);
-            StartCoroutine(shootLaser());
-        }else
         {
             GameObject bulletClone = Instantiate(bullet, shootPos.position, bullet.transform.rotation);
             bulletClone.GetComponent<Rigidbody>().velocity = (playerDir + new Vector3(Random.Range(-.3f, .3f), 0, Random.Range(-.3f, .3f))) * bulletSpeed;
         }
     }
 
-    IEnumerator shootLaser()
+    public void Beam()
     {
-        Laser.GetComponent<LineRenderer>().enabled = true; 
-        yield return new WaitForSeconds(.2f);
+        StartCoroutine(laserbeam());
+        agent.SetDestination(transform.position);
+    }
+
+    IEnumerator laserbeam()
+    {
+        Laser.GetComponent<LineRenderer>().enabled = true;
+        agent.SetDestination(transform.position);
+        if (Physics.Raycast(lsrFirePt.transform.position, lsrFirePt.transform.forward, out RaycastHit hit))
+        {
+            LineRenderer shwnLsr = Instantiate(Laser.GetComponent<LineRenderer>(), lsrFirePt.transform.position, Quaternion.identity);
+            shwnLsr.gameObject.layer = 7;
+            shwnLsr.SetPosition(0, lsrFirePt.localPosition);
+            shwnLsr.SetPosition(1, hit.point);
+        }
+        yield return new WaitForSeconds(.5f);
         Laser.GetComponent<LineRenderer>().enabled = false;
+        agent.SetDestination(gameManager.instance.player.transform.position);
     }
     public void agentStop()
     {

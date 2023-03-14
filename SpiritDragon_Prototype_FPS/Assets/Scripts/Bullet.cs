@@ -15,6 +15,7 @@ public class Bullet : MonoBehaviour
 
    private void OnTriggerEnter(Collider obj)
     {
+        Debug.Log(obj);
         if(obj.CompareTag("Player"))
         {
             gameManager.instance.playerScript.takeDamage(bulletDmg);

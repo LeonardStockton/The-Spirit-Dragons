@@ -970,7 +970,7 @@ MonoBehaviour:
   roamDist: 5
   bdyClnWait: 30
   shootPos: {fileID: 4952295259362529311}
-  bullet: {fileID: 673867294353771614, guid: 6257b34b5c10aa745b6b0c34dc46cc0e, type: 3}
+  bullet: {fileID: 7905007233913547341, guid: 394593e34beb4b544a83d0eaa7d1f862, type: 3}
   Gren: {fileID: 0}
   explo: {fileID: 0}
   bulletSpeed: 25
