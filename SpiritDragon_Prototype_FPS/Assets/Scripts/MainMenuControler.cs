@@ -110,22 +110,22 @@ public class MainMenuControler : MonoBehaviour
         {
             if (enemyDifficulty[i] == 0)
             {
-                gameManager.instance.GameDifficultyValue = enemyDifficulty[i];
+                enemyDifficulty[i] = gameDifficulty.value;
                 PlayerPrefs.SetInt("Game Difficulty", i);
             }
             if (enemyDifficulty[i] == 1)
             {
-                gameManager.instance.GameDifficultyValue= enemyDifficulty[i]; 
+                enemyDifficulty[i] = gameDifficulty.value;
                 PlayerPrefs.SetInt("Game Difficulty", i);
             }
             if (enemyDifficulty[i] == 2) 
             {
-                gameManager.instance.GameDifficultyValue = enemyDifficulty[i];
+                enemyDifficulty[i] = gameDifficulty.value;
                 PlayerPrefs.SetInt("Game Difficulty", i);
             }
             if (enemyDifficulty[i] == 3) 
             {
-                gameManager.instance.GameDifficultyValue = enemyDifficulty[i];
+                enemyDifficulty[i] = gameDifficulty.value;
                 PlayerPrefs.SetInt("Game Difficulty", i);
             }
         }

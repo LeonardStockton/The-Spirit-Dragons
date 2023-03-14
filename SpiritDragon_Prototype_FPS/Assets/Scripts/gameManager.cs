@@ -58,7 +58,7 @@ public class gameManager : MonoBehaviour
         playerScript = player.GetComponent<playerController>();
         sceneLoader = GameObject.FindGameObjectWithTag("LvlLoad");
         loaderScript = sceneLoader.GetComponent<levelLoader>();
-
+        GameDifficultyValue=MainMenuControler.instance.gameDifficulty.value;
     }
 
     // Update is called once per frame
