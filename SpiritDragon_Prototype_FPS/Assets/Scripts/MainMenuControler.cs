@@ -54,6 +54,8 @@ public class MainMenuControler : MonoBehaviour
     [Header("~~confermation~~")]
     [SerializeField] private GameObject confermationPrompt = null;
 
+    public bool isDifficult = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,10 +85,50 @@ public class MainMenuControler : MonoBehaviour
     }
     public void GameDif()
     {
-        if (gameDifficulty.value == 0) { enemyDifficulty[0] = gameManager.instance.GameDifficultyValue = 2f; }
-        else if (gameDifficulty.value == 1) { enemyDifficulty[1] = gameManager.instance.GameDifficultyValue = 1f; }
-        else if(gameDifficulty.value == 2) { enemyDifficulty[2] = gameManager.instance.GameDifficultyValue= 0.5f; }
-        else { enemyDifficulty[3] = gameManager.instance.GameDifficultyValue = 0.25f; }
+        enemyDifficulty = new float[4]; 
+        if (gameDifficulty.value == 0 ) 
+        {
+            isDifficult = true;
+            enemyDifficulty[1] = 2f;
+        }
+        else if (gameDifficulty.value == 1) 
+        { 
+            enemyDifficulty[1] =  1f; 
+        }
+        else if(gameDifficulty.value == 2) 
+        { 
+            enemyDifficulty[2] =  0.5f;
+        }
+        else
+        { 
+            enemyDifficulty[3] =  0.25f;
+        }
+    }
+    public void GameDifApply()
+    {
+        for (int i = 0; i < enemyDifficulty.Length; i++)
+        {
+            if (enemyDifficulty[i] == 0)
+            {
+                gameManager.instance.GameDifficultyValue = enemyDifficulty[i];
+                PlayerPrefs.SetInt("Game Difficulty", i);
+            }
+            if (enemyDifficulty[i] == 1)
+            {
+                gameManager.instance.GameDifficultyValue= enemyDifficulty[i]; 
+                PlayerPrefs.SetInt("Game Difficulty", i);
+            }
+            if (enemyDifficulty[i] == 2) 
+            {
+                gameManager.instance.GameDifficultyValue = enemyDifficulty[i];
+                PlayerPrefs.SetInt("Game Difficulty", i);
+            }
+            if (enemyDifficulty[i] == 3) 
+            {
+                gameManager.instance.GameDifficultyValue = enemyDifficulty[i];
+                PlayerPrefs.SetInt("Game Difficulty", i);
+            }
+        }
     }
    
     public void NewGameDialog()
@@ -137,7 +179,6 @@ public class MainMenuControler : MonoBehaviour
         //show prompt 
         StartCoroutine(ConfermationBox());
     }
-
     public void SetControllerSenstivity(float sensitivity)
     {
         mainControllerSens = Mathf.RoundToInt(sensitivity);
