@@ -160,7 +160,11 @@ public class EnemyAI : MonoBehaviour, IDamage
             agent.enabled = false;
             StartCoroutine(deathCleanup());
             miniMapObj.SetActive(false);
-            gameManager.instance.bossAlive = false;
+            if (this.CompareTag("Boss"))
+            {
+
+                gameManager.instance.bossAlive = false;
+            }
         }
         else
         {

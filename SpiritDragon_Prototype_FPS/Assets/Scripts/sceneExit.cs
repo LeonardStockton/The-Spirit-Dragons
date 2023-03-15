@@ -8,7 +8,11 @@ public class sceneExit : MonoBehaviour
     public string sceneToLoad;
     private void OnTriggerEnter(Collider other)
     {
-        if (gameManager.instance.GoalComplete == true)
+        //if (gameManager.instance.GoalComplete == true)
+        //{
+
+        //}
+        if (other.CompareTag("Player"))
         {
             SceneManager.LoadScene(sceneToLoad);
 
