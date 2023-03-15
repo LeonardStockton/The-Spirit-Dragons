@@ -2,17 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mucisChange : MonoBehaviour
+public class musicChange : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public AudioClip nextMusic;
+    public AudioClip currentMusic;
+
+   
+
+    // Update is called once per frame
     void Start()
     {
         
+        GetComponent<AudioSource>().clip = currentMusic;
+        GetComponent<AudioSource>().Play();
+
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            
+            GetComponent<AudioSource>().clip = nextMusic;
+            GetComponent<AudioSource>().Play();
+            
+        }
     }
+
+
+    public void BossAlive()
+    {
+        if (gameManager.instance.bossAlive == false)
+        {
+            GetComponent<AudioSource>().clip = currentMusic;
+            GetComponent<AudioSource>().Play();
+        }
+    }
+    
 }

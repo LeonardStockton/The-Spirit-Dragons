@@ -45,11 +45,13 @@ public class gameManager : MonoBehaviour
 
     [Header("----- Game Goals -----")]
     public int enemiesRemaining;
+    public bool bossAlive;
 
     /*---------------------------------------------------------------------------------*/
     public bool isPaused;
     public float Volume;
     public float GameDifficultyValue;
+    
 
     void Awake()
     {

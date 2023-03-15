@@ -68,6 +68,7 @@ public class EnemyAI : MonoBehaviour, IDamage
         {
             gameManager.instance.updateGameGoal(1);
             Laser.GetComponent<LineRenderer>().enabled = false;
+            gameManager.instance.bossAlive = true;
         }
     }
 
@@ -159,6 +160,7 @@ public class EnemyAI : MonoBehaviour, IDamage
             agent.enabled = false;
             StartCoroutine(deathCleanup());
             miniMapObj.SetActive(false);
+            gameManager.instance.bossAlive = false;
         }
         else
         {
