@@ -165,7 +165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 071ac3c8622d0c94bb9a1411e91dbf6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoCount: 50
+  pistolAmmo: 50
+  rifleAmmo: 10
+  shotgunAmmo: 20
 --- !u!135 &2168727404727531221
 SphereCollider:
   m_ObjectHideFlags: 0
