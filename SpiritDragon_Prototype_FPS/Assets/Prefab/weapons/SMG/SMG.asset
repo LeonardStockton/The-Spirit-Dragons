@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3992271a9721e42bbbf07301c7a3c9, type: 3}
   m_Name: SMG
   m_EditorClassIdentifier: 
-  shootRate: 0.05
+  shootRate: 0.1
   gunName: uzi SMG
   shootDist: 10
   shootDamage: 5
   weaponAmmo: 30
-  weaponSkin: {fileID: 2924319151539297037, guid: 5b67568c52760484a8e7440fc6e9efb7, type: 3}
+  weaponSkin: {fileID: 5477959659041245615, guid: f68345958522cd946ac1ccd0d8da60be, type: 3}

@@ -6,6 +6,8 @@ public class ammoPickup : MonoBehaviour
 {
     public int pistolAmmo;
     public int rifleAmmo;
+    public int sniperAmmo;
+    public int submachineAmmo;
     public int shotgunAmmo;
     // Start is called before the first frame update
     void Start()
@@ -25,7 +27,7 @@ public class ammoPickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             StartCoroutine(ammo());
-            other.GetComponent<playerController>().ammoPack(pistolAmmo, shotgunAmmo, rifleAmmo);
+            other.GetComponent<playerController>().ammoPack(pistolAmmo, shotgunAmmo, rifleAmmo, sniperAmmo, submachineAmmo);
         }
 
     }

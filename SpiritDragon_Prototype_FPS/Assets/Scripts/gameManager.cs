@@ -64,7 +64,6 @@ public class gameManager : MonoBehaviour
         {
             GameDifficultyValue = MainMenuControler.instance.gameDifficulty.value;
         }
-        
     }
 
     // Update is called once per frame

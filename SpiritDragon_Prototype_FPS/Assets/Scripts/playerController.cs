@@ -64,6 +64,8 @@ public class playerController : MonoBehaviour
     int selectedWeapon;
     public int rifleAmmo;
     public int shotgunAmmo;
+    public int sniperAmmo;
+    public int submachineAmmo;
     public int pistolAmmo;
     public bool isShooting;
     public bool isSprinting;
@@ -193,13 +195,15 @@ public class playerController : MonoBehaviour
         gameManager.instance.playerDamageFlashScreen.SetActive(false);
     }
 
-    public void ammoPack(int pis, int shot, int rif)
+    public void ammoPack(int pis, int shot, int rif, int smg, int snp)
     {
             shotgunAmmo += shot;  
             pistolAmmo += pis;
             rifleAmmo += rif;
-       
-        UpdateGunUI(selectedWeapon);
+            sniperAmmo += snp;
+            submachineAmmo += smg;
+
+    UpdateGunUI(selectedWeapon);
     }
 
     public void grenPack(int nades)

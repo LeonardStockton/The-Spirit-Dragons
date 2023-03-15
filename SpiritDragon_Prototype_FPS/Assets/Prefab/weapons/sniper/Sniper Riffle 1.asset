@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3992271a9721e42bbbf07301c7a3c9, type: 3}
   m_Name: Sniper Riffle 1
   m_EditorClassIdentifier: 
-  shootRate: 10
+  shootRate: 2
   gunName: garand sniper
   shootDist: 100
   shootDamage: 45

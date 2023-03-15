@@ -27207,14 +27207,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1295468908301846576, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
-      propertyPath: HP
-      value: 99
-      objectReference: {fileID: 0}
-    - target: {fileID: 1295468908301846576, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
-      propertyPath: shootEffect
-      value: 
-      objectReference: {fileID: 2661794688658211060, guid: 95a68250b5394a84ea60a4874dec51ec, type: 3}
     - target: {fileID: 1295468908301846578, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
       propertyPath: m_Name
       value: Player Avatar
@@ -28715,6 +28707,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pistolAmmo: 50
   rifleAmmo: 10
+  sniperAmmo: 0
+  submachineAmmo: 0
   shotgunAmmo: 20
 --- !u!4 &1774389500
 Transform:
@@ -34091,18 +34085,6 @@ PrefabInstance:
       value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2168727404727531176, guid: 5592e0bd68f60c34ba42a671d311f141, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.35477
-      objectReference: {fileID: 0}
-    - target: {fileID: 2168727404727531176, guid: 5592e0bd68f60c34ba42a671d311f141, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.35477
-      objectReference: {fileID: 0}
-    - target: {fileID: 2168727404727531176, guid: 5592e0bd68f60c34ba42a671d311f141, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.35477
-      objectReference: {fileID: 0}
-    - target: {fileID: 2168727404727531176, guid: 5592e0bd68f60c34ba42a671d311f141, type: 3}
       propertyPath: m_LocalPosition.x
       value: -34.417
       objectReference: {fileID: 0}
@@ -34141,10 +34123,6 @@ PrefabInstance:
     - target: {fileID: 2168727404727531176, guid: 5592e0bd68f60c34ba42a671d311f141, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2168727404727531177, guid: 5592e0bd68f60c34ba42a671d311f141, type: 3}
-      propertyPath: ammoCount
-      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2168727404727531220, guid: 5592e0bd68f60c34ba42a671d311f141, type: 3}
       propertyPath: m_Name

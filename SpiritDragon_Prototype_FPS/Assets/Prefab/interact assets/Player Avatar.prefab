@@ -380,7 +380,7 @@ MonoBehaviour:
   aud: {fileID: 485184036}
   playerSpeed: 3
   playerSprintSpeed: 1.5
-  HP: 100
+  HP: 99
   jumpTimes: 1
   jumpSpeed: 14
   gravity: 40
@@ -388,7 +388,7 @@ MonoBehaviour:
   weaponList: []
   shootRate: 0
   barrel: {fileID: 121786933}
-  shootEffect: {fileID: 0}
+  shootEffect: {fileID: 2661794688658211060, guid: 95a68250b5394a84ea60a4874dec51ec, type: 3}
   impactEffect: {fileID: 448555418424459825, guid: 5c8ddd874f4ddef42b9ca91f4c54b1df, type: 3}
   bullTrail: {fileID: 8252676843787283548, guid: 6257b34b5c10aa745b6b0c34dc46cc0e, type: 3}
   shootDist: 0
