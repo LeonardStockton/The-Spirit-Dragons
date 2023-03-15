@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: RevolversGS
   m_EditorClassIdentifier: 
   shootRate: 1
+  gunName: 6-Shooter pistol
   shootDist: 6
   shootDamage: 2
   weaponAmmo: 6
   weaponSkin: {fileID: 0}
-  weaponFireAud: {fileID: 0}

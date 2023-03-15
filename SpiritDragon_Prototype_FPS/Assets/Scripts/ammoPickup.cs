@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ammoPickup : MonoBehaviour
 {
-    public int ammoCount;
+    public int pistolAmmo;
+    public int rifleAmmo;
+    public int shotgunAmmo;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,7 @@ public class ammoPickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             StartCoroutine(ammo());
-            other.GetComponent<playerController>().ammoPack(ammoCount);
+            other.GetComponent<playerController>().ammoPack(pistolAmmo, shotgunAmmo, rifleAmmo);
         }
 
     }

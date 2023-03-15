@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Pump shot
   m_EditorClassIdentifier: 
   shootRate: 1
+  gunName: pump shotgun
   shootDist: 3
   shootDamage: 25
   weaponAmmo: 5
   weaponSkin: {fileID: 6841800412722713060, guid: a17b9c50427aa5b47a3243822251c527, type: 3}
-  weaponFireAud: {fileID: 0}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: G 19 GS
   m_EditorClassIdentifier: 
   shootRate: 0.75
-  gunName: G 19 GS
+  gunName: G 19 GS pistol
   shootDist: 45
   shootDamage: 5
   weaponAmmo: 15

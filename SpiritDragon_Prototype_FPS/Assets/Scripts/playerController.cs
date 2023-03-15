@@ -89,7 +89,7 @@ public class playerController : MonoBehaviour
         pushBack = Vector3.Lerp(pushBack, Vector3.zero, Time.deltaTime * pushbackResTime);
         StartCoroutine(throwGrenade());
         movement();
-        sprint();    
+        sprint();
         selectFirearm();
         if (!isShooting && weaponList.Count > 0 && Input.GetButton("Shoot") && weaponAmmo > 0)
         {
@@ -193,21 +193,12 @@ public class playerController : MonoBehaviour
         gameManager.instance.playerDamageFlashScreen.SetActive(false);
     }
 
-    public void ammoPack(int rounds)
+    public void ammoPack(int pis, int shot, int rif)
     {
-        if (weaponList[selectedWeapon].name.Contains("shotgun"))
-        {
-            shotgunAmmo += rounds;
-
-        }
-        if (weaponList[selectedWeapon].name.Contains("GS"))
-        {
-            pistolAmmo += rounds;
-        }
-        if (weaponList[selectedWeapon].name.Contains("rifle"))
-        {
-            rifleAmmo += rounds;
-        }
+            shotgunAmmo += shot;  
+            pistolAmmo += pis;
+            rifleAmmo += rif;
+       
         UpdateGunUI(selectedWeapon);
     }
 
@@ -229,16 +220,18 @@ public class playerController : MonoBehaviour
         isShooting = true;
         aud.PlayOneShot(audGunShot[Random.Range(0, audGunShot.Length)], audGunVol);
         StartCoroutine(recoil());
+        Instantiate(shootEffect, barrel.transform.position, Quaternion.LookRotation(barrel.transform.forward));
         weaponAmmo--;
-        if(weaponList[selectedWeapon].gunName.Contains("shotgun"))
-        {
-            shotgunAmmo--;
-        }
-        if (weaponList[selectedWeapon].gunName.Contains("pistol"))
+        Debug.Log(weaponList[selectedWeapon].gunName);
+       if (weaponList[selectedWeapon].gunName.Contains("pistol"))
         {
             pistolAmmo--;
         }
-        if (weaponList[selectedWeapon].gunName.Contains("rifle"))
+        else if (weaponList[selectedWeapon].gunName.Contains("shotgun"))
+        {
+            shotgunAmmo--;
+        }
+        else if (weaponList[selectedWeapon].gunName.Contains("rifle"))
         {
             rifleAmmo--;
         }
@@ -279,7 +272,7 @@ public class playerController : MonoBehaviour
         shootRate = gunStats.shootRate;
         shootDist = gunStats.shootDist;
         shootDamage = (gunStats.shootDamage * gameManager.instance.GameDifficultyValue);
-        if(gunName.Contains("GS"))
+        if(gunName.Contains("pistol"))
         {
             pistolAmmo = pistolAmmo + gunStats.weaponAmmo;
         }
@@ -323,7 +316,7 @@ public class playerController : MonoBehaviour
 
     public void UpdateGunUI(int GunPos, int condition = 0)
     {
-        if (weaponList[selectedWeapon].name.Contains("GS"))
+        if (weaponList[selectedWeapon].name.Contains("pistol"))
         {
             gameManager.instance.CurrentGunImagePistol.enabled = true;
             gameManager.instance.CurrentGunImageShotgun.enabled = false;
@@ -335,7 +328,7 @@ public class playerController : MonoBehaviour
             gameManager.instance.CurrentGunImageShotgun.enabled = true;
             gameManager.instance.CurrentGunImageAssaultRifle.enabled = false;
         }
-        else if (weaponList[selectedWeapon].name.Contains("Rifle"))
+        else if (weaponList[selectedWeapon].name.Contains("rifle"))
         {
             gameManager.instance.CurrentGunImagePistol.enabled = false;
             gameManager.instance.CurrentGunImageShotgun.enabled = false;

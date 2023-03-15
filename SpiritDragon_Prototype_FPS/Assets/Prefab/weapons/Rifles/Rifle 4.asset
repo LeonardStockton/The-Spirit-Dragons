@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rifle 4
   m_EditorClassIdentifier: 
   shootRate: 0.334
-  gunName: rifle 4
+  gunName: 'M4 rifle '
   shootDist: 30
   shootDamage: 10
   weaponAmmo: 30

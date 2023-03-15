@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SMG 2
   m_EditorClassIdentifier: 
   shootRate: 0.05
+  gunName: ump SMG
   shootDist: 10
   shootDamage: 5
   weaponAmmo: 30
   weaponSkin: {fileID: 0}
-  weaponFireAud: {fileID: 0}
