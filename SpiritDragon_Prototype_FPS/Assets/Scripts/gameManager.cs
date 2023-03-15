@@ -46,6 +46,7 @@ public class gameManager : MonoBehaviour
     [Header("----- Game Goals -----")]
     public int enemiesRemaining;
     public bool bossAlive;
+    public bool GoalComplete;
 
     /*---------------------------------------------------------------------------------*/
     public bool isPaused;
@@ -60,10 +61,13 @@ public class gameManager : MonoBehaviour
         playerScript = player.GetComponent<playerController>();
         sceneLoader = GameObject.FindGameObjectWithTag("LvlLoad");
         loaderScript = sceneLoader.GetComponent<levelLoader>();
-        if (MainMenuControler.instance.gameDifficulty.value != null)
-        {
-            GameDifficultyValue = MainMenuControler.instance.gameDifficulty.value;
-        }
+
+        //if (MainMenuControler.instance.gameDifficulty.value != null)
+        //{
+            //GameDifficultyValue = MainMenuControler.instance.gameDifficulty.value;
+        //}
+        
+
     }
 
     // Update is called once per frame
@@ -110,6 +114,7 @@ public class gameManager : MonoBehaviour
         if (enemiesRemaining <= 0)
         {
             setMenu(winMenu);
+            GoalComplete = true;
         }
     }
 
