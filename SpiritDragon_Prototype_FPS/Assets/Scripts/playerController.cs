@@ -91,7 +91,7 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(Grenades);
         pushBack = Vector3.Lerp(pushBack, Vector3.zero, Time.deltaTime * pushbackResTime);
         StartCoroutine(throwGrenade());
         movement();

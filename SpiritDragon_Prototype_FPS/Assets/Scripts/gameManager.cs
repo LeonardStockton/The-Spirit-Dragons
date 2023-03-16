@@ -48,6 +48,7 @@ public class gameManager : MonoBehaviour
     [SerializeField] public bool otherReq;
     public bool bossAlive = false;
     public bool GoalComplete;
+    public int played;
 
     /*---------------------------------------------------------------------------------*/
     public bool isPaused;
@@ -60,22 +61,28 @@ public class gameManager : MonoBehaviour
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<playerController>();
-
-        if (MainMenuControler.instance.gameDifficulty.value != null)
-       {
-            GameDifficultyValue = MainMenuControler.instance.gameDifficulty.value;
-       }
-        
-
+        playerScript.enemyMultiplyer = playerDataTracker.difficultyMod;
+        if(SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            otherReq = true;
+        }
+        else
+        {
+            otherReq = false;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        ammoDisplay.text = player.GetComponent<playerController>().weaponAmmo.ToString();
-        grenDisplay.text = player.GetComponent<playerController>().Grenades.ToString();
-       
+        ammoDisplay.text = playerScript.weaponAmmo.ToString();
+        grenDisplay.text = playerScript.Grenades.ToString();
 
+        Debug.Log(otherReq);
+        Debug.Log(enemiesRemaining);
+        Debug.Log(bossAlive);
+        Debug.Log(GoalComplete);
+        updateGameGoal(0);
         if (Input.GetButtonDown("Cancel") && activeMenu == null)
         {
             isPaused = !isPaused;
@@ -112,17 +119,22 @@ public class gameManager : MonoBehaviour
         enemiesRemainingText.text = enemiesRemaining.ToString("F0");
         if (enemiesRemaining <= 0 && bossAlive == false && otherReq == false)
         {
-            StartCoroutine(WinMenu());
             GoalComplete = true;
+            StartCoroutine(WinMenu());
+            
         }
     }
 
     IEnumerator WinMenu()
     {
-        activeMenu = winMenu;
-        activeMenu.SetActive(true);
-        yield return new WaitForSeconds(3f);
-        unPause();
+        if (played != 1)
+        {
+            played++;
+            activeMenu = winMenu;
+            activeMenu.SetActive(true);
+            yield return new WaitForSeconds(3f);
+            unPause();
+        }
         if(SceneManager.GetActiveScene().buildIndex == 2)
         {
             SceneManager.LoadScene("Credits");

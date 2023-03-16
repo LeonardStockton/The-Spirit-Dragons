@@ -26821,6 +26821,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Animated Door
       objectReference: {fileID: 0}
+    - target: {fileID: 8571588536835039802, guid: cbc94bb3750fee841983be670f09e071, type: 3}
+      propertyPath: m_Size.z
+      value: 2.51
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8571588536835039803, guid: cbc94bb3750fee841983be670f09e071, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbc94bb3750fee841983be670f09e071, type: 3}
@@ -28517,6 +28521,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1295468908301846576, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
+      propertyPath: playerSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1295468908301846578, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
       propertyPath: m_Name
       value: Player Avatar
@@ -28564,6 +28572,10 @@ PrefabInstance:
     - target: {fileID: 1923528210567746184, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076570211639912367, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
+      propertyPath: far clip plane
+      value: 1206.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
@@ -37142,6 +37154,8 @@ MonoBehaviour:
   CurrentGunImageShotgun: {fileID: 1793678926}
   CurrentGunImageAssaultRifle: {fileID: 1770862070}
   enemiesRemainingText: {fileID: 3907481191972469101}
+  interactShield: {fileID: 0}
+  interactShiDanger: {fileID: 0}
   ammoDisplay: {fileID: 8658770674236379355}
   grenDisplay: {fileID: 213846255}
   gameMenu: {fileID: 0}
@@ -37149,6 +37163,7 @@ MonoBehaviour:
   otherReq: 0
   bossAlive: 0
   GoalComplete: 0
+  played: 0
   isPaused: 0
   Volume: 0
   GameDifficultyValue: 0
