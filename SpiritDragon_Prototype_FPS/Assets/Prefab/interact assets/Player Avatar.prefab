@@ -339,6 +339,7 @@ GameObject:
   - component: {fileID: 1295468908301846577}
   - component: {fileID: 1295468908301846579}
   - component: {fileID: 485184036}
+  - component: {fileID: 1680344784}
   m_Layer: 3
   m_Name: Player Avatar
   m_TagString: Player
@@ -430,6 +431,8 @@ MonoBehaviour:
   audGunVol: 0.5
   rifleAmmo: 0
   shotgunAmmo: 0
+  sniperAmmo: 0
+  submachineAmmo: 0
   pistolAmmo: 0
   isShooting: 0
   isSprinting: 0
@@ -583,6 +586,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1680344784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295468908301846578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecde202b00ab4274bba4d6e452276962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3076570211639912361
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEditor.Animations;
+using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class gameManager : MonoBehaviour
     public int level;
     public int playerLevel;
     public int playerHealth;
+    public bool loadNxtLvl;
 
     [Header("----- UI -----")]   
     public GameObject activeMenu;
@@ -34,18 +36,17 @@ public class gameManager : MonoBehaviour
     public Image CurrentGunImageShotgun;
     public Image CurrentGunImageAssaultRifle;
     public TextMeshProUGUI enemiesRemainingText;
+    public GameObject interactShield;
+    public GameObject interactShiDanger;
     public TextMeshProUGUI ammoDisplay;
     public TextMeshProUGUI grenDisplay;
     public GameObject gameMenu;
     
 
-    [Header("----- Game Resource -----")]
-    public GameObject sceneLoader;
-    public levelLoader loaderScript;
-
     [Header("----- Game Goals -----")]
     public int enemiesRemaining;
-    public bool bossAlive;
+    [SerializeField] public bool otherReq;
+    public bool bossAlive = false;
     public bool GoalComplete;
 
     /*---------------------------------------------------------------------------------*/
@@ -59,13 +60,11 @@ public class gameManager : MonoBehaviour
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<playerController>();
-        sceneLoader = GameObject.FindGameObjectWithTag("LvlLoad");
-        loaderScript = sceneLoader.GetComponent<levelLoader>();
 
-        //if (MainMenuControler.instance.gameDifficulty.value != null)
-        //{
-            //GameDifficultyValue = MainMenuControler.instance.gameDifficulty.value;
-        //}
+        if (MainMenuControler.instance.gameDifficulty.value != null)
+       {
+            GameDifficultyValue = MainMenuControler.instance.gameDifficulty.value;
+       }
         
 
     }
@@ -111,13 +110,24 @@ public class gameManager : MonoBehaviour
     {
         enemiesRemaining += amount;
         enemiesRemainingText.text = enemiesRemaining.ToString("F0");
-        if (enemiesRemaining <= 0)
+        if (enemiesRemaining <= 0 && bossAlive == false && otherReq == false)
         {
-            setMenu(winMenu);
+            StartCoroutine(WinMenu());
             GoalComplete = true;
         }
     }
 
+    IEnumerator WinMenu()
+    {
+        activeMenu = winMenu;
+        activeMenu.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        unPause();
+        if(SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            SceneManager.LoadScene("Credits");
+        }
+    }
     public void playerDead()
     {
         setMenu(loseMenu);

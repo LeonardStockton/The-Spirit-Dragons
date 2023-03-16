@@ -6,17 +6,19 @@ using UnityEngine.SceneManagement;
 public class sceneExit : MonoBehaviour
 {
     public string sceneToLoad;
+
     private void OnTriggerEnter(Collider other)
     {
-        //if (gameManager.instance.GoalComplete == true)
-        //{
-
-        //}
-        if (other.CompareTag("Player"))
+        if (gameManager.instance.GoalComplete == true)
         {
-            SceneManager.LoadScene(sceneToLoad);
+            if (other.CompareTag("Player"))
+            {
+                gameManager.instance.loadNxtLvl = true;
+                SceneManager.LoadScene(sceneToLoad);
 
+            }
         }
+        
     }
 
     

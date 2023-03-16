@@ -162,7 +162,7 @@ public class EnemyAI : MonoBehaviour, IDamage
             miniMapObj.SetActive(false);
             if (this.CompareTag("Boss"))
             {
-
+                Laser.GetComponent<LineRenderer>().enabled = false;
                 gameManager.instance.bossAlive = false;
             }
         }
@@ -203,19 +203,19 @@ public class EnemyAI : MonoBehaviour, IDamage
             Destroy(grenClone, 1);
             anim.SetTrigger("Shoot");
         }
-        if(this.CompareTag("Boss"))
+        if (this.CompareTag("Boss"))
         {
             createBullet();
-        }
-        yield return new WaitForSeconds(fireRate * 2);
-        isShooting = false;
-        shootLsr = Random.Range(1, 5);
-        if(shootLsr == 2)
-        {
-            agent.SetDestination(transform.position);
-            anim.SetTrigger("Laser");
-        }
 
+            yield return new WaitForSeconds(fireRate * 2);
+            isShooting = false;
+            shootLsr = Random.Range(1, 5);
+            if (shootLsr == 2)
+            {
+                agent.SetDestination(transform.position);
+                anim.SetTrigger("Laser");
+            }
+        }
     }
 
     public void createBullet()

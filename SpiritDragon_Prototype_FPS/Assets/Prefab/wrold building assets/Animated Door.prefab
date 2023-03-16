@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8571588536829795267}
   - component: {fileID: 8571588536830910347}
   - component: {fileID: 8571588536823703201}
+  - component: {fileID: 8657962907951556135}
   m_Layer: 0
   m_Name: door_1_left
   m_TagString: Untagged
@@ -104,6 +105,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!65 &8657962907951556135
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8571588536832935995}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3490467, y: 3.85862, z: 0.14652932}
+  m_Center: {x: -0.72547734, y: 1.9999999, z: 0.0000009536743}
 --- !u!1 &8571588536833116917
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +147,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8571588536833116917}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 7.7520456, y: -10.517314, z: 17.302195}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -265,6 +279,7 @@ GameObject:
   - component: {fileID: 8571588536829810057}
   - component: {fileID: 8571588536830662391}
   - component: {fileID: 8571588536823700031}
+  - component: {fileID: 3577082992084784043}
   m_Layer: 0
   m_Name: door_1_right
   m_TagString: Untagged
@@ -357,3 +372,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!65 &3577082992084784043
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8571588536833126731}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.622798, y: 3.85862, z: 0.14652932}
+  m_Center: {x: 0.8620837, y: 1.9999999, z: 0}

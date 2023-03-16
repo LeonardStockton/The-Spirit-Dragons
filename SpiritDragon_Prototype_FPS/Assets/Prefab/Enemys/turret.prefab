@@ -475,7 +475,7 @@ MonoBehaviour:
   playerFaceSpeed: 15
   viewAngle: 120
   Shot: {fileID: 8300000, guid: c7c3466cb5930a24b93aad1e29642674, type: 3}
-  audShotVol: 0
+  audShotVol: 0.356
   barrels:
   - {fileID: 187802522}
   - {fileID: 5307016314080769546}

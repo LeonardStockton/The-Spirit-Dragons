@@ -24,7 +24,7 @@ public class playerController : MonoBehaviour
     [Range(1, 5)][SerializeField] int pushbackResTime;
 
     [Header("~~~~~~~Gun Stats~~~~~~~~")]
-    [SerializeField] List<gunStats> weaponList = new List<gunStats>();
+    [SerializeField] public List<gunStats> weaponList = new List<gunStats>();
     [SerializeField] float shootRate;
     [SerializeField] GameObject barrel;
     [SerializeField] ParticleSystem shootEffect;
@@ -61,7 +61,7 @@ public class playerController : MonoBehaviour
     float wepZoomOrg;
     int jumpCurrent;
     int HPorg;
-    int selectedWeapon;
+    public int selectedWeapon;
     public int rifleAmmo;
     public int shotgunAmmo;
     public int sniperAmmo;
@@ -79,6 +79,10 @@ public class playerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(weaponList.Count > 0)
+        {
+            changeFirearm();
+        }
         HPorg = HP;
         wepZoomOrg = Camera.main.fieldOfView;
         stolenHealth();
@@ -293,21 +297,21 @@ public class playerController : MonoBehaviour
         weaponModel.GetComponentInChildren<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshRenderer>().sharedMaterial;
         selectedWeapon = weaponList.Count - 1;
 
-        if (weaponList[selectedWeapon].name.Contains("shotgun"))
+        if (weaponList[selectedWeapon].gunName.Contains("shotgun"))
         {
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
             weaponAmmo = shotgunAmmo;
             barrel.transform.localPosition = new Vector3(1.326f, -1.029f, 6.418f);
         }
-        if (weaponList[selectedWeapon].name.Contains("GS"))
+        if (weaponList[selectedWeapon].gunName.Contains("pistol"))
         {
             Vector3 newPos = new Vector3(0.57f, -0.95f, 1.83f);
             weaponModel.transform.localPosition = newPos;
             weaponAmmo = pistolAmmo;
             barrel.transform.localPosition = new Vector3(0.561f, -0.539f, 2.345f);
         }
-        if (weaponList[selectedWeapon].name.Contains("Rifle"))
+        if (weaponList[selectedWeapon].gunName.Contains("rifle"))
         {
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
@@ -315,24 +319,25 @@ public class playerController : MonoBehaviour
             barrel.transform.localPosition = new Vector3(1.311f, -0.878f, 6.714f);
         }
         UpdateGunUI(selectedWeapon, firstGunPickup);
+        Debug.Log(weaponList[selectedWeapon].gunName);
         ++firstGunPickup;
     }
 
     public void UpdateGunUI(int GunPos, int condition = 0)
     {
-        if (weaponList[selectedWeapon].name.Contains("pistol"))
+        if (weaponList[selectedWeapon].gunName.Contains("pistol"))
         {
             gameManager.instance.CurrentGunImagePistol.enabled = true;
             gameManager.instance.CurrentGunImageShotgun.enabled = false;
             gameManager.instance.CurrentGunImageAssaultRifle.enabled = false;
         }
-        else if (weaponList[selectedWeapon].name.Contains("shotgun"))
+        else if (weaponList[selectedWeapon].gunName.Contains("shotgun"))
         {
             gameManager.instance.CurrentGunImagePistol.enabled = false;
             gameManager.instance.CurrentGunImageShotgun.enabled = true;
             gameManager.instance.CurrentGunImageAssaultRifle.enabled = false;
         }
-        else if (weaponList[selectedWeapon].name.Contains("rifle"))
+        else if (weaponList[selectedWeapon].gunName.Contains("rifle"))
         {
             gameManager.instance.CurrentGunImagePistol.enabled = false;
             gameManager.instance.CurrentGunImageShotgun.enabled = false;
@@ -367,21 +372,21 @@ public class playerController : MonoBehaviour
 
         weaponModel.GetComponentInChildren<MeshFilter>().sharedMesh = weaponList[selectedWeapon].weaponSkin.GetComponentInChildren<MeshFilter>().sharedMesh;
         weaponModel.GetComponentInChildren<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponentInChildren<MeshRenderer>().sharedMaterial;
-        if (weaponList[selectedWeapon].name.Contains("shotgun"))
+        if (weaponList[selectedWeapon].gunName.Contains("shotgun"))
         {
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
             weaponAmmo = shotgunAmmo;
             barrel.transform.localPosition = new Vector3(1.326f, -1.029f, 6.418f);
         }
-        if (weaponList[selectedWeapon].name.Contains("GS"))
+        if (weaponList[selectedWeapon].gunName.Contains("pistol"))
         {
             Vector3 newPos = new Vector3(0.57f, -0.95f, 1.83f);
             weaponModel.transform.localPosition = newPos;
             weaponAmmo = pistolAmmo;
             barrel.transform.localPosition = new Vector3(0.561f, -0.539f, 2.345f);
         }
-        if (weaponList[selectedWeapon].name.Contains("Rifle"))
+        if (weaponList[selectedWeapon].gunName.Contains("rifle"))
         {
             Vector3 newPos = new Vector3(1.33f, -1.58f, 3.8f);
             weaponModel.transform.localPosition = newPos;
