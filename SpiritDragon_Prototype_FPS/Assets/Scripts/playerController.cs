@@ -61,6 +61,7 @@ public class playerController : MonoBehaviour
     float wepZoomOrg;
     int jumpCurrent;
     int HPorg;
+    public bool interact;
     public int selectedWeapon;
     public int rifleAmmo;
     public int shotgunAmmo;
@@ -91,7 +92,6 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Grenades);
         pushBack = Vector3.Lerp(pushBack, Vector3.zero, Time.deltaTime * pushbackResTime);
         StartCoroutine(throwGrenade());
         movement();
@@ -104,6 +104,10 @@ public class playerController : MonoBehaviour
         if (weaponAmmo <= 0)
         {
             weaponAmmo = 0;
+        }
+        if(weaponList.Count > 0)
+        {
+            updateAmmo();
         }
     }
 
@@ -230,7 +234,6 @@ public class playerController : MonoBehaviour
         StartCoroutine(recoil());
         Instantiate(shootEffect, barrel.transform.position, Quaternion.LookRotation(barrel.transform.forward));
         weaponAmmo--;
-        Debug.Log(weaponList[selectedWeapon].gunName);
        if (weaponList[selectedWeapon].gunName.Contains("pistol"))
         {
             pistolAmmo--;
@@ -270,7 +273,8 @@ public class playerController : MonoBehaviour
             yield return null;
         }
         trail.transform.position = hit.point;
-        Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        if (hit.collider.GetComponent<IDamage>() == null)
+             Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
 
         Destroy(trail.gameObject, trail.time);
     }
@@ -319,7 +323,6 @@ public class playerController : MonoBehaviour
             barrel.transform.localPosition = new Vector3(1.311f, -0.878f, 6.714f);
         }
         UpdateGunUI(selectedWeapon, firstGunPickup);
-        Debug.Log(weaponList[selectedWeapon].gunName);
         ++firstGunPickup;
     }
 
@@ -439,4 +442,39 @@ public class playerController : MonoBehaviour
         controller.enabled = true;
     }
 
+    public void Interact()
+    {
+        if(Input.GetKeyDown("Interact"))
+        {
+            interact = true;
+        }
+        if (Input.GetKeyUp("Interact"))
+        {
+            interact = false;
+        }
+    }
+
+    public void updateAmmo()
+    {
+        if (weaponList[selectedWeapon].gunName.Contains("pistol"))
+        {
+            weaponAmmo = pistolAmmo;
+        }
+        else if (weaponList[selectedWeapon].gunName.Contains("shotgun"))
+        {
+            weaponAmmo = shotgunAmmo;
+        }
+        else if (weaponList[selectedWeapon].gunName.Contains("rifle"))
+        {
+            weaponAmmo = rifleAmmo;
+        }
+        else if (weaponList[selectedWeapon].gunName.Contains("sniper"))
+        {
+            weaponAmmo = sniperAmmo;
+        }
+        else if (weaponList[selectedWeapon].gunName.Contains("SMG"))
+        {
+            weaponAmmo = submachineAmmo;
+        }
+    }
 }

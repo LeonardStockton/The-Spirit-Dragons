@@ -78,10 +78,6 @@ public class gameManager : MonoBehaviour
         ammoDisplay.text = playerScript.weaponAmmo.ToString();
         grenDisplay.text = playerScript.Grenades.ToString();
 
-        Debug.Log(otherReq);
-        Debug.Log(enemiesRemaining);
-        Debug.Log(bossAlive);
-        Debug.Log(GoalComplete);
         updateGameGoal(0);
         if (Input.GetButtonDown("Cancel") && activeMenu == null)
         {

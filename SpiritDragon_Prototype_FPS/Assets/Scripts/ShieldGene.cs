@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ShieldGene : MonoBehaviour
 {
+    public bool playerNearShield = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,8 @@ public class ShieldGene : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             gameManager.instance.interactShield.SetActive(true);
-            if (Input.GetKeyDown("Interact"))
+            playerNearShield = true;
+            if (gameManager.instance.playerScript.interact == true)
             {
                 gameManager.instance.interactShield.SetActive(false);
                 if (gameManager.instance.enemiesRemaining > 0)
@@ -41,10 +44,11 @@ public class ShieldGene : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             gameManager.instance.interactShield.SetActive(false);
+            playerNearShield = false;
         }
     }
 
-    private IEnumerator Danger()
+    public IEnumerator Danger()
     {
         gameManager.instance.interactShiDanger.SetActive(true);
         yield return new WaitForSeconds(1f);
