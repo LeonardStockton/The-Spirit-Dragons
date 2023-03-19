@@ -222,7 +222,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     {
         {
             GameObject bulletClone = Instantiate(bullet, shootPos.position, bullet.transform.rotation);
-            bulletClone.GetComponent<Rigidbody>().velocity = (playerDir + new Vector3(Random.Range(-.3f, .3f), 0, Random.Range(-.3f, .3f))) * bulletSpeed;
+            bulletClone.GetComponent<Rigidbody>().velocity = playerDir * bulletSpeed;
         }
     }
 

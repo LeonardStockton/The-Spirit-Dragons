@@ -297,8 +297,8 @@ public class playerController : MonoBehaviour
             rifleAmmo = rifleAmmo + gunStats.weaponAmmo;
         }
 
-        weaponModel.GetComponentInChildren<MeshFilter>().sharedMesh = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshFilter>().sharedMesh;
-        weaponModel.GetComponentInChildren<MeshRenderer>().sharedMaterial = weaponList[selectedWeapon].weaponSkin.GetComponent<MeshRenderer>().sharedMaterial;
+        weaponModel.GetComponentInChildren<MeshFilter>().sharedMesh = gunStats.weaponSkin.GetComponent<MeshFilter>().sharedMesh;
+        weaponModel.GetComponentInChildren<MeshRenderer>().sharedMaterial = gunStats.weaponSkin.GetComponent<MeshRenderer>().sharedMaterial;
         selectedWeapon = weaponList.Count - 1;
 
         if (weaponList[selectedWeapon].gunName.Contains("shotgun"))
