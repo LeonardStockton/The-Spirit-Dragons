@@ -216,6 +216,7 @@ public class EnemyAI : MonoBehaviour, IDamage
                 anim.SetTrigger("Laser");
             }
         }
+        isShooting = false;
     }
 
     public void createBullet()
