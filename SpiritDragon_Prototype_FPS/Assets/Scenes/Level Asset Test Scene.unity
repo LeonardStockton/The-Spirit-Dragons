@@ -5374,6 +5374,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+--- !u!114 &379863117 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 519997186, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+  m_PrefabInstance: {fileID: 379863116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &379863118 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 487498454, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+  m_PrefabInstance: {fileID: 379863116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &388184103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17221,6 +17243,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1015878471}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
+      propertyPath: volumeAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2b4dfb0b452666d46acc4a3a5713fd61, type: 3}
+    - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
+      propertyPath: volumeSFXSlider
+      value: 
+      objectReference: {fileID: 379863118}
+    - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: volumeTextValue
       value: 
       objectReference: {fileID: 1788156336}
@@ -17233,6 +17263,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1948290509}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
+      propertyPath: volumeAudioSource
+      value: 
+      objectReference: {fileID: 307615481}
+    - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: confermationPrompt
       value: 
       objectReference: {fileID: 7765723569538733877, guid: 0e40e87e79d923648b2830fb786cec00, type: 3}
@@ -17240,6 +17274,10 @@ PrefabInstance:
       propertyPath: resolutionDropdown
       value: 
       objectReference: {fileID: 213396033}
+    - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
+      propertyPath: volumeSFXTextValue
+      value: 
+      objectReference: {fileID: 379863117}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: brightnessTexTValue
       value: 
@@ -39688,7 +39726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3907481191998815752
 RectTransform:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEditor.Animations;
+//using UnityEditor.Animations;
 using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
