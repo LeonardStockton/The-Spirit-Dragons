@@ -15,7 +15,7 @@ public class ShieldGene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        interactWGene();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,7 +24,7 @@ public class ShieldGene : MonoBehaviour
         {
             gameManager.instance.interactShield.SetActive(true);
             playerNearShield = true;
-            if (gameManager.instance.playerScript.interact == true)
+            if (Input.GetButtonDown("touch"))
             {
                 gameManager.instance.interactShield.SetActive(false);
                 if (gameManager.instance.enemiesRemaining > 0)
@@ -54,4 +54,21 @@ public class ShieldGene : MonoBehaviour
         yield return new WaitForSeconds(1f);
         gameManager.instance.interactShiDanger.SetActive(false);
     }
+
+    public void interactWGene()
+    {
+        if (Input.GetButtonDown("touch") && playerNearShield == true)
+        {
+            gameManager.instance.interactShield.SetActive(false);
+            if (gameManager.instance.enemiesRemaining > 0)
+            {
+                StartCoroutine(Danger());
+            }
+            else
+            {
+                gameManager.instance.otherReq = false;
+            }
+        }
+    }
 }
+

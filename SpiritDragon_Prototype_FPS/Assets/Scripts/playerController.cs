@@ -61,7 +61,6 @@ public class playerController : MonoBehaviour
     float wepZoomOrg;
     int jumpCurrent;
     int HPorg;
-    public bool interact;
     public int selectedWeapon;
     public int rifleAmmo;
     public int shotgunAmmo;
@@ -440,18 +439,6 @@ public class playerController : MonoBehaviour
         stolenHealth();
 
         controller.enabled = true;
-    }
-
-    public void Interact()
-    {
-        if(Input.GetKeyDown("Interact"))
-        {
-            interact = true;
-        }
-        if (Input.GetKeyUp("Interact"))
-        {
-            interact = false;
-        }
     }
 
     public void updateAmmo()

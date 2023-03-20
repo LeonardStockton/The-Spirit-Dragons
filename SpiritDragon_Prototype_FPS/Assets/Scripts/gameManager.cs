@@ -38,6 +38,7 @@ public class gameManager : MonoBehaviour
     public TextMeshProUGUI enemiesRemainingText;
     public GameObject interactShield;
     public GameObject interactShiDanger;
+    public GameObject activateShi;
     public TextMeshProUGUI ammoDisplay;
     public TextMeshProUGUI grenDisplay;
     public GameObject gameMenu;
@@ -113,6 +114,10 @@ public class gameManager : MonoBehaviour
     {
         enemiesRemaining += amount;
         enemiesRemainingText.text = enemiesRemaining.ToString("F0");
+        if(SceneManager.GetActiveScene().buildIndex == 2 && enemiesRemaining <= 0)
+        {
+            StartCoroutine(enemiesDead());
+        }
         if (enemiesRemaining <= 0 && bossAlive == false && otherReq == false)
         {
             GoalComplete = true;
@@ -148,7 +153,13 @@ public class gameManager : MonoBehaviour
         activeMenu.SetActive(true);
     }
 
-  
+    IEnumerator enemiesDead()
+    {
+        activateShi.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        activateShi.SetActive(false);
+
+    }
     public void SavePlayer (playerController player)
     {
         SavingSystem.SavePlayer(player);

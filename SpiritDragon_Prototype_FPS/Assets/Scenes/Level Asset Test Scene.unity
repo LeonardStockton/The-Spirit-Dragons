@@ -2886,6 +2886,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1662819720, guid: cf2c11dbf0dbb6640abe06ff2e3d682f, type: 3}
+      propertyPath: m_UseWorldSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662819721, guid: cf2c11dbf0dbb6640abe06ff2e3d682f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662819721, guid: cf2c11dbf0dbb6640abe06ff2e3d682f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662819721, guid: cf2c11dbf0dbb6640abe06ff2e3d682f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 3062657558470217244, guid: cf2c11dbf0dbb6640abe06ff2e3d682f, type: 3}
       propertyPath: m_Name
       value: BossManKyle

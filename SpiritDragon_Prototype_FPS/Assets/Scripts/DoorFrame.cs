@@ -8,7 +8,7 @@ public class DoorFrame : MonoBehaviour
     // Start is called before the first frame update
     void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Enemy"))
         {
             anim.SetBool("Open", true);
         }
@@ -17,7 +17,7 @@ public class DoorFrame : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Enemy"))
         {
             anim.SetBool("Open", false);
         }

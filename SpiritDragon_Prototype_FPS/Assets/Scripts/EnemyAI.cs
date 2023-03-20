@@ -208,7 +208,6 @@ public class EnemyAI : MonoBehaviour, IDamage
             createBullet();
 
             yield return new WaitForSeconds(fireRate * 2);
-            isShooting = false;
             shootLsr = Random.Range(1, 5);
             if (shootLsr == 2)
             {
@@ -229,24 +228,16 @@ public class EnemyAI : MonoBehaviour, IDamage
 
     public void Beam()
     {
+        facePlayer();
         StartCoroutine(laserbeam());
-        agent.SetDestination(transform.position);
     }
 
     IEnumerator laserbeam()
     {
         Laser.GetComponent<LineRenderer>().enabled = true;
         agent.SetDestination(transform.position);
-        if (Physics.Raycast(lsrFirePt.transform.position, lsrFirePt.transform.forward, out RaycastHit hit))
-        {
-            LineRenderer shwnLsr = Instantiate(Laser.GetComponent<LineRenderer>(), lsrFirePt.transform.position, Quaternion.identity);
-            shwnLsr.gameObject.layer = 7;
-            shwnLsr.SetPosition(0, lsrFirePt.localPosition);
-            shwnLsr.SetPosition(1, hit.point);
-        }
         yield return new WaitForSeconds(.5f);
         Laser.GetComponent<LineRenderer>().enabled = false;
-        agent.SetDestination(gameManager.instance.player.transform.position);
     }
     public void agentStop()
     {
