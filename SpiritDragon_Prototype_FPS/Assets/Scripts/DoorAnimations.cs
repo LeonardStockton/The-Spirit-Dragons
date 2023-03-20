@@ -8,13 +8,13 @@ public class DoorAnimations : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<playerController>())
+        if (other.CompareTag("Player") || other.CompareTag("Enemy"))
             door.SetBool("character_nearby", true);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<playerController>())
+        if (other.CompareTag("Player") || other.CompareTag("Enemy"))
             door.SetBool("character_nearby", false);
     }
 }

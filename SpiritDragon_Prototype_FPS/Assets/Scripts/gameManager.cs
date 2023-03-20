@@ -122,7 +122,10 @@ public class gameManager : MonoBehaviour
         {
             GoalComplete = true;
             StartCoroutine(WinMenu());
-            
+            if (SceneManager.GetActiveScene().buildIndex == 2)
+            {
+                SceneManager.LoadScene("Credits");
+            }
         }
     }
 
@@ -135,10 +138,6 @@ public class gameManager : MonoBehaviour
             activeMenu.SetActive(true);
             yield return new WaitForSeconds(3f);
             unPause();
-        }
-        if(SceneManager.GetActiveScene().buildIndex == 2)
-        {
-            SceneManager.LoadScene("Credits");
         }
     }
     public void playerDead()

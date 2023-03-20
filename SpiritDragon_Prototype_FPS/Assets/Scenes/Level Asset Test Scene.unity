@@ -37131,6 +37131,7 @@ MonoBehaviour:
   enemiesRemainingText: {fileID: 3907481191972469101}
   interactShield: {fileID: 0}
   interactShiDanger: {fileID: 0}
+  activateShi: {fileID: 0}
   ammoDisplay: {fileID: 8658770674236379355}
   grenDisplay: {fileID: 213846255}
   gameMenu: {fileID: 0}
@@ -39663,7 +39664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3907481191998815752
 RectTransform:
   m_ObjectHideFlags: 0

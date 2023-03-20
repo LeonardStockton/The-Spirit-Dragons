@@ -18,7 +18,6 @@ public class explosion : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, blastRadius);
         foreach (Collider c in colliders)
         {
-            Debug.Log(c);
             if (c.GetComponent<EnemyAI>())
             {
                 c.GetComponent<EnemyAI>().takeDamage(grenDmg);
