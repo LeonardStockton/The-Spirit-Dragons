@@ -11284,6 +11284,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Animated Door 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8571588536835039802, guid: cbc94bb3750fee841983be670f09e071, type: 3}
+      propertyPath: m_Size.z
+      value: 3.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571588536835039802, guid: cbc94bb3750fee841983be670f09e071, type: 3}
+      propertyPath: m_Center.z
+      value: 0.06
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbc94bb3750fee841983be670f09e071, type: 3}
 --- !u!222 &658339530
