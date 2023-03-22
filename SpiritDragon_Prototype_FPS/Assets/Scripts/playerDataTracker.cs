@@ -18,7 +18,6 @@ public class playerDataTracker : MonoBehaviour
     { 
         if(plyrWepList != null)
         {
-            Debug.Log("Ran data Tracker");
             gameManager.instance.playerScript.weaponList = plyrWepList;
             gameManager.instance.playerScript.rifleAmmo = rifleAmmo;
             gameManager.instance.playerScript.shotgunAmmo = shotgunAmmo;

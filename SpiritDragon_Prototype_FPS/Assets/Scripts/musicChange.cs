@@ -31,9 +31,7 @@ public class musicChange : MonoBehaviour
         {
             
             GetComponent<AudioSource>().clip = nextMusic;
-            GetComponent<AudioSource>().Play();
-            
-            
+            GetComponent<AudioSource>().Play();  
         }
     }
 

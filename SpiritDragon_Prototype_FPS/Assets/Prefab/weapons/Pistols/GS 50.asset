@@ -15,6 +15,6 @@ MonoBehaviour:
   shootRate: 0.8
   gunName: GS 50 pistol
   shootDist: 8
-  shootDamage: 10
+  shootDamage: 30
   weaponAmmo: 10
   weaponSkin: {fileID: 919132149155446097, guid: 8f9696fb6017be144a307b6586855ac0, type: 3}

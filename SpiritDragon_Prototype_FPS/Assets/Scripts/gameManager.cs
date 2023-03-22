@@ -157,7 +157,7 @@ public class gameManager : MonoBehaviour
         activateShi.SetActive(true);
         yield return new WaitForSeconds(2f);
         activateShi.SetActive(false);
-
+        Destroy(activateShi);
     }
     public void SavePlayer (playerController player)
     {
