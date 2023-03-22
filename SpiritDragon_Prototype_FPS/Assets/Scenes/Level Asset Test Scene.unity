@@ -28512,6 +28512,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 485184036, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
+      propertyPath: MaxDistance
+      value: 499.0728
+      objectReference: {fileID: 0}
     - target: {fileID: 2134773223, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
       propertyPath: swayMult
       value: 2

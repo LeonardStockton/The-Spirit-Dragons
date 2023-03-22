@@ -4921,7 +4921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 329d06c83bb973c479e72cf08e963e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBack: 100
+  knockBack: 8
   push: 1
   blastRadius: 5
   grenDmg: 100

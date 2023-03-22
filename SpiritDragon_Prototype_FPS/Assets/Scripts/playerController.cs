@@ -220,12 +220,10 @@ public class playerController : MonoBehaviour
 
     IEnumerator recoil()
     {
-        weaponModel.transform.localPosition = new Vector3(weaponModel.transform.localPosition.x, weaponModel.transform.localPosition.y, weaponModel.transform.localPosition.z - (float)(.05 * shootDamage));
-        weaponModel.transform.localRotation = Quaternion.Lerp(weaponModel.transform.localRotation, new Quaternion(0, 5, 0, (float)(20 * shootDamage)), shootRate/2);
-        yield return new WaitForSeconds(shootRate / 2);
-        weaponModel.transform.localPosition = new Vector3(weaponModel.transform.localPosition.x , weaponModel.transform.localPosition.y, weaponModel.transform.localPosition.z + (float)(.05 * shootDamage));
-        weaponModel.transform.localRotation = Quaternion.Lerp(weaponModel.transform.localRotation, new Quaternion(0, -5, 0, (float)(20 * shootDamage)), shootRate / 2);
+        weaponModel.transform.localRotation = Quaternion.Lerp(weaponModel.transform.localRotation, new Quaternion(-.2f, 0, 0, 0), shootRate);
+        yield return new WaitForSeconds(shootRate);
     }
+
     IEnumerator shoot()
     {
         isShooting = true;
