@@ -44,9 +44,16 @@ public class LoadPlayerPrefs : MonoBehaviour
                 AudioListener.volume = _LocalVolume;
             }
             else { menuController.Resetbutton("Sound");}
-            if (PlayerPrefs.HasKey("SFX Volume"))
+            if (PlayerPrefs.HasKey("SFXVolume"))
             {
                 float _LocalVolume = PlayerPrefs.GetFloat("SFX Volume");
+                volumeTextValue.text = _LocalVolume.ToString("0.0");
+                volumeSlider.value = _LocalVolume;
+                AudioListener.volume = _LocalVolume;
+            }
+            if (PlayerPrefs.HasKey("MusicVolume"))
+            {
+                float _LocalVolume = PlayerPrefs.GetFloat("MusicVolume");
                 volumeTextValue.text = _LocalVolume.ToString("0.0");
                 volumeSlider.value = _LocalVolume;
                 AudioListener.volume = _LocalVolume;

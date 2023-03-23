@@ -6,34 +6,39 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using Unity.VisualScripting;
 using System;
+using UnityEngine.Audio;
 
 public class MainMenuControler : MonoBehaviour
 {
     public static MainMenuControler instance;
 
+    [Header("~~~~~~~Audio Mixer~~~~~~~")]
+    [SerializeField] public AudioMixer _Mixer;
+    [SerializeField] public float _Multiplyer = 30f;
+
     [Header("~~~~~~Audio settings~~~~~")]
-    [SerializeField] private TMP_Text volumeTextValue = null;
-    [SerializeField] private Slider volumeSlider = null;
-    [SerializeField] private TMP_Text volumeSFXTextValue = null;
-    [SerializeField] private Slider volumeSFXSlider = null;
-    [SerializeField] private float defualtVolume = 1.0f;
-    [SerializeField] private AudioSource volumeAudioSource;
-    [SerializeField] private AudioClip volumeAudioClip;
+    [SerializeField] public TMP_Text masterVolumeTextValue = null;
+    [SerializeField] public Slider masterVolumeSlider = null;
+    [SerializeField] public TMP_Text MusicVolTextValue = null;
+    [SerializeField] public Slider MusicVolSlider = null;
+    [SerializeField] public TMP_Text sFXVolumeTextValue = null;
+    [SerializeField] public Slider sFXVolumeSlider = null;
+    [SerializeField] public float defualtVolumeValue = .8f;
 
     [Header("~~~~Gameplay Settings~~~~")]
-    [SerializeField] private TMP_Text controllerSensivityTextValue = null;
-    [SerializeField] private Slider conrollerSensSlider = null;
-    [SerializeField] private int defualSensivityValue = 4;
+    [SerializeField] public TMP_Text controllerSensivityTextValue = null;
+    [SerializeField] public Slider conrollerSensSlider = null;
+    [SerializeField] public int defualSensivityValue = 4;
     public int mainControllerSens = 4;
 
     [Header("~~~~~~~~~~Toggels~~~~~~~~")]
-    [SerializeField] private Toggle invertYtoggle = null;
-    [SerializeField] private Toggle fullScreenToggel;
-    [Header("~~~~~~~~~~Graphics~~~~~~~~")]
-    [SerializeField] private Slider brightnessSlider = null;
-    [SerializeField] private TMP_Text brightnessTexTValue = null;
-    [SerializeField] private float defualtBrightness = 1.0f;
+    [SerializeField] public Toggle invertYtoggle = null;
+    [SerializeField] public Toggle fullScreenToggel;
 
+    [Header("~~~~~~~~~~Graphics~~~~~~~~")]
+    [SerializeField] public Slider brightnessSlider = null;
+    [SerializeField] public TMP_Text brightnessTexTValue = null;
+    [SerializeField] public float defualtBrightness = 1.0f;
 
     [Header("~~~~~~level to load~~~~~~")]
     public string _newGameLevel;
@@ -42,19 +47,24 @@ public class MainMenuControler : MonoBehaviour
     public float [] enemyDifficulty;
     public TMP_Dropdown gameDifficulty;
 
-
     [Header("Resolutions Settings")]
     public TMP_Dropdown resolutionDropdown;
     private Resolution[] _Resolutions;
     [SerializeField] private TMP_Dropdown qualityDropdown;
-    private int _QualityLevel;
-    private float _BrightnessLevel;
-    private bool _IsFullScreen;
+    public int _QualityLevel;
+    public float _BrightnessLevel;
+    public bool _IsFullScreen;
 
     [Header("~~confermation~~")]
     [SerializeField] private GameObject confermationPrompt = null;
 
     public bool isDifficult = false;
+    public float _Volume;
+
+    private void Awake()
+    {
+        VolumeControl.instance.VolumeController(defualtVolumeValue);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -82,6 +92,11 @@ public class MainMenuControler : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void OnDisable()
+    {
+        //PlayerPrefs.SetFloat()
     }
     public void GameDif()
     {
@@ -154,27 +169,19 @@ public class MainMenuControler : MonoBehaviour
         Application.Quit();
     }
 
-    public void SetVolume(float volume, float _SFXVolume)
+    public void SetVolume(float volumeLevel )
     {
-        AudioListener.volume = volume;
-        volumeTextValue.text = volume.ToString("0.0");
-        AudioListener.volume = _SFXVolume;
-        volumeSFXTextValue.text = _SFXVolume.ToString("0.0");
-        if (volume == AudioListener.volume ++||_SFXVolume == AudioListener.volume++)
-        {
-            volumeAudioSource.PlayOneShot(volumeAudioClip);
-        }
-        if (_SFXVolume == AudioListener.volume--||_SFXVolume == AudioListener.volume--)
-        {
-            volumeAudioSource.PlayOneShot(volumeAudioClip);
-        }
-
+        masterVolumeTextValue.text = volumeLevel.ToString("0.0");
+        MusicVolTextValue.text = volumeLevel.ToString("0.0");
+        sFXVolumeTextValue.text = volumeLevel.ToString("0.0");
 
     }
 
     public void VolumeApply()
     {
+      
         PlayerPrefs.SetFloat("MasterVolume", AudioListener.volume);
+        PlayerPrefs.SetFloat("MusicVolume", AudioListener.volume);
         PlayerPrefs.SetFloat("SFX Volume", AudioListener.volume);
         //show prompt 
         StartCoroutine(ConfermationBox());
@@ -238,10 +245,7 @@ public class MainMenuControler : MonoBehaviour
     {
         if (menuType == "Sound")
         {
-            AudioListener.volume = defualtVolume;
-            volumeSlider.value = defualtVolume;
-            volumeTextValue.text = defualtVolume.ToString("0.0");
-            VolumeApply();
+                        
         }
         if (menuType == "Gameplay")
         {
