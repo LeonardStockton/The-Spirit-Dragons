@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 2354706}
   - component: {fileID: 6592720}
   - component: {fileID: 4875106309296922368}
+  - component: {fileID: 6825031280603604805}
   m_Layer: 0
   m_Name: door_3_bottom_A
   m_TagString: Untagged
@@ -334,7 +335,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1000004, y: 2.394, z: 0}
+  m_LocalPosition: {x: 0.1000004, y: 2.374, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -418,6 +419,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.7999992, y: 1.7, z: 0.74}
   m_Center: {x: -0.100000255, y: -1.3500004, z: 0}
+--- !u!208 &6825031280603604805
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164122}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.4000001, y: 0.55, z: 0.192}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.1, y: -1.35, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &198422
 GameObject:
   m_ObjectHideFlags: 0

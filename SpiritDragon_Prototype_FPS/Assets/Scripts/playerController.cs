@@ -220,7 +220,7 @@ public class playerController : MonoBehaviour
 
     IEnumerator recoil()
     {
-        weaponModel.transform.localRotation = Quaternion.Lerp(weaponModel.transform.localRotation, new Quaternion(-.2f, 0, 0, 0), shootRate);
+        weaponModel.transform.localRotation = Quaternion.Lerp(weaponModel.transform.localRotation, new Quaternion(.2f, 0, 0, 0), shootRate);
         yield return new WaitForSeconds(shootRate);
     }
 
@@ -253,6 +253,11 @@ public class playerController : MonoBehaviour
             {
                 hit.collider.GetComponent<IDamage>().takeDamage((int)shootDamage);
             }
+        }else
+        {
+            Physics.Raycast(barrel.transform.position, barrel.transform.forward, out RaycastHit hit2);
+            TrailRenderer trail = Instantiate(bullTrail, barrel.transform.position, Quaternion.identity);
+            StartCoroutine(SpawnTrail(trail, hit2));
         }
         yield return new WaitForSeconds(shootRate);
         isShooting = false;
