@@ -8662,6 +8662,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5187851496902094258, guid: a5962b2f38d154d4fbde382d4cf68ba1, type: 3}
   m_PrefabInstance: {fileID: 426829452}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &428879766 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 474939942330315964, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+  m_PrefabInstance: {fileID: 1341639904}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &428879767 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 474939941321839903, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+  m_PrefabInstance: {fileID: 1341639904}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &428879768 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 519997186, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+  m_PrefabInstance: {fileID: 1341639904}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &428879769 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 487498454, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+  m_PrefabInstance: {fileID: 1341639904}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &428879770 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 474939941707713164, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+  m_PrefabInstance: {fileID: 1341639904}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &432136143
 GameObject:
   m_ObjectHideFlags: 0
@@ -24833,6 +24888,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
+--- !u!114 &952610354 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 695469054, guid: 816f2e6599217fa48be6a0d32c6f588f, type: 3}
+  m_PrefabInstance: {fileID: 952610353}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &961052578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38475,6 +38541,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
+      propertyPath: layer
+      value: 
+      objectReference: {fileID: 952610354}
+    - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
+      propertyPath: brightness
+      value: 
+      objectReference: {fileID: 11400000, guid: 19ac21b2557f36044a8ae9ac90820d5e, type: 2}
+    - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: volumeSlider
       value: 
       objectReference: {fileID: 0}
@@ -38483,9 +38557,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1341639909}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
+      propertyPath: MusicVolSlider
+      value: 
+      objectReference: {fileID: 428879767}
+    - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: qualityDropdown
       value: 
       objectReference: {fileID: 1341639912}
+    - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
+      propertyPath: sFXVolumeSlider
+      value: 
+      objectReference: {fileID: 428879769}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: volumeTextValue
       value: 
@@ -38499,13 +38581,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1341639905}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
+      propertyPath: MusicVolTextValue
+      value: 
+      objectReference: {fileID: 428879766}
+    - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: confermationPrompt
       value: 
       objectReference: {fileID: 7765723569538733877, guid: 0e40e87e79d923648b2830fb786cec00, type: 3}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
+      propertyPath: masterVolumeSlider
+      value: 
+      objectReference: {fileID: 428879770}
+    - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: resolutionDropdown
       value: 
       objectReference: {fileID: 1341639908}
+    - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
+      propertyPath: sFXVolumeTextValue
+      value: 
+      objectReference: {fileID: 428879768}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: brightnessTexTValue
       value: 
@@ -38514,6 +38608,10 @@ PrefabInstance:
       propertyPath: conrollerSensSlider
       value: 
       objectReference: {fileID: 1341639913}
+    - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
+      propertyPath: masterVolumeTextValue
+      value: 
+      objectReference: {fileID: 1341639916}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: controllerSensivityTextValue
       value: 

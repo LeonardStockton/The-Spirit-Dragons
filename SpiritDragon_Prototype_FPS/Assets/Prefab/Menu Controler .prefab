@@ -44,9 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc94072fdab236048bd468be599fa8a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeTextValue: {fileID: 0}
-  volumeSlider: {fileID: 0}
-  defualtVolume: 0.5
+  _Mixer: {fileID: 0}
+  _Multiplyer: 30
+  masterVolumeTextValue: {fileID: 0}
+  masterVolumeSlider: {fileID: 0}
+  MusicVolTextValue: {fileID: 0}
+  MusicVolSlider: {fileID: 0}
+  sFXVolumeTextValue: {fileID: 0}
+  sFXVolumeSlider: {fileID: 0}
+  defualtVolumeValue: 0.8
   controllerSensivityTextValue: {fileID: 0}
   conrollerSensSlider: {fileID: 0}
   defualSensivityValue: 4
@@ -56,8 +62,17 @@ MonoBehaviour:
   brightnessSlider: {fileID: 0}
   brightnessTexTValue: {fileID: 0}
   defualtBrightness: 1
+  brightness: {fileID: 0}
+  layer: {fileID: 0}
   _newGameLevel: Level 1 Scene
   noSaveFile: {fileID: 0}
+  enemyDifficulty: []
+  gameDifficulty: {fileID: 0}
   resolutionDropdown: {fileID: 0}
   qualityDropdown: {fileID: 0}
-  confermationPrompt: {fileID: 0}
+  _QualityLevel: 0
+  _BrightnessLevel: 0
+  _IsFullScreen: 0
+  confermationPrompt: {fileID: 7765723569538733877, guid: 0e40e87e79d923648b2830fb786cec00, type: 3}
+  isDifficult: 0
+  _Volume: 0
