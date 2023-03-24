@@ -7,6 +7,7 @@ using TMPro;
 using Unity.VisualScripting;
 using System;
 using UnityEngine.Audio;
+using UnityEngine.Rendering.PostProcessing;
 
 public class MainMenuControler : MonoBehaviour
 {
@@ -36,9 +37,12 @@ public class MainMenuControler : MonoBehaviour
     [SerializeField] public Toggle fullScreenToggel;
 
     [Header("~~~~~~~~~~Graphics~~~~~~~~")]
-    [SerializeField] public Slider brightnessSlider = null;
+    [SerializeField] public Slider brightnessSlider;
     [SerializeField] public TMP_Text brightnessTexTValue = null;
     [SerializeField] public float defualtBrightness = 1.0f;
+    public PostProcessProfile brightness;
+    public PostProcessLayer layer;
+    AutoExposure exposure;
 
     [Header("~~~~~~level to load~~~~~~")]
     public string _newGameLevel;
@@ -66,6 +70,7 @@ public class MainMenuControler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        brightness.TryGetSettings(out exposure);
         _Resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
 
@@ -206,6 +211,14 @@ public class MainMenuControler : MonoBehaviour
     {
         _BrightnessLevel = bright;
         brightnessTexTValue.text = bright.ToString("0.0");
+        if (bright != 0)
+        {
+            exposure.keyValue.value = bright;
+        }
+        else
+        {
+            exposure.keyValue.value = 0.05f;
+        }
     }
 
     public void ToggelFullScreen(bool isFullScreen)
