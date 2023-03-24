@@ -4602,7 +4602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &954083705
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4959,7 +4959,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057342224}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0016116907, w: -0.99999875}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4967,10 +4967,10 @@ RectTransform:
   - {fileID: 1694894182}
   m_Father: {fileID: 356532874}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.25}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.185}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.000030517578}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1065367838
@@ -8437,7 +8437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1694894182
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8455,8 +8455,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 59.682007, y: -0.000029563904}
-  m_SizeDelta: {x: 119.36, y: -0.000042915}
+  m_AnchoredPosition: {x: -0, y: 1}
+  m_SizeDelta: {x: -0.0020142, y: 8.748}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1694894183
 MonoBehaviour:
@@ -12595,6 +12595,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Menu Controler '
       objectReference: {fileID: 0}
+    - target: {fileID: 4726173566242838076, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4726173566242838078, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -12660,6 +12664,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1170193519}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
+      propertyPath: MusicVolSlider
+      value: 
+      objectReference: {fileID: 356532876}
+    - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: gameDifficulty
       value: 
       objectReference: {fileID: 547412125221916716}
@@ -12667,6 +12675,10 @@ PrefabInstance:
       propertyPath: qualityDropdown
       value: 
       objectReference: {fileID: 1065367842}
+    - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
+      propertyPath: sFXVolumeSlider
+      value: 
+      objectReference: {fileID: 547412124870418949}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: volumeAudioClip
       value: 
@@ -12688,6 +12700,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 681095493}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
+      propertyPath: MusicVolTextValue
+      value: 
+      objectReference: {fileID: 1365009199}
+    - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: volumeAudioSource
       value: 
       objectReference: {fileID: 1490874}
@@ -12696,9 +12712,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1744807535}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
+      propertyPath: masterVolumeSlider
+      value: 
+      objectReference: {fileID: 2051038495}
+    - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: resolutionDropdown
       value: 
       objectReference: {fileID: 1500655985}
+    - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
+      propertyPath: sFXVolumeTextValue
+      value: 
+      objectReference: {fileID: 547412124915501009}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: volumeSFXTextValue
       value: 
@@ -12711,6 +12735,10 @@ PrefabInstance:
       propertyPath: conrollerSensSlider
       value: 
       objectReference: {fileID: 971565765}
+    - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
+      propertyPath: masterVolumeTextValue
+      value: 
+      objectReference: {fileID: 1585306726}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: enemyDifficulty.Array.size
       value: 4

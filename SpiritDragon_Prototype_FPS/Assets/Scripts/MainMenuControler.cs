@@ -61,10 +61,7 @@ public class MainMenuControler : MonoBehaviour
     public bool isDifficult = false;
     public float _Volume;
 
-    private void Awake()
-    {
-        VolumeControl.instance.VolumeController(defualtVolumeValue);
-    }
+   
 
     // Start is called before the first frame update
     void Start()
