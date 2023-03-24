@@ -11973,7 +11973,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'You have sucessfully defended yourself and the remaing Kythron crystals.
-    You will be Hansomely Rewarded for your Heroic deed upon your return '
+    You will be Handsomely Rewarded for your Heroic deed upon your return '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -18041,7 +18041,7 @@ PrefabInstance:
     - target: {fileID: 2909020831669799606, guid: ea1d2026afd1b5b459d4f4a434b18efc, type: 3}
       propertyPath: volumeSlider
       value: 
-      objectReference: {fileID: 1341639915}
+      objectReference: {fileID: 0}
     - target: {fileID: 2909020831669799606, guid: ea1d2026afd1b5b459d4f4a434b18efc, type: 3}
       propertyPath: invertYtoggle
       value: 
@@ -27773,17 +27773,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1341639915 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 547412123381816780, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
-  m_PrefabInstance: {fileID: 1341639904}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1341639916 stripped
@@ -38488,7 +38477,7 @@ PrefabInstance:
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: volumeSlider
       value: 
-      objectReference: {fileID: 1341639915}
+      objectReference: {fileID: 0}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: invertYtoggle
       value: 

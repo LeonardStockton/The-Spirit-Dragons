@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 997
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 144
+  controlID: 19
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 984
-    height: 477
+    height: 367
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
@@ -185,25 +185,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: AudioMixerWindow
+  m_Name: GameView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 477
+    y: 367
     width: 984
-    height: 470
-  m_MinSize: {x: 101, y: 121}
+    height: 580
+  m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 18}
+  m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
   - {fileID: 16}
   - {fileID: 17}
   - {fileID: 18}
-  m_Selected: 3
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 3
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -305,9 +305,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 550
+    y: 440
     width: 983
-    height: 449
+    height: 559
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -345,7 +345,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -355,22 +355,22 @@ MonoBehaviour:
       x: 0
       y: 21
       width: 983
-      height: 428
-    m_Scale: {x: 0.3962963, y: 0.3962963}
-    m_Translation: {x: 491.5, y: 214}
+      height: 538
+    m_Scale: {x: 0.49814814, y: 0.49814814}
+    m_Translation: {x: 491.5, y: 269}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1240.2336
+      x: -986.6543
       y: -540
-      width: 2480.4673
+      width: 1973.3086
       height: 1080
     m_MinimalGUI: 1
-  m_defaultScale: 0.3962963
-  m_LastWindowPixelSize: {x: 983, y: 449}
+  m_defaultScale: 0.49814814
+  m_LastWindowPixelSize: {x: 983, y: 559}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -399,7 +399,7 @@ MonoBehaviour:
     x: 0
     y: 73
     width: 983
-    height: 456
+    height: 346
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -634,9 +634,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 28.370695, y: -2.2862456, z: -13.290275}
+    m_Target: {x: 960, y: 540, z: 0}
     speed: 2
-    m_Value: {x: 28.370695, y: -2.2862456, z: -13.290275}
+    m_Value: {x: 960, y: 540, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -687,9 +687,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.03187211, y: 0.84205276, z: -0.050794452, w: 0.53605145}
   m_Size:
-    m_Target: 16.768251
+    m_Target: 10
     speed: 2
-    m_Value: 16.768251
+    m_Value: 10
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1281,25 +1281,25 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 60670000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: dec7ffffb4f4ffff0cfbffff
+      m_ExpandedIDs: 389afeff86eafeff9c0bffffcc76ffff08a4ffff00c7ffff48f7ffff308900007c4501003e460100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: WinMenu
+        m_OriginalName: WinMenu
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 35314
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 7}
+        m_ClientGUIView: {fileID: 9}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -1348,22 +1348,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefab/weapons/Shotguns
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefab/weapons/Shotguns
+  - Assets/Scenes
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\The-Spirit-Dragons\SpiritDragon_Prototype_FPS
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4a670000
-    m_LastClickedID: 26442
-    m_ExpandedIDs: 000000009e660000b2660000b46600002467000000ca9a3bffffff7f
+    m_SelectedIDs: da820000
+    m_LastClickedID: 33498
+    m_ExpandedIDs: 00000000788200007a820000d88200001283000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1391,7 +1391,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009e660000
+    m_ExpandedIDs: 00000000788200007a820000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1422,15 +1422,15 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 66730000327300005e8a0000b0a0ffff
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Level Asset Test Scene
-      m_OriginalName: Level Asset Test Scene
+      m_Name: Main Title Scene
+      m_OriginalName: Main Title Scene
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 26364
+      m_UserData: 33602
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
