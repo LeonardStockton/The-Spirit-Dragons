@@ -1132,6 +1132,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5216503802594933287, guid: d4e7901f76f50fd49a850c55ec8440cd, type: 3}
   m_PrefabInstance: {fileID: 5216503800861238040}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1820433657 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 547412124739725101, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+  m_PrefabInstance: {fileID: 5460078491782197142}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1880766518 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5675966686062331882, guid: 5d2e07e836265fa439932408abe85fc7, type: 3}
@@ -1261,11 +1266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &76454752518402818 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 547412123590698129, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
-  m_PrefabInstance: {fileID: 5460078491782197142}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &76454752518402819 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 547412123590698128, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
@@ -1937,7 +1937,7 @@ PrefabInstance:
     - target: {fileID: 5216503801636135254, guid: d4e7901f76f50fd49a850c55ec8440cd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 76454752518402818}
+      objectReference: {fileID: 1820433657}
     - target: {fileID: 5216503801636135254, guid: d4e7901f76f50fd49a850c55ec8440cd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
@@ -2059,6 +2059,10 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1680202006}
+    - target: {fileID: 385652698969708192, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 474939941321839903, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2151,10 +2155,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Options Popout Dialog
       objectReference: {fileID: 0}
+    - target: {fileID: 547412123590698129, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 547412123648207872, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2041307057}
+    - target: {fileID: 547412123648207874, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 547412123867165090, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2163,6 +2175,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1680202006}
+    - target: {fileID: 547412123899045919, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 547412124031603301, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2175,10 +2191,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1680202006}
+    - target: {fileID: 547412124189965501, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 547412124359080433, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1680202006}
+    - target: {fileID: 547412124394252816, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 547412124394252822, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
       propertyPath: m_FillRect
       value: 
@@ -2215,6 +2239,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1680202006}
+    - target: {fileID: 547412124739725101, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 547412124816676333, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2223,6 +2251,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1680202006}
+    - target: {fileID: 547412125153277803, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1840131975623468714, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
       propertyPath: m_MaxValue
       value: 5
@@ -2257,7 +2289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6165270203558051650, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8556665668335963399, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
