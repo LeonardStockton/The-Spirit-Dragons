@@ -808,7 +808,7 @@ MonoBehaviour:
   aud: {fileID: 3062657558479715721}
   miniMapObj: {fileID: 9061157528627497379}
   headPos: {fileID: 3062657558470709866}
-  HP: 40
+  HP: 80
   playerFaceSpeed: 15
   speedChase: 5
   viewAngle: 100
