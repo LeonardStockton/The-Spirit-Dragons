@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -634,9 +634,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 17.635845, y: -1.7363896, z: -23.394423}
+    m_Target: {x: 28.370695, y: -2.2862456, z: -13.290275}
     speed: 2
-    m_Value: {x: 17.635845, y: -1.7363896, z: -23.394423}
+    m_Value: {x: 28.370695, y: -2.2862456, z: -13.290275}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -683,13 +683,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.01719998, y: 0.9443372, z: -0.05116949, w: 0.32493147}
+    m_Target: {x: 0.031876355, y: 0.842165, z: -0.05080122, w: 0.5361229}
     speed: 2
-    m_Value: {x: 0.017197682, y: 0.944211, z: -0.051162653, w: 0.32488805}
+    m_Value: {x: 0.03187211, y: 0.84205276, z: -0.050794452, w: 0.53605145}
   m_Size:
-    m_Target: 16.046173
+    m_Target: 16.768251
     speed: 2
-    m_Value: 16.046173
+    m_Value: 16.768251
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1281,9 +1281,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 505c0000
-      m_LastClickedID: 23632
-      m_ExpandedIDs: 0cfbffff
+      m_SelectedIDs: 60670000
+      m_LastClickedID: 0
+      m_ExpandedIDs: dec7ffffb4f4ffff0cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1348,22 +1348,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Prefab/weapons/Shotguns
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Prefab/weapons/Shotguns
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\The-Spirit-Dragons\SpiritDragon_Prototype_FPS
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b6660000
-    m_LastClickedID: 26294
-    m_ExpandedIDs: 000000009e66000000ca9a3bffffff7f
+    m_SelectedIDs: 4a670000
+    m_LastClickedID: 26442
+    m_ExpandedIDs: 000000009e660000b2660000b46600002467000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1418,22 +1418,22 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 66730000327300005e8a0000b0a0ffff
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Level Asset Test Scene
+      m_OriginalName: Level Asset Test Scene
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 26364
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:

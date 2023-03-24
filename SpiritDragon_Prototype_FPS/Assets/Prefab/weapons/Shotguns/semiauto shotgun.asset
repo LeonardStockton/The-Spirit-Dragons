@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3992271a9721e42bbbf07301c7a3c9, type: 3}
   m_Name: semiauto shotgun
   m_EditorClassIdentifier: 
-  shootRate: 0.25
+  shootRate: 1
   gunName: Semi shotgun
   shootDist: 6
   shootDamage: 25
