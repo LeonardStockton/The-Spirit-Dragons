@@ -190,7 +190,6 @@ public class MainMenuControler : MonoBehaviour
     }
     public void SetControllerSenstivity(float sensitivity)
     {
-        
         mainControllerSens = Mathf.RoundToInt(sensitivity);
         controllerSensivityTextValue.text = sensitivity.ToString("0");
     }

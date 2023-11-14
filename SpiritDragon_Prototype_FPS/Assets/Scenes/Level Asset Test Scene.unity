@@ -2505,7 +2505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5426,6 +5426,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &379863119 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 474939942330315964, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+  m_PrefabInstance: {fileID: 379863116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &379863120 stripped
@@ -9651,6 +9662,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.000001, y: 4.0000005, z: 0.42}
   m_Center: {x: -0.0000047683716, y: 1.9999999, z: 0.14933406}
+--- !u!114 &722116225 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 547412125361573112, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+  m_PrefabInstance: {fileID: 379863116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &736558863 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 120586, guid: e15828603e27c5e42b39860e4f55da70, type: 3}
@@ -17210,7 +17232,7 @@ PrefabInstance:
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: brightnessSlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1921192234}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: fullScreenToggel
       value: 
@@ -17218,7 +17240,7 @@ PrefabInstance:
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: MusicVolTextValue
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 379863119}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: masterVolumeSlider
       value: 
@@ -17234,7 +17256,7 @@ PrefabInstance:
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: brightnessTexTValue
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 722116225}
     - target: {fileID: 4726173566242838079, guid: 299293c3e36db844ba9c344b5d09fe1b, type: 3}
       propertyPath: conrollerSensSlider
       value: 
@@ -29979,7 +30001,7 @@ PrefabInstance:
     - target: {fileID: 2909020831669799606, guid: ea1d2026afd1b5b459d4f4a434b18efc, type: 3}
       propertyPath: brightnessSlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1921192234}
     - target: {fileID: 2909020831669799606, guid: ea1d2026afd1b5b459d4f4a434b18efc, type: 3}
       propertyPath: fullScreenToggel
       value: 
@@ -29987,7 +30009,7 @@ PrefabInstance:
     - target: {fileID: 2909020831669799606, guid: ea1d2026afd1b5b459d4f4a434b18efc, type: 3}
       propertyPath: brightnessTexTValue
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 722116225}
     - target: {fileID: 2909020831669799606, guid: ea1d2026afd1b5b459d4f4a434b18efc, type: 3}
       propertyPath: conrollerSensSlider
       value: 
@@ -31637,6 +31659,17 @@ MonoBehaviour:
   minIntensity: 0
   maxIntensity: 1.6
   increaseDecreasAmount: 0.02
+--- !u!114 &1921192234 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 547412124178867908, guid: 5228b95e7bd1395468c16da55689430c, type: 3}
+  m_PrefabInstance: {fileID: 379863116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1923069632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37939,7 +37972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -38846,7 +38879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -39647,7 +39680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.87058824}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -39845,7 +39878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
